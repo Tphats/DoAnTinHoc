@@ -12,23 +12,18 @@ namespace QuanLyUser
 {
     public partial class FrmQLUser : Form
     {
-        private List<CQLUser> dsuser = new List<CQLUser>();
+        private List<CQLUser> dsuser = DuLieuDungChung.dsuser;
         public FrmQLUser()
         {
             InitializeComponent();
-            LoadData();
+            DuLieuDungChung.LoadData();
+            dsuser = DuLieuDungChung.dsuser;
             hienthidanhsach();
         }
         private void hienthidanhsach()
         {
             dgvDsUser.DataSource = null;
             dgvDsUser.DataSource = dsuser;
-        }
-        private void LoadData()
-        {
-            dsuser.Add(new CQLUser("Admin", "U001", "admin", "123456", DateTime.Now));
-            dsuser.Add(new CQLUser("User", "U002", "user1", "123456", DateTime.Now));
-            dsuser.Add(new CQLUser("User", "U003", "user2", "123456", DateTime.Now));
         }
         private void ClearData()
         {
@@ -39,13 +34,6 @@ namespace QuanLyUser
             rBtnAdmin.Checked = false;
             rBtnUser.Checked = false;
         }
-        //public void timkiem()
-        //{
-        //    string tukhoa = txtTimKiem.Text.ToLower();
-        //    var ketqua = dsuser.Where(u => u.MaUser.ToLower().Contains(tukhoa) || u.TenDangNhap.ToLower().Contains(tukhoa)).ToList();
-        //    dgvDsUser.DataSource = null;
-        //    dgvDsUser.DataSource = ketqua;
-        //}
         private CQLUser timUser(string maUs)
         {
             foreach(CQLUser us in dsuser)
@@ -69,6 +57,84 @@ namespace QuanLyUser
                 else
                     us.LoaiUser = "User";
                 dsuser.Add(us);
+                hienthidanhsach();
+            }
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            CQLUser us = new CQLUser();
+            us.MaUser = txtTimKiem.Text;
+            if (timUser(us.MaUser) == null)
+            {
+                MessageBox.Show("Không tìm thấy user có mã " + us.MaUser);
+            }
+            else
+            {
+                us = timUser(us.MaUser);
+                txtMaUser.Text = us.MaUser;
+                txtTenDangNhap.Text = us.TenDangNhap;
+                txtMatKhau.Text = us.MatKhau;
+                dtNgayTaoTK.Value = us.NgayTaoTK;
+                if (us.LoaiUser == "Admin")
+                    rBtnAdmin.Checked = true;
+                else
+                    rBtnUser.Checked = true;
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string maUs = txtMaUser.Text;
+            CQLUser us = new CQLUser();
+            if(timUser(maUs) == null)
+            {
+                MessageBox.Show("Không tìm thấy user có mã " + maUs);
+            }
+            else
+            {
+                us = timUser(maUs);
+                dsuser.Remove(us);
+                hienthidanhsach();
+            }
+        }
+
+        private void dgvDsUser_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex < 0 || e.RowIndex >= dgvDsUser.Rows.Count)
+            {
+                return;
+            }
+            DataGridViewRow row = dgvDsUser.Rows[e.RowIndex];
+            if (row.IsNewRow)
+                return;
+            txtMaUser.Text = dgvDsUser.Rows[e.RowIndex].Cells[1].Value?.ToString() ?? "";
+            txtTenDangNhap.Text = dgvDsUser.Rows[e.RowIndex].Cells[2].Value?.ToString() ?? "";
+            txtMatKhau.Text = dgvDsUser.Rows[e.RowIndex].Cells[3].Value?.ToString() ?? "";
+            dtNgayTaoTK.Value = Convert.ToDateTime(dgvDsUser.Rows[e.RowIndex].Cells[4].Value ?? DateTime.Now);
+            if (dgvDsUser.Rows[e.RowIndex].Cells[0].Value?.ToString() == "Admin")
+                rBtnAdmin.Checked = true;
+            else
+                rBtnUser.Checked = true;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string maUs = txtMaUser.Text;
+            if(timUser(maUs) == null)
+            {
+                MessageBox.Show("Không tìm thấy user có mã " + maUs);
+            }
+            else
+            {
+                CQLUser us = timUser(maUs);
+                us.TenDangNhap = txtTenDangNhap.Text;
+                us.MatKhau = txtMatKhau.Text;
+                us.NgayTaoTK = dtNgayTaoTK.Value;
+                if (rBtnAdmin.Checked)
+                    us.LoaiUser = "Admin";
+                else
+                    us.LoaiUser = "User";
                 hienthidanhsach();
             }
         }

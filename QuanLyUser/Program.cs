@@ -16,7 +16,8 @@ namespace QuanLyUser
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmQLUser());
+            Application.Run(new FrmDangNhap());
+            //Application.Run(new FrmQLUser());
         }
     }
 }
