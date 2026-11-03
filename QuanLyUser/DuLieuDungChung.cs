@@ -15,13 +15,12 @@ namespace QuanLyUser
                 return;
             for (int i = 1; i <= 10; i++)
             {
-                dsuser.Add(new CQLUser("Admin", "AD" + i.ToString("D2"), "admin" + i, "123456", DateTime.Now));
+                dsuser.Add(new CQLUser("Admin", "AD" + i.ToString("D2"), "admin" + i, "123456", DateTime.Now, true));
             }
             for (int i = 1; i <= 90; i++)
             {
-                dsuser.Add(new CQLUser("User", "US" + i.ToString("D2"), "user" + i, "123456", DateTime.Now));
+                dsuser.Add(new CQLUser("User", "US" + i.ToString("D2"), "user" + i, "123456", DateTime.Now, true));
             }
-
         }
     }
 }

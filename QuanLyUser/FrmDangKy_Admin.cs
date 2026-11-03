@@ -50,18 +50,18 @@ namespace QuanLyUser
             dk_user.MatKhau = txtMK.Text;
             //Profile
             dk_user.NgayTaoTK = DateTime.Now;
-            dk_user.TenAdmin = txtTen.Text;
-            dk_user.CCCD_Admin = txtCCCD.Text;
-            dk_user.SDT_Admin = txtSDT.Text;
-            dk_user.Email_Admin = txtEmail.Text;
-            dk_user.DiaChi_Admin = txtDC.Text;
+            dk_user.TenUser = txtTen.Text;
+            dk_user.CCCD_User = txtCCCD.Text;
+            dk_user.SDT_User = txtSDT.Text;
+            dk_user.Email_User = txtEmail.Text;
+            dk_user.DiaChi_User = txtDC.Text;
             if (rbtnNam.Checked)
             {
-                dk_user.GioiTinh_Admin = "Nam";
+                dk_user.GioiTinh_User = "Nam";
             }
             else
             {
-                dk_user.GioiTinh_Admin = "Nữ";
+                dk_user.GioiTinh_User = "Nữ";
             }
             // Duyệt Admin qua mã admin được cung cấp sẵn (mã demo: 123)
             if (txtMa_Admin.Text != "123")

@@ -16,6 +16,15 @@ namespace QuanLyUser
         {
             InitializeComponent();
         }
+        private bool KiemTraTenDangNhap(string ma)
+        {
+            foreach (CQLUser us in DuLieuDungChung.dsuser)
+            {
+                if (us.MaUser == ma)
+                    return true;
+            }
+            return false;
+        }
         private string taoMaUser()
         {
             string ma;
@@ -25,7 +34,7 @@ namespace QuanLyUser
                     .ToString("N") // loại bỏ dấu "-" trong chuỗi định danh
                     .Substring(0, 8) // lấy 8 kí tự đầu tiên
                     .ToUpper(); // chuyển đổi thành chữ hoa
-            } while (DuLieuDungChung.dsuser.Any(u => u.MaUser == ma));
+            } while (KiemTraTenDangNhap(ma));
             return ma;
         }
 
@@ -63,6 +72,7 @@ namespace QuanLyUser
             {
                 dk_user.GioiTinh_User = "Nữ";
             }
+            dk_user.TrangthaiTK = true;
             DuLieuDungChung.dsuser.Add(dk_user);
             FrmDangNhap frmDN = new FrmDangNhap();
             frmDN.Show();

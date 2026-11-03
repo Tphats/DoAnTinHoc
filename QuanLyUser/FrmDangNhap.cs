@@ -90,8 +90,8 @@ namespace QuanLyUser
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            FrmDangKyTK_Chung frmDK_Chung = new FrmDangKyTK_Chung();
-            frmDK_Chung.Show();
+            FrmDangKy_User frmDK = new FrmDangKy_User();
+            frmDK.Show();
             this.Hide();
         }
 

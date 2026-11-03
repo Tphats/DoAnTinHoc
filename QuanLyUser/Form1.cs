@@ -58,31 +58,9 @@ namespace QuanLyUser
                     us.LoaiUser = "User";
                 dsuser.Add(us);
                 hienthidanhsach();
+                ClearData();
             }
         }
-
-        private void btn_Click(object sender, EventArgs e)
-        {
-            CQLUser us = new CQLUser();
-            us.MaUser = txtTimKiem.Text;
-            if (timUser(us.MaUser) == null)
-            {
-                MessageBox.Show("Không tìm thấy user có mã " + us.MaUser);
-            }
-            else
-            {
-                us = timUser(us.MaUser);
-                txtMaUser.Text = us.MaUser;
-                txtTenDangNhap.Text = us.TenDangNhap;
-                txtMatKhau.Text = us.MatKhau;
-                dtNgayTaoTK.Value = us.NgayTaoTK;
-                if (us.LoaiUser == "Admin")
-                    rBtnAdmin.Checked = true;
-                else
-                    rBtnUser.Checked = true;
-            }
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string maUs = txtMaUser.Text;
@@ -136,6 +114,57 @@ namespace QuanLyUser
                 else
                     us.LoaiUser = "User";
                 hienthidanhsach();
+            }
+        }
+
+        private void btnKhoa_Click(object sender, EventArgs e)
+        {
+            string maUs = txtMaUser.Text;
+            CQLUser us = timUser(maUs);
+            if (us == null)
+            {
+                MessageBox.Show("Không tìm thấy user có mã " + maUs);
+            }
+            else
+            {
+                us.TrangthaiTK = true;
+                hienthidanhsach();
+            }
+        }
+
+        private void btnMo_Click(object sender, EventArgs e)
+        {
+            string maUs = txtMaUser.Text;
+            CQLUser us = timUser(maUs);
+            if (us == null)
+            {
+                MessageBox.Show("Không tìm thấy user có mã " + maUs);
+            }
+            else
+            {
+                us.TrangthaiTK = false;
+                hienthidanhsach();
+            }
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            CQLUser us = new CQLUser();
+            us.MaUser = txtTimKiem.Text;
+            if (timUser(us.MaUser) == null)
+            {
+                MessageBox.Show("Không tìm thấy user có mã " + us.MaUser);
+            }
+            else
+            {
+                us = timUser(us.MaUser);
+                txtMaUser.Text = us.MaUser;
+                txtTenDangNhap.Text = us.TenDangNhap;
+                txtMatKhau.Text = us.MatKhau;
+                dtNgayTaoTK.Value = us.NgayTaoTK;
+                if (us.LoaiUser == "Admin")
+                    rBtnAdmin.Checked = true;
+                else
+                    rBtnUser.Checked = true;
             }
         }
     }
