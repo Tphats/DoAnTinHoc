@@ -1,4 +1,4 @@
-﻿namespace QuanLyUser
+﻿namespace QuanLyAccount
 {
     partial class FrmDangNhap
     {

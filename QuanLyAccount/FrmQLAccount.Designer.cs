@@ -1,6 +1,6 @@
-﻿namespace QuanLyUser
+﻿namespace QuanLyAccount
 {
-    partial class FrmQLUser
+    partial class FrmQLAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,12 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.dtNgayTaoTK = new System.Windows.Forms.DateTimePicker();
             this.dgvDsUser = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -47,12 +53,6 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnMo = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelHoTen = new System.Windows.Forms.Label();
             this.labelCCCD = new System.Windows.Forms.Label();
             this.labelSdt = new System.Windows.Forms.Label();
@@ -188,6 +188,48 @@
             this.dgvDsUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsUser_RowEnter);
             this.dgvDsUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsUser_RowEnter);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "LoaiUser";
+            this.Column1.HeaderText = "Loại Tài khoản";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaUser";
+            this.Column2.HeaderText = "Mã Tài Khoản";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TenDangNhap";
+            this.Column3.HeaderText = "Tên Đăng nhập";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "MatKhau";
+            this.Column4.HeaderText = "Mật Khẩu";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NgayTaoTK";
+            this.Column5.HeaderText = "Ngày Tạo";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "TrangthaiTK";
+            this.Column6.HeaderText = "Khóa";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(586, 381);
@@ -254,42 +296,6 @@
             this.btnMo.Text = "Mở";
             this.btnMo.UseVisualStyleBackColor = true;
             this.btnMo.Click += new System.EventHandler(this.btnMo_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "LoaiUser";
-            this.Column1.HeaderText = "Loại Tài khoản";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MaUser";
-            this.Column2.HeaderText = "Mã Tài Khoản";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TenDangNhap";
-            this.Column3.HeaderText = "Tên Đăng nhập";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "MatKhau";
-            this.Column4.HeaderText = "Mật Khẩu";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "NgayTaoTK";
-            this.Column5.HeaderText = "Ngày Tạo";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "TrangthaiTK";
-            this.Column6.HeaderText = "Khóa";
-            this.Column6.Name = "Column6";
             // 
             // labelHoTen
             // 
@@ -420,7 +426,7 @@
             this.rbtnNam.Text = "Nam";
             this.rbtnNam.UseVisualStyleBackColor = true;
             // 
-            // FrmQLUser
+            // FrmQLAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -456,8 +462,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxLoaiTK);
             this.MaximizeBox = false;
-            this.Name = "FrmQLUser";
-            this.Text = "FrmQLUser";
+            this.Name = "FrmQLAccount";
+            this.Text = "FrmQLAccount";
             this.groupBoxLoaiTK.ResumeLayout(false);
             this.groupBoxLoaiTK.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsUser)).EndInit();

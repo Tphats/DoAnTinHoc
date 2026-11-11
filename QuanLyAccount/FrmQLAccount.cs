@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyUser
+namespace QuanLyAccount
 {
-    public partial class FrmQLUser : Form
+    public partial class FrmQLAccount : Form
     {
-        private List<CQLUser> dsuser = DuLieuDungChung.dsuser;
-        public FrmQLUser()
+        private List<CQLAccount> dsuser = DuLieuDungChung.dsuser;
+        public FrmQLAccount()
         {
             InitializeComponent();
             DuLieuDungChung.LoadData();
@@ -34,9 +34,9 @@ namespace QuanLyUser
             rBtnAdmin.Checked = false;
             rBtnUser.Checked = false;
         }
-        private CQLUser timUser(string maUs)
+        private CQLAccount timUser(string maUs)
         {
-            foreach(CQLUser us in dsuser)
+            foreach(CQLAccount us in dsuser)
             {
                 if(us.MaUser == maUs)
                    return us;
@@ -45,7 +45,7 @@ namespace QuanLyUser
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            CQLUser us = new CQLUser();
+            CQLAccount us = new CQLAccount();
             if(timUser(txtMaUser.Text) == null)
             {
                 us.MaUser = txtMaUser.Text;
@@ -64,7 +64,7 @@ namespace QuanLyUser
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string maUs = txtMaUser.Text;
-            CQLUser us = new CQLUser();
+            CQLAccount us = new CQLAccount();
             if(timUser(maUs) == null)
             {
                 MessageBox.Show("Không tìm thấy user có mã " + maUs);
@@ -105,7 +105,7 @@ namespace QuanLyUser
             }
             else
             {
-                CQLUser us = timUser(maUs);
+                CQLAccount us = timUser(maUs);
                 us.TenDangNhap = txtTenDangNhap.Text;
                 us.MatKhau = txtMatKhau.Text;
                 us.NgayTaoTK = dtNgayTaoTK.Value;
@@ -120,7 +120,7 @@ namespace QuanLyUser
         private void btnKhoa_Click(object sender, EventArgs e)
         {
             string maUs = txtMaUser.Text;
-            CQLUser us = timUser(maUs);
+            CQLAccount us = timUser(maUs);
             if (us == null)
             {
                 MessageBox.Show("Không tìm thấy user có mã " + maUs);
@@ -135,7 +135,7 @@ namespace QuanLyUser
         private void btnMo_Click(object sender, EventArgs e)
         {
             string maUs = txtMaUser.Text;
-            CQLUser us = timUser(maUs);
+            CQLAccount us = timUser(maUs);
             if (us == null)
             {
                 MessageBox.Show("Không tìm thấy user có mã " + maUs);
@@ -148,7 +148,7 @@ namespace QuanLyUser
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            CQLUser us = new CQLUser();
+            CQLAccount us = new CQLAccount();
             us.MaUser = txtTimKiem.Text;
             if (timUser(us.MaUser) == null)
             {

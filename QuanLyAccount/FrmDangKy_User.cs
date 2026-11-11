@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyUser
+namespace QuanLyAccount
 {
     public partial class FrmDangKy_User : Form
     {
@@ -18,7 +18,7 @@ namespace QuanLyUser
         }
         private bool KiemTraTenDangNhap(string ma)
         {
-            foreach (CQLUser us in DuLieuDungChung.dsuser)
+            foreach (CQLAccount us in DuLieuDungChung.dsuser)
             {
                 if (us.MaUser == ma)
                     return true;
@@ -46,7 +46,7 @@ namespace QuanLyUser
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
-            CQLUser dk_user = new CQLUser();
+            CQLAccount dk_user = new CQLAccount();
             dk_user.LoaiUser = "User";
             dk_user.MaUser = taoMaUser();
             dk_user.TenDangNhap = txtTenDN.Text;

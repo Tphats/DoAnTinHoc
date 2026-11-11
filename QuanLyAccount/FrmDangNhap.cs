@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyUser
+namespace QuanLyAccount
 {
     public partial class FrmDangNhap : Form
     {
-        private List<CQLUser> dsuser = DuLieuDungChung.dsuser;
+        private List<CQLAccount> dsuser = DuLieuDungChung.dsuser;
         public FrmDangNhap()
         {
             InitializeComponent();
@@ -31,13 +31,13 @@ namespace QuanLyUser
             string mk = txtMK.Text.Trim();
             if(rbtnAdmin.Checked)
             {
-                foreach (CQLUser us in dsuser)
+                foreach (CQLAccount us in dsuser)
                 {
                     if (/*us.MaUser*/ "123" /*Thay 123 bằng mã admin thực tế sau khi có database*/ == txtPhanQuyen.Text.Trim()
                         && us.TenDangNhap == maUs && us.MatKhau == mk)
                     {
                         MessageBox.Show("Đăng nhập thành công!");
-                        FrmQLUser frm = new FrmQLUser();
+                        FrmQLAccount frm = new FrmQLAccount();
                         frm.Show();
                         this.Hide();
                         return;
@@ -51,7 +51,7 @@ namespace QuanLyUser
             }
             else
             {
-                foreach (CQLUser us in dsuser)
+                foreach (CQLAccount us in dsuser)
                 {
                     if (us.LoaiUser == "User" && us.TenDangNhap == maUs && us.MatKhau == mk)
                     {

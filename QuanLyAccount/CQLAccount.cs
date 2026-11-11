@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyUser
+namespace QuanLyAccount
 {
-    internal class CQLUser
+    internal class CQLAccount
     {
         // Account
         private string _LoaiUser;
@@ -39,7 +39,7 @@ namespace QuanLyUser
         public string GioiTinh_User { get { return _GioiTinh_User; } set { _GioiTinh_User = value; } }
         public DateTime NgaySinh_User { get { return _NgaySinh_User; } set { _NgaySinh_User = value; } }
 
-        public CQLUser(string LoaiUser, string MaUser, string TenDangNhap, string MatKhau, DateTime NgayTaoTK, bool TrangthaiTK)
+        public CQLAccount(string LoaiUser, string MaUser, string TenDangNhap, string MatKhau, DateTime NgayTaoTK, bool TrangthaiTK)
         {
             this.LoaiUser = LoaiUser;
             this.MaUser = MaUser;
@@ -48,7 +48,7 @@ namespace QuanLyUser
             this.NgayTaoTK = NgayTaoTK;
             this.TrangthaiTK = TrangthaiTK;
         }
-        public CQLUser():this("", "", "", "", DateTime.Now, true)
+        public CQLAccount():this("", "", "", "", DateTime.Now, true)
         {
           
         }
