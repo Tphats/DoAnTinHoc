@@ -13,8 +13,6 @@ namespace QuanLyAccount
         private string _maUser;
         private string _tenDangNhap;
         private string _matKhau;
-        private DateTime _ngayTaoTK;
-        private bool _trangthaiTK;
         // User
         private string _TenUser;
         private string _CCCD_User;
@@ -28,8 +26,6 @@ namespace QuanLyAccount
         public string MaUser { get { return _maUser; } set { _maUser = value; } }
         public string TenDangNhap { get {return _tenDangNhap; } set {_tenDangNhap = value; } }
         public string MatKhau { get {return _matKhau; } set {_matKhau = value; } }
-        public DateTime NgayTaoTK { get {return _ngayTaoTK; } set {_ngayTaoTK = value; } }
-        public bool TrangthaiTK { get { return _trangthaiTK; } set { _trangthaiTK = value; } }
         // User properties
         public string TenUser { get { return _TenUser; } set { _TenUser = value; } }
         public string CCCD_User { get { return _CCCD_User; } set { _CCCD_User = value; } }
@@ -39,16 +35,14 @@ namespace QuanLyAccount
         public string GioiTinh_User { get { return _GioiTinh_User; } set { _GioiTinh_User = value; } }
         public DateTime NgaySinh_User { get { return _NgaySinh_User; } set { _NgaySinh_User = value; } }
 
-        public CQLAccount(string LoaiUser, string MaUser, string TenDangNhap, string MatKhau, DateTime NgayTaoTK, bool TrangthaiTK)
+        public CQLAccount(string LoaiUser, string MaUser, string TenDangNhap, string MatKhau)
         {
             this.LoaiUser = LoaiUser;
             this.MaUser = MaUser;
             this.TenDangNhap = TenDangNhap;
             this.MatKhau = MatKhau;
-            this.NgayTaoTK = NgayTaoTK;
-            this.TrangthaiTK = TrangthaiTK;
         }
-        public CQLAccount():this("", "", "", "", DateTime.Now, true)
+        public CQLAccount():this("", "", "", "")
         {
           
         }

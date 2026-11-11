@@ -58,7 +58,6 @@ namespace QuanLyAccount
             }
             dk_user.MatKhau = txtMK.Text;
             //
-            dk_user.NgayTaoTK = DateTime.Now;
             dk_user.TenUser = txtTen.Text;
             dk_user.CCCD_User = txtCCCD.Text;
             dk_user.SDT_User = txtSDT.Text;
@@ -72,7 +71,6 @@ namespace QuanLyAccount
             {
                 dk_user.GioiTinh_User = "Nữ";
             }
-            dk_user.TrangthaiTK = true;
             DuLieuDungChung.dsuser.Add(dk_user);
             FrmDangNhap frmDN = new FrmDangNhap();
             frmDN.Show();

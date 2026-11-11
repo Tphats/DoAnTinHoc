@@ -15,11 +15,11 @@ namespace QuanLyAccount
                 return;
             for (int i = 1; i <= 10; i++)
             {
-                dsuser.Add(new CQLAccount("Admin", "AD" + i.ToString("D2"), "admin" + i, "123456", DateTime.Now, true));
+                dsuser.Add(new CQLAccount("Admin", "AD" + i.ToString("D2"), "admin" + i, "123456"));
             }
             for (int i = 1; i <= 90; i++)
             {
-                dsuser.Add(new CQLAccount("User", "US" + i.ToString("D2"), "user" + i, "123456", DateTime.Now, true));
+                dsuser.Add(new CQLAccount("User", "US" + i.ToString("D2"), "user" + i, "123456"));
             }
         }
     }

@@ -50,6 +50,7 @@
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.txtMK = new System.Windows.Forms.TextBox();
             this.txtNhaplaiMK = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.grGTinh.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -240,11 +241,19 @@
             this.txtNhaplaiMK.Size = new System.Drawing.Size(284, 20);
             this.txtNhaplaiMK.TabIndex = 22;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(472, 260);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(314, 100);
+            this.panel1.TabIndex = 23;
+            // 
             // FrmDangKy_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtNhaplaiMK);
             this.Controls.Add(this.txtMK);
             this.Controls.Add(this.txtTenDN);
@@ -299,5 +308,6 @@
         private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.TextBox txtMK;
         private System.Windows.Forms.TextBox txtNhaplaiMK;
+        private System.Windows.Forms.Panel panel1;
     }
 }

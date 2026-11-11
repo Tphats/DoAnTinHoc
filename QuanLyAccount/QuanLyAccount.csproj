@@ -49,6 +49,18 @@
   <ItemGroup>
     <Compile Include="CQLAccount.cs" />
     <Compile Include="DuLieuDungChung.cs" />
+    <Compile Include="FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmQLAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmQLAccount.resx">
       <DependentUpon>FrmQLAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +118,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_thuvien%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_thuvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_thuvien %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tong_quan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thong_ke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhan_vien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phieu_phat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_gia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_gia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thong_ke1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muon_tra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tao_tai_khoan_doc_gia_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

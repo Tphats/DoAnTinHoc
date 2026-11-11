@@ -30,7 +30,6 @@ namespace QuanLyAccount
             txtMaUser.Text = "";
             txtTenDangNhap.Text = "";
             txtMatKhau.Text = "";
-            dtNgayTaoTK.Value = DateTime.Now;
             rBtnAdmin.Checked = false;
             rBtnUser.Checked = false;
         }
@@ -51,7 +50,6 @@ namespace QuanLyAccount
                 us.MaUser = txtMaUser.Text;
                 us.TenDangNhap = txtTenDangNhap.Text;
                 us.MatKhau = txtMatKhau.Text;
-                us.NgayTaoTK = dtNgayTaoTK.Value;
                 if(rBtnAdmin.Checked)
                     us.LoaiUser = "Admin";
                 else
@@ -89,7 +87,6 @@ namespace QuanLyAccount
             txtMaUser.Text = dgvDsUser.Rows[e.RowIndex].Cells[1].Value?.ToString() ?? "";
             txtTenDangNhap.Text = dgvDsUser.Rows[e.RowIndex].Cells[2].Value?.ToString() ?? "";
             txtMatKhau.Text = dgvDsUser.Rows[e.RowIndex].Cells[3].Value?.ToString() ?? "";
-            dtNgayTaoTK.Value = Convert.ToDateTime(dgvDsUser.Rows[e.RowIndex].Cells[4].Value ?? DateTime.Now);
             if (dgvDsUser.Rows[e.RowIndex].Cells[0].Value?.ToString() == "Admin")
                 rBtnAdmin.Checked = true;
             else
@@ -108,41 +105,10 @@ namespace QuanLyAccount
                 CQLAccount us = timUser(maUs);
                 us.TenDangNhap = txtTenDangNhap.Text;
                 us.MatKhau = txtMatKhau.Text;
-                us.NgayTaoTK = dtNgayTaoTK.Value;
                 if (rBtnAdmin.Checked)
                     us.LoaiUser = "Admin";
                 else
                     us.LoaiUser = "User";
-                hienthidanhsach();
-            }
-        }
-
-        private void btnKhoa_Click(object sender, EventArgs e)
-        {
-            string maUs = txtMaUser.Text;
-            CQLAccount us = timUser(maUs);
-            if (us == null)
-            {
-                MessageBox.Show("Không tìm thấy user có mã " + maUs);
-            }
-            else
-            {
-                us.TrangthaiTK = true;
-                hienthidanhsach();
-            }
-        }
-
-        private void btnMo_Click(object sender, EventArgs e)
-        {
-            string maUs = txtMaUser.Text;
-            CQLAccount us = timUser(maUs);
-            if (us == null)
-            {
-                MessageBox.Show("Không tìm thấy user có mã " + maUs);
-            }
-            else
-            {
-                us.TrangthaiTK = false;
                 hienthidanhsach();
             }
         }
@@ -160,7 +126,6 @@ namespace QuanLyAccount
                 txtMaUser.Text = us.MaUser;
                 txtTenDangNhap.Text = us.TenDangNhap;
                 txtMatKhau.Text = us.MatKhau;
-                dtNgayTaoTK.Value = us.NgayTaoTK;
                 if (us.LoaiUser == "Admin")
                     rBtnAdmin.Checked = true;
                 else
