@@ -42,13 +42,17 @@
             this.pnl_Content = new System.Windows.Forms.Panel();
             this.pnl_Top = new System.Windows.Forms.Panel();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.Pnl_Sidebar.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.pnl_Top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_Sidebar
             // 
+            this.Pnl_Sidebar.Controls.Add(this.pictureBox1);
             this.Pnl_Sidebar.Controls.Add(this.btnTongQuan);
             this.Pnl_Sidebar.Controls.Add(this.btnQLAccount);
             this.Pnl_Sidebar.Controls.Add(this.btnQLSach);
@@ -63,17 +67,15 @@
             this.Pnl_Sidebar.Size = new System.Drawing.Size(209, 590);
             this.Pnl_Sidebar.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            // 
             // btnTongQuan
             // 
             this.btnTongQuan.BackColor = System.Drawing.Color.AliceBlue;
             this.btnTongQuan.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTongQuan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnTongQuan.Image = global::QuanLyAccount.Properties.Resources.tong_quan;
             this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTongQuan.Location = new System.Drawing.Point(0, 85);
+            this.btnTongQuan.Location = new System.Drawing.Point(0, 84);
             this.btnTongQuan.Margin = new System.Windows.Forms.Padding(0);
             this.btnTongQuan.Name = "btnTongQuan";
             this.btnTongQuan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -92,7 +94,7 @@
             this.btnQLAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btnQLAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnQLAccount.Image")));
             this.btnQLAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLAccount.Location = new System.Drawing.Point(0, 132);
+            this.btnQLAccount.Location = new System.Drawing.Point(0, 131);
             this.btnQLAccount.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLAccount.Name = "btnQLAccount";
             this.btnQLAccount.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -110,8 +112,9 @@
             this.btnQLSach.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnQLSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQLSach.Image = global::QuanLyAccount.Properties.Resources.sach;
             this.btnQLSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLSach.Location = new System.Drawing.Point(0, 179);
+            this.btnQLSach.Location = new System.Drawing.Point(0, 178);
             this.btnQLSach.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLSach.Name = "btnQLSach";
             this.btnQLSach.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -128,8 +131,9 @@
             this.btnQLDocGia.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnQLDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLDocGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQLDocGia.Image = global::QuanLyAccount.Properties.Resources.user;
             this.btnQLDocGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLDocGia.Location = new System.Drawing.Point(0, 226);
+            this.btnQLDocGia.Location = new System.Drawing.Point(0, 225);
             this.btnQLDocGia.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLDocGia.Name = "btnQLDocGia";
             this.btnQLDocGia.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -146,8 +150,9 @@
             this.btnQLNhanVien.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnQLNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQLNhanVien.Image = global::QuanLyAccount.Properties.Resources.nhanvien;
             this.btnQLNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 273);
+            this.btnQLNhanVien.Location = new System.Drawing.Point(0, 272);
             this.btnQLNhanVien.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLNhanVien.Name = "btnQLNhanVien";
             this.btnQLNhanVien.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -164,8 +169,9 @@
             this.btnQLPhieuMuon.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnQLPhieuMuon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLPhieuMuon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQLPhieuMuon.Image = global::QuanLyAccount.Properties.Resources.muon_tra;
             this.btnQLPhieuMuon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLPhieuMuon.Location = new System.Drawing.Point(0, 320);
+            this.btnQLPhieuMuon.Location = new System.Drawing.Point(0, 319);
             this.btnQLPhieuMuon.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLPhieuMuon.Name = "btnQLPhieuMuon";
             this.btnQLPhieuMuon.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -182,8 +188,9 @@
             this.btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnThongKe.Image = global::QuanLyAccount.Properties.Resources.thong_ke;
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 367);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 366);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(0);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -200,8 +207,9 @@
             this.btnQLSetting.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnQLSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQLSetting.Image = global::QuanLyAccount.Properties.Resources.setting;
             this.btnQLSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLSetting.Location = new System.Drawing.Point(0, 414);
+            this.btnQLSetting.Location = new System.Drawing.Point(0, 413);
             this.btnQLSetting.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLSetting.Name = "btnQLSetting";
             this.btnQLSetting.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -234,16 +242,13 @@
             // 
             // pnl_Top
             // 
+            this.pnl_Top.Controls.Add(this.label3);
             this.pnl_Top.Controls.Add(this.btn_TaiKhoan);
             this.pnl_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Top.Location = new System.Drawing.Point(0, 0);
             this.pnl_Top.Name = "pnl_Top";
             this.pnl_Top.Size = new System.Drawing.Size(926, 81);
             this.pnl_Top.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-
             // 
             // btn_TaiKhoan
             // 
@@ -254,7 +259,7 @@
             this.btn_TaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btn_TaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("btn_TaiKhoan.Image")));
             this.btn_TaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TaiKhoan.Location = new System.Drawing.Point(777, 18);
+            this.btn_TaiKhoan.Location = new System.Drawing.Point(724, 20);
             this.btn_TaiKhoan.Margin = new System.Windows.Forms.Padding(0);
             this.btn_TaiKhoan.Name = "btn_TaiKhoan";
             this.btn_TaiKhoan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
@@ -264,6 +269,26 @@
             this.btn_TaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_TaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_TaiKhoan.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyAccount.Properties.Resources.logo_thuvien__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 78);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label3.Location = new System.Drawing.Point(72, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(546, 58);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "GIAO DIỆN QUẢN TRỊ VIÊN";
             // 
             // FrmAdmin
             // 
@@ -281,6 +306,8 @@
             this.Pnl_Sidebar.ResumeLayout(false);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Top.ResumeLayout(false);
+            this.pnl_Top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,6 +326,7 @@
         private System.Windows.Forms.Panel pnl_Content;
         private System.Windows.Forms.Panel pnl_Top;
         private System.Windows.Forms.Button btn_TaiKhoan;
-
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
