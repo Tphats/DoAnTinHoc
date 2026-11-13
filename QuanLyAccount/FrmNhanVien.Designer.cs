@@ -39,8 +39,8 @@
             this.btnQLDocGia = new System.Windows.Forms.Button();
             this.btnQLPhieuMuon = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnQLSetting = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.btnQuaHan = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_Content = new System.Windows.Forms.Panel();
             this.pnl_Main.SuspendLayout();
@@ -97,9 +97,9 @@
             this.Pnl_Sidebar.Controls.Add(this.btnQLSach);
             this.Pnl_Sidebar.Controls.Add(this.btnQLDocGia);
             this.Pnl_Sidebar.Controls.Add(this.btnQLPhieuMuon);
-            this.Pnl_Sidebar.Controls.Add(this.button1);
+            this.Pnl_Sidebar.Controls.Add(this.btnQuaHan);
             this.Pnl_Sidebar.Controls.Add(this.btnThongKe);
-            this.Pnl_Sidebar.Controls.Add(this.btnQLSetting);
+            this.Pnl_Sidebar.Controls.Add(this.btnSetting);
             this.Pnl_Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.Pnl_Sidebar.Location = new System.Drawing.Point(0, 0);
             this.Pnl_Sidebar.Name = "Pnl_Sidebar";
@@ -216,45 +216,45 @@
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = false;
             // 
-            // btnQLSetting
+            // btnSetting
             // 
-            this.btnQLSetting.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnQLSetting.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnQLSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLSetting.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnQLSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnQLSetting.Image = global::QuanLyAccount.Properties.Resources.setting;
-            this.btnQLSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLSetting.Location = new System.Drawing.Point(0, 366);
-            this.btnQLSetting.Margin = new System.Windows.Forms.Padding(0);
-            this.btnQLSetting.Name = "btnQLSetting";
-            this.btnQLSetting.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQLSetting.Size = new System.Drawing.Size(198, 47);
-            this.btnQLSetting.TabIndex = 7;
-            this.btnQLSetting.Text = "Cài đặt";
-            this.btnQLSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLSetting.UseVisualStyleBackColor = false;
+            this.btnSetting.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnSetting.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnSetting.Image = global::QuanLyAccount.Properties.Resources.setting;
+            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.Location = new System.Drawing.Point(0, 366);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnSetting.Size = new System.Drawing.Size(198, 47);
+            this.btnSetting.TabIndex = 7;
+            this.btnSetting.Text = "Cài đặt";
+            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSetting.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnQuaHan
             // 
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.button1.Image = global::QuanLyAccount.Properties.Resources.qua_han;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 272);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(198, 47);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Quản lý quá hạn";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnQuaHan.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnQuaHan.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnQuaHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuaHan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnQuaHan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQuaHan.Image = global::QuanLyAccount.Properties.Resources.qua_han;
+            this.btnQuaHan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuaHan.Location = new System.Drawing.Point(0, 272);
+            this.btnQuaHan.Margin = new System.Windows.Forms.Padding(0);
+            this.btnQuaHan.Name = "btnQuaHan";
+            this.btnQuaHan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnQuaHan.Size = new System.Drawing.Size(198, 47);
+            this.btnQuaHan.TabIndex = 10;
+            this.btnQuaHan.Text = "Quản lý Quá hạn";
+            this.btnQuaHan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuaHan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuaHan.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -306,11 +306,11 @@
         private System.Windows.Forms.Button btnQLDocGia;
         private System.Windows.Forms.Button btnQLPhieuMuon;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button btnQLSetting;
+        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnCreatUser;
         private System.Windows.Forms.Button btn_TaiKhoan;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnQuaHan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnl_Content;
     }
