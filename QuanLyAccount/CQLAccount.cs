@@ -8,8 +8,14 @@ namespace QuanLyAccount
 {
     internal class CQLAccount
     {
+        public enum VaiTro
+        {
+            Admin,
+            User,
+            Librarian
+        }
         // Account
-        private string _LoaiUser;
+        private VaiTro _LoaiUser;
         private string _maUser;
         private string _tenDangNhap;
         private string _matKhau;
@@ -22,7 +28,7 @@ namespace QuanLyAccount
         private string _GioiTinh_User;
         private DateTime _NgaySinh_User;
         // Account properties
-        public string LoaiUser { get { return _LoaiUser; } set { _LoaiUser = value; } }
+        public VaiTro LoaiUser { get { return _LoaiUser; } set { _LoaiUser = value; } }
         public string MaUser { get { return _maUser; } set { _maUser = value; } }
         public string TenDangNhap { get {return _tenDangNhap; } set {_tenDangNhap = value; } }
         public string MatKhau { get {return _matKhau; } set {_matKhau = value; } }
@@ -35,14 +41,14 @@ namespace QuanLyAccount
         public string GioiTinh_User { get { return _GioiTinh_User; } set { _GioiTinh_User = value; } }
         public DateTime NgaySinh_User { get { return _NgaySinh_User; } set { _NgaySinh_User = value; } }
 
-        public CQLAccount(string LoaiUser, string MaUser, string TenDangNhap, string MatKhau)
+        public CQLAccount(VaiTro LoaiUser, string MaUser, string TenDangNhap, string MatKhau)
         {
             this.LoaiUser = LoaiUser;
             this.MaUser = MaUser;
             this.TenDangNhap = TenDangNhap;
             this.MatKhau = MatKhau;
         }
-        public CQLAccount():this("", "", "", "")
+        public CQLAccount():this(VaiTro.User, "", "", "")
         {
           
         }

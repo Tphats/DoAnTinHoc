@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace QuanLyAccount
 {
-    public partial class FrmQLAccount : Form
+    public partial class ucQLAccount : UserControl
     {
         private List<CQLAccount> dsuser = DuLieuDungChung.dsuser;
-        public FrmQLAccount()
+        public ucQLAccount()
         {
             InitializeComponent();
             DuLieuDungChung.LoadData();
@@ -30,30 +30,30 @@ namespace QuanLyAccount
             txtMaUser.Text = "";
             txtTenDangNhap.Text = "";
             txtMatKhau.Text = "";
-            rBtnAdmin.Checked = false;
+            rBtnThuThu.Checked = false;
             rBtnUser.Checked = false;
         }
         private CQLAccount timUser(string maUs)
         {
-            foreach(CQLAccount us in dsuser)
+            foreach (CQLAccount us in dsuser)
             {
-                if(us.MaUser == maUs)
-                   return us;
+                if (us.MaUser == maUs)
+                    return us;
             }
             return null;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             CQLAccount us = new CQLAccount();
-            if(timUser(txtMaUser.Text) == null)
+            if (timUser(txtMaUser.Text) == null)
             {
                 us.MaUser = txtMaUser.Text;
                 us.TenDangNhap = txtTenDangNhap.Text;
                 us.MatKhau = txtMatKhau.Text;
-                if(rBtnAdmin.Checked)
-                    us.LoaiUser = "Admin";
+                if (rBtnThuThu.Checked)
+                    us.LoaiUser = CQLAccount.VaiTro.Librarian;
                 else
-                    us.LoaiUser = "User";
+                    us.LoaiUser = CQLAccount.VaiTro.User;
                 dsuser.Add(us);
                 hienthidanhsach();
                 ClearData();
@@ -63,21 +63,24 @@ namespace QuanLyAccount
         {
             string maUs = txtMaUser.Text;
             CQLAccount us = new CQLAccount();
-            if(timUser(maUs) == null)
+            if (timUser(maUs) != null && timUser(maUs).LoaiUser != CQLAccount.VaiTro.Admin)
             {
-                MessageBox.Show("Không tìm thấy user có mã " + maUs);
+                dsuser.Remove(timUser(maUs));
+                hienthidanhsach();
+            }
+            else if (timUser(maUs) != null && timUser(maUs).LoaiUser == CQLAccount.VaiTro.Admin)
+            {
+                MessageBox.Show("Không thể xóa user có vai trò Admin!");
             }
             else
             {
-                us = timUser(maUs);
-                dsuser.Remove(us);
-                hienthidanhsach();
+                MessageBox.Show("Không tìm thấy user có mã " + maUs);
             }
         }
 
         private void dgvDsUser_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex < 0 || e.RowIndex >= dgvDsUser.Rows.Count)
+            if (e.RowIndex < 0 || e.RowIndex >= dgvDsUser.Rows.Count)
             {
                 return;
             }
@@ -87,8 +90,8 @@ namespace QuanLyAccount
             txtMaUser.Text = dgvDsUser.Rows[e.RowIndex].Cells[1].Value?.ToString() ?? "";
             txtTenDangNhap.Text = dgvDsUser.Rows[e.RowIndex].Cells[2].Value?.ToString() ?? "";
             txtMatKhau.Text = dgvDsUser.Rows[e.RowIndex].Cells[3].Value?.ToString() ?? "";
-            if (dgvDsUser.Rows[e.RowIndex].Cells[0].Value?.ToString() == "Admin")
-                rBtnAdmin.Checked = true;
+            if (dgvDsUser.Rows[e.RowIndex].Cells[0].Value?.ToString() == "Librarian")
+                rBtnThuThu.Checked = true;
             else
                 rBtnUser.Checked = true;
         }
@@ -96,7 +99,7 @@ namespace QuanLyAccount
         private void btnSua_Click(object sender, EventArgs e)
         {
             string maUs = txtMaUser.Text;
-            if(timUser(maUs) == null)
+            if (timUser(maUs) == null)
             {
                 MessageBox.Show("Không tìm thấy user có mã " + maUs);
             }
@@ -105,29 +108,30 @@ namespace QuanLyAccount
                 CQLAccount us = timUser(maUs);
                 us.TenDangNhap = txtTenDangNhap.Text;
                 us.MatKhau = txtMatKhau.Text;
-                if (rBtnAdmin.Checked)
-                    us.LoaiUser = "Admin";
+                if (rBtnThuThu.Checked)
+                    us.LoaiUser = CQLAccount.VaiTro.Librarian;
                 else
-                    us.LoaiUser = "User";
+                    us.LoaiUser = CQLAccount.VaiTro.User;
                 hienthidanhsach();
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            CQLAccount us = new CQLAccount();
-            us.MaUser = txtTimKiem.Text;
-            if (timUser(us.MaUser) == null)
+            CQLAccount us = timUser(txtTimKiem.Text);
+            if (us == null)
             {
-                MessageBox.Show("Không tìm thấy user có mã " + us.MaUser);
+                MessageBox.Show("Không tìm thấy user có mã " + txtTimKiem.Text);
             }
             else
             {
-                us = timUser(us.MaUser);
+                int index = dsuser.IndexOf(us);// Lấy dòng của user trong danh sách
+                dgvDsUser.ClearSelection(); // Xóa lựa chọn hiện tại
+                dgvDsUser.Rows[index].Selected = true; // Chọn dòng tương ứng với user tìm thấy
                 txtMaUser.Text = us.MaUser;
                 txtTenDangNhap.Text = us.TenDangNhap;
                 txtMatKhau.Text = us.MatKhau;
-                if (us.LoaiUser == "Admin")
-                    rBtnAdmin.Checked = true;
+                if (us.LoaiUser == CQLAccount.VaiTro.Librarian)
+                    rBtnThuThu.Checked = true;
                 else
                     rBtnUser.Checked = true;
             }

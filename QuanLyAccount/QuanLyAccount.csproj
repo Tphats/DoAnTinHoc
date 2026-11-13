@@ -61,37 +61,37 @@
     <Compile Include="FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQLAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQLAccount.Designer.cs">
-      <DependentUpon>FrmQLAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDangKy_User.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDangKy_User.Designer.cs">
-      <DependentUpon>FrmDangKy_User.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTest.Designer.cs">
+      <DependentUpon>FrmTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucDangkyTK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDangkyTK.Designer.cs">
+      <DependentUpon>ucDangkyTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLAccount.Designer.cs">
+      <DependentUpon>ucQLAccount.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmQLAccount.resx">
-      <DependentUpon>FrmQLAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDangKy_User.resx">
-      <DependentUpon>FrmDangKy_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
@@ -106,6 +106,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucDangkyTK.resx">
+      <DependentUpon>ucDangkyTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLAccount.resx">
+      <DependentUpon>ucQLAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

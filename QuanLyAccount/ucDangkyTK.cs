@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyAccount
 {
-    public partial class FrmDangKy_User : Form
+    public partial class ucDangkyTK : UserControl
     {
-        public FrmDangKy_User()
+        public ucDangkyTK()
         {
             InitializeComponent();
         }
@@ -40,18 +40,18 @@ namespace QuanLyAccount
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            if(txtTenDN.Text == "" || txtMK.Text == "" || txtNhaplaiMK.Text == "" || txtTen.Text == "" || txtCCCD.Text == "" || txtSDT.Text == "" || txtEmail.Text == ""
+            if (txtTenDN.Text == "" || txtMK.Text == "" || txtNhaplaiMK.Text == "" || txtTen.Text == "" || txtCCCD.Text == "" || txtSDT.Text == "" || txtEmail.Text == ""
                 || txtDC.Text == "" || rbtnNam.Checked == false && rbtnNu.Checked == false)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
             CQLAccount dk_user = new CQLAccount();
-            dk_user.LoaiUser = "User";
+            dk_user.LoaiUser = CQLAccount.VaiTro.User;
             dk_user.MaUser = taoMaUser();
             dk_user.TenDangNhap = txtTenDN.Text;
             //Password
-            if(txtMK.Text != txtNhaplaiMK.Text)
+            if (txtMK.Text != txtNhaplaiMK.Text)
             {
                 MessageBox.Show("Mật khẩu không trùng khớp!");
                 return;
@@ -63,7 +63,7 @@ namespace QuanLyAccount
             dk_user.SDT_User = txtSDT.Text;
             dk_user.Email_User = txtEmail.Text;
             dk_user.DiaChi_User = txtDC.Text;
-            if(rbtnNam.Checked)
+            if (rbtnNam.Checked)
             {
                 dk_user.GioiTinh_User = "Nam";
             }
@@ -76,7 +76,5 @@ namespace QuanLyAccount
             frmDN.Show();
             this.Hide();
         }
-
-       
     }
 }

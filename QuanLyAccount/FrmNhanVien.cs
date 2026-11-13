@@ -33,9 +33,15 @@ namespace QuanLyAccount
 
             frm.Show();
         }
+        private void HienthiUserControl(UserControl uc)
+        {
+            uc.Dock = DockStyle.Fill;
+            pnl_Content.Controls.Clear();
+            pnl_Content.Controls.Add(uc);
+        }
         private void btnCreatUser_Click(object sender, EventArgs e)
         {
-            HienThiForm(new FrmDangKy_User());
+            HienthiUserControl(new ucDangkyTK());
         }
     }
 }
