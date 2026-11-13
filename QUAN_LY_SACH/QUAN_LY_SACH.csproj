@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB438A00-516B-49DE-BB88-BFC00AC2F4FD}</ProjectGuid>
+    <ProjectGuid>{0C434964-6170-4BA1-A6A7-9D247ECEBFDC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>QuanLyUser</RootNamespace>
-    <AssemblyName>QuanLyUser</AssemblyName>
+    <RootNamespace>QUAN_LY_SACH</RootNamespace>
+    <AssemblyName>QUAN_LY_SACH</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,54 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CQLUser.cs" />
-    <Compile Include="DuLieuDungChung.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="0_CDanhSachMau.cs" />
+    <Compile Include="5_CNhaXuatBan.cs" />
+    <Compile Include="2_CQuanLySach.cs" />
+    <Compile Include="4_CQuanLyTacGia.cs" />
+    <Compile Include="1_CSach.cs" />
+    <Compile Include="3_CTacGia.cs" />
+    <Compile Include="6_CQuanLyNhaXuatBan.cs" />
+    <Compile Include="7_CTheLoai.cs" />
+    <Compile Include="8_CQuanLyTheLoai.cs" />
+    <Compile Include="FormCapNhatNhaXuatBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormCapNhatNhaXuatBan.Designer.cs">
+      <DependentUpon>FormCapNhatNhaXuatBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDangKyTK_Chung.cs">
+    <Compile Include="FormCapTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDangKyTK_Chung.Designer.cs">
-      <DependentUpon>FrmDangKyTK_Chung.cs</DependentUpon>
+    <Compile Include="FormCapTacGia.Designer.cs">
+      <DependentUpon>FormCapTacGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDangKy_Admin.cs">
+    <Compile Include="FormCapNhatTheLoai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDangKy_Admin.Designer.cs">
-      <DependentUpon>FrmDangKy_Admin.cs</DependentUpon>
+    <Compile Include="FormCapNhatTheLoai.Designer.cs">
+      <DependentUpon>FormCapNhatTheLoai.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDangKy_User.cs">
+    <Compile Include="FormQuanLySach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDangKy_User.Designer.cs">
-      <DependentUpon>FrmDangKy_User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDangNhap.Designer.cs">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    <Compile Include="FormQuanLySach.Designer.cs">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDangKyTK_Chung.resx">
-      <DependentUpon>FrmDangKyTK_Chung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDangKy_Admin.resx">
-      <DependentUpon>FrmDangKy_Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDangKy_User.resx">
-      <DependentUpon>FrmDangKy_User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDangNhap.resx">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="FormQuanLySach.resx">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +106,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xemdanhsach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xoa_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_sua_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_thoat_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_them_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconsach_vien_trang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

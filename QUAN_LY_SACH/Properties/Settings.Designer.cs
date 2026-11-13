@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuanLyUser.Properties
+namespace QUAN_LY_SACH.Properties
 {
 
 
