@@ -8,13 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyUser
+namespace QuanLyAccount
 {
-    public partial class FrmDangKy_User : Form
+    public partial class ucDangkyTK : UserControl
     {
-        public FrmDangKy_User()
+        public ucDangkyTK()
         {
             InitializeComponent();
+        }
+        private bool KiemTraTenDangNhap(string ma)
+        {
+            foreach (CQLAccount us in DuLieuDungChung.dsuser)
+            {
+                if (us.MaUser == ma)
+                    return true;
+            }
+            return false;
         }
         private string taoMaUser()
         {
@@ -25,37 +34,36 @@ namespace QuanLyUser
                     .ToString("N") // loại bỏ dấu "-" trong chuỗi định danh
                     .Substring(0, 8) // lấy 8 kí tự đầu tiên
                     .ToUpper(); // chuyển đổi thành chữ hoa
-            } while (DuLieuDungChung.dsuser.Any(u => u.MaUser == ma));
+            } while (KiemTraTenDangNhap(ma));
             return ma;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            if(txtTenDN.Text == "" || txtMK.Text == "" || txtNhaplaiMK.Text == "" || txtTen.Text == "" || txtCCCD.Text == "" || txtSDT.Text == "" || txtEmail.Text == ""
+            if (txtTenDN.Text == "" || txtMK.Text == "" || txtNhaplaiMK.Text == "" || txtTen.Text == "" || txtCCCD.Text == "" || txtSDT.Text == "" || txtEmail.Text == ""
                 || txtDC.Text == "" || rbtnNam.Checked == false && rbtnNu.Checked == false)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
-            CQLUser dk_user = new CQLUser();
-            dk_user.LoaiUser = "User";
+            CQLAccount dk_user = new CQLAccount();
+            dk_user.LoaiUser = CQLAccount.VaiTro.User;
             dk_user.MaUser = taoMaUser();
             dk_user.TenDangNhap = txtTenDN.Text;
             //Password
-            if(txtMK.Text != txtNhaplaiMK.Text)
+            if (txtMK.Text != txtNhaplaiMK.Text)
             {
                 MessageBox.Show("Mật khẩu không trùng khớp!");
                 return;
             }
             dk_user.MatKhau = txtMK.Text;
             //
-            dk_user.NgayTaoTK = DateTime.Now;
             dk_user.TenUser = txtTen.Text;
             dk_user.CCCD_User = txtCCCD.Text;
             dk_user.SDT_User = txtSDT.Text;
             dk_user.Email_User = txtEmail.Text;
             dk_user.DiaChi_User = txtDC.Text;
-            if(rbtnNam.Checked)
+            if (rbtnNam.Checked)
             {
                 dk_user.GioiTinh_User = "Nam";
             }
@@ -68,7 +76,5 @@ namespace QuanLyUser
             frmDN.Show();
             this.Hide();
         }
-
-       
     }
 }
