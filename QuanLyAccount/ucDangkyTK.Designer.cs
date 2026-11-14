@@ -56,6 +56,7 @@
             // 
             // txtNhaplaiMK
             // 
+            this.txtNhaplaiMK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNhaplaiMK.Location = new System.Drawing.Point(524, 189);
             this.txtNhaplaiMK.Multiline = true;
             this.txtNhaplaiMK.Name = "txtNhaplaiMK";
@@ -64,6 +65,7 @@
             // 
             // txtMK
             // 
+            this.txtMK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMK.Location = new System.Drawing.Point(524, 150);
             this.txtMK.Multiline = true;
             this.txtMK.Name = "txtMK";
@@ -72,6 +74,7 @@
             // 
             // txtTenDN
             // 
+            this.txtTenDN.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenDN.Location = new System.Drawing.Point(524, 111);
             this.txtTenDN.Multiline = true;
             this.txtTenDN.Name = "txtTenDN";
@@ -80,6 +83,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label10.Location = new System.Drawing.Point(396, 189);
@@ -90,6 +94,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label8.Location = new System.Drawing.Point(398, 153);
@@ -100,6 +105,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(396, 117);
@@ -110,6 +116,7 @@
             // 
             // dtNgaySinh
             // 
+            this.dtNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtNgaySinh.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtNgaySinh.Location = new System.Drawing.Point(131, 360);
             this.dtNgaySinh.Name = "dtNgaySinh";
@@ -118,6 +125,7 @@
             // 
             // txtDC
             // 
+            this.txtDC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDC.Location = new System.Drawing.Point(131, 314);
             this.txtDC.Multiline = true;
             this.txtDC.Name = "txtDC";
@@ -126,6 +134,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.Location = new System.Drawing.Point(131, 227);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
@@ -134,6 +143,7 @@
             // 
             // txtSDT
             // 
+            this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSDT.Location = new System.Drawing.Point(131, 188);
             this.txtSDT.Multiline = true;
             this.txtSDT.Name = "txtSDT";
@@ -142,6 +152,7 @@
             // 
             // txtCCCD
             // 
+            this.txtCCCD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCCCD.Location = new System.Drawing.Point(131, 150);
             this.txtCCCD.Multiline = true;
             this.txtCCCD.Name = "txtCCCD";
@@ -150,6 +161,7 @@
             // 
             // txtTen
             // 
+            this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTen.Location = new System.Drawing.Point(131, 111);
             this.txtTen.Multiline = true;
             this.txtTen.Name = "txtTen";
@@ -158,6 +170,7 @@
             // 
             // grGTinh
             // 
+            this.grGTinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.grGTinh.Controls.Add(this.rbtnNu);
             this.grGTinh.Controls.Add(this.rbtnNam);
             this.grGTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -193,6 +206,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.ForeColor = System.Drawing.Color.Black;
@@ -204,6 +218,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.ForeColor = System.Drawing.Color.Black;
@@ -215,6 +230,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.Color.Black;
@@ -226,6 +242,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.Color.Black;
@@ -237,6 +254,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.ForeColor = System.Drawing.Color.Black;
@@ -248,6 +266,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.ForeColor = System.Drawing.Color.Black;
@@ -259,8 +278,9 @@
             // 
             // btnDangKy
             // 
+            this.btnDangKy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnDangKy.Location = new System.Drawing.Point(484, 244);
+            this.btnDangKy.Location = new System.Drawing.Point(624, 228);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(111, 32);
             this.btnDangKy.TabIndex = 23;
@@ -269,11 +289,13 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(189, 19);
+            this.label9.Font = new System.Drawing.Font("Calibri", 25F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label9.Location = new System.Drawing.Point(245, 40);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(378, 58);
+            this.label9.Size = new System.Drawing.Size(273, 41);
             this.label9.TabIndex = 43;
             this.label9.Text = "Hồ sơ người dùng";
             // 
@@ -281,7 +303,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNhaplaiMK);
             this.Controls.Add(this.txtMK);

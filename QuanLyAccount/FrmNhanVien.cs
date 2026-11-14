@@ -43,5 +43,10 @@ namespace QuanLyAccount
         {
             HienthiUserControl(new ucDangkyTK());
         }
+
+        private void btnQLAccount_Click(object sender, EventArgs e)
+        {
+            HienthiUserControl(new ucQLAccount());
+        }
     }
 }
