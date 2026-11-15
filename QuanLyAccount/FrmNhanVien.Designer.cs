@@ -165,7 +165,7 @@
             this.btnCreatUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatUser.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnCreatUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnCreatUser.Image = global::QuanLyAccount.Properties.Resources.tao_tai_khoan_doc_gia_32x32;
+            this.btnCreatUser.Image = ((System.Drawing.Image)(resources.GetObject("btnCreatUser.Image")));
             this.btnCreatUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreatUser.Location = new System.Drawing.Point(0, 131);
             this.btnCreatUser.Margin = new System.Windows.Forms.Padding(0);
@@ -186,7 +186,7 @@
             this.btnQLDocGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLDocGia.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQLDocGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnQLDocGia.Image = global::QuanLyAccount.Properties.Resources.user;
+            this.btnQLDocGia.Image = ((System.Drawing.Image)(resources.GetObject("btnQLDocGia.Image")));
             this.btnQLDocGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLDocGia.Location = new System.Drawing.Point(0, 178);
             this.btnQLDocGia.Margin = new System.Windows.Forms.Padding(0);
@@ -207,7 +207,7 @@
             this.btnQLSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLSach.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQLSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnQLSach.Image = global::QuanLyAccount.Properties.Resources.sach;
+            this.btnQLSach.Image = ((System.Drawing.Image)(resources.GetObject("btnQLSach.Image")));
             this.btnQLSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLSach.Location = new System.Drawing.Point(0, 225);
             this.btnQLSach.Margin = new System.Windows.Forms.Padding(0);
@@ -227,7 +227,7 @@
             this.btnQLPhieuMuon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLPhieuMuon.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQLPhieuMuon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnQLPhieuMuon.Image = global::QuanLyAccount.Properties.Resources.muon_tra;
+            this.btnQLPhieuMuon.Image = ((System.Drawing.Image)(resources.GetObject("btnQLPhieuMuon.Image")));
             this.btnQLPhieuMuon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLPhieuMuon.Location = new System.Drawing.Point(0, 272);
             this.btnQLPhieuMuon.Margin = new System.Windows.Forms.Padding(0);
@@ -247,7 +247,7 @@
             this.btnQuaHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuaHan.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQuaHan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnQuaHan.Image = global::QuanLyAccount.Properties.Resources.qua_han;
+            this.btnQuaHan.Image = ((System.Drawing.Image)(resources.GetObject("btnQuaHan.Image")));
             this.btnQuaHan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuaHan.Location = new System.Drawing.Point(0, 319);
             this.btnQuaHan.Margin = new System.Windows.Forms.Padding(0);
@@ -267,7 +267,7 @@
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnSetting.Image = global::QuanLyAccount.Properties.Resources.setting;
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.Location = new System.Drawing.Point(0, 366);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(0);

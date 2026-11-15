@@ -51,12 +51,6 @@
     <Compile Include="CQLAccount.cs" />
     <Compile Include="CQLUser.cs" />
     <Compile Include="DuLieuDungChung.cs" />
-    <Compile Include="FrmAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAdmin.Designer.cs">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,9 +112,6 @@
     <Compile Include="ucQLUser.Designer.cs">
       <DependentUpon>ucQLUser.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmAdmin.resx">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
