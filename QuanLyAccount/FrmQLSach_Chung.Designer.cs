@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnl_Top = new System.Windows.Forms.Panel();
-            this.pnl_Content = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnl_Content = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSach = new System.Windows.Forms.Button();
             this.btnTG = new System.Windows.Forms.Button();
@@ -50,20 +50,6 @@
             this.pnl_Top.Size = new System.Drawing.Size(800, 57);
             this.pnl_Top.TabIndex = 0;
             // 
-            // pnl_Content
-            // 
-            this.pnl_Content.Location = new System.Drawing.Point(0, 100);
-            this.pnl_Content.Name = "pnl_Content";
-            this.pnl_Content.Size = new System.Drawing.Size(800, 351);
-            this.pnl_Content.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(0, 73);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 21);
-            this.panel3.TabIndex = 2;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -74,6 +60,20 @@
             this.label5.Size = new System.Drawing.Size(226, 41);
             this.label5.TabIndex = 3;
             this.label5.Text = "QUẢN LÝ SÁCH";
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(0, 73);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(800, 21);
+            this.panel3.TabIndex = 2;
+            // 
+            // pnl_Content
+            // 
+            this.pnl_Content.Location = new System.Drawing.Point(0, 100);
+            this.pnl_Content.Name = "pnl_Content";
+            this.pnl_Content.Size = new System.Drawing.Size(800, 351);
+            this.pnl_Content.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -90,7 +90,7 @@
             this.btnSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSach.Location = new System.Drawing.Point(3, 3);
             this.btnSach.Name = "btnSach";
-            this.btnSach.Size = new System.Drawing.Size(268, 28);
+            this.btnSach.Size = new System.Drawing.Size(212, 28);
             this.btnSach.TabIndex = 0;
             this.btnSach.Text = "Sách";
             this.btnSach.UseVisualStyleBackColor = true;
@@ -98,9 +98,9 @@
             // btnTG
             // 
             this.btnTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnTG.Location = new System.Drawing.Point(277, 3);
+            this.btnTG.Location = new System.Drawing.Point(221, 3);
             this.btnTG.Name = "btnTG";
-            this.btnTG.Size = new System.Drawing.Size(265, 28);
+            this.btnTG.Size = new System.Drawing.Size(187, 28);
             this.btnTG.TabIndex = 1;
             this.btnTG.Text = "Tác giả";
             this.btnTG.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@
             // btnNXB
             // 
             this.btnNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnNXB.Location = new System.Drawing.Point(548, 3);
+            this.btnNXB.Location = new System.Drawing.Point(414, 3);
             this.btnNXB.Name = "btnNXB";
-            this.btnNXB.Size = new System.Drawing.Size(249, 28);
+            this.btnNXB.Size = new System.Drawing.Size(150, 28);
             this.btnNXB.TabIndex = 2;
             this.btnNXB.Text = "Nhà xuất bản";
             this.btnNXB.UseVisualStyleBackColor = true;

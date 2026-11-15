@@ -84,7 +84,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(231, 9);
+            this.label3.Location = new System.Drawing.Point(216, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(430, 58);
             this.label3.TabIndex = 12;
@@ -100,7 +100,7 @@
             this.btn_TaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btn_TaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("btn_TaiKhoan.Image")));
             this.btn_TaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TaiKhoan.Location = new System.Drawing.Point(777, 18);
+            this.btn_TaiKhoan.Location = new System.Drawing.Point(777, 20);
             this.btn_TaiKhoan.Margin = new System.Windows.Forms.Padding(0);
             this.btn_TaiKhoan.Name = "btn_TaiKhoan";
             this.btn_TaiKhoan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
