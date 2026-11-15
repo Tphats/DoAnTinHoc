@@ -170,5 +170,9 @@ namespace QUAN_LY_SACH
             Close();
         }
 
+        private void FormQuanLySach_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
