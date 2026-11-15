@@ -41,10 +41,10 @@ namespace QuanLyAccount
                         }
                         else if(us.LoaiUser == CQLAccount.VaiTro.Admin)
                         {
-                            FrmAdmin frm = new FrmAdmin();
-                            frm.Show();
-                            this.Hide();
-                            return;
+                            //FrmAdmin frm = new FrmAdmin();
+                            //frm.Show();
+                            //this.Hide();
+                            //return;
                         }
                         else if (us.LoaiUser == CQLAccount.VaiTro.User)
                         {
