@@ -5,11 +5,19 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+<<<<<<<< HEAD:QuanLyAccount/Properties/AssemblyInfo.cs
 [assembly: AssemblyTitle("QuanLyAccount")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("QuanLyAccount")]
+========
+[assembly: AssemblyTitle("QUAN_LY_SACH")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("QUAN_LY_SACH")]
+>>>>>>>> thanhphuc:QUAN_LY_SACH/Properties/AssemblyInfo.cs
 [assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +28,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bb438a00-516b-49de-bb88-bfc00ac2f4fd")]
+[assembly: Guid("0c434964-6170-4ba1-a6a7-9d247ecebfdc")]
 
 // Version information for an assembly consists of the following four values:
 //
