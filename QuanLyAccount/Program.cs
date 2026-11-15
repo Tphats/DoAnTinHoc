@@ -16,9 +16,8 @@ namespace QuanLyAccount
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDangNhap());
-            //Application.Run(new FrmAdmin());
-            //Application.Run(new FrmNhanVien());
+            //Application.Run(new FrmDangNhap());
+            Application.Run(new FrmNhanVien());
             //Application.Run(new FrmTest());
         }
     }

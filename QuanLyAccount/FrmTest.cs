@@ -15,7 +15,9 @@ namespace QuanLyAccount
         public FrmTest()
         {
             InitializeComponent();
-            ucQLAccount uc = new ucQLAccount();
+            //ucDangkyTK uc = new ucDangkyTK();
+            //ucQLAccount uc = new ucQLAccount();
+            ucQLUser uc = new ucQLUser();
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
         }

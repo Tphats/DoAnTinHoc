@@ -47,14 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPhieuMuon.cs" />
     <Compile Include="CQLAccount.cs" />
+    <Compile Include="CQLUser.cs" />
     <Compile Include="DuLieuDungChung.cs" />
-    <Compile Include="FrmAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAdmin.Designer.cs">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +62,12 @@
     </Compile>
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQLSach_Chung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQLSach_Chung.Designer.cs">
+      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTest.cs">
       <SubType>Form</SubType>
@@ -80,6 +82,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ucCreatUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucCreatUser.Designer.cs">
+      <DependentUpon>ucCreatUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucDangkyTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,24 +100,45 @@
     <Compile Include="ucQLAccount.Designer.cs">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmAdmin.resx">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="ucQLPhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLPhieuMuon.Designer.cs">
+      <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLUser.Designer.cs">
+      <DependentUpon>ucQLUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmQLSach_Chung.resx">
+      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCreatUser.resx">
+      <DependentUpon>ucCreatUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucDangkyTK.resx">
       <DependentUpon>ucDangkyTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLAccount.resx">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLPhieuMuon.resx">
+      <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLUser.resx">
+      <DependentUpon>ucQLUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,6 +152,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_thuvien %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muon_tra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qua_han.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tao_tai_khoan_doc_gia_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tong_quan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thong_ke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
