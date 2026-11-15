@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyAccount
+namespace QUAN_LY_SACH
 {
-    public partial class ucCreatUser : UserControl
+    public partial class FormCapNhatTheLoai : Form
     {
-        public ucCreatUser()
+        public FormCapNhatTheLoai()
         {
             InitializeComponent();
         }

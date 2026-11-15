@@ -4,15 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0C434964-6170-4BA1-A6A7-9D247ECEBFDC}</ProjectGuid>
+    <ProjectGuid>{BB438A00-516B-49DE-BB88-BFC00AC2F4FD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-<<<<<<<< HEAD:QuanLyAccount/QuanLyAccount.csproj
-    <RootNamespace>QuanLyAccount</RootNamespace>
-    <AssemblyName>QuanLyAccount</AssemblyName>
-========
-    <RootNamespace>QUAN_LY_SACH</RootNamespace>
-    <AssemblyName>QUAN_LY_SACH</AssemblyName>
->>>>>>>> thanhphuc:QUAN_LY_SACH/QUAN_LY_SACH.csproj
+    <RootNamespace>QuanLyThuVien</RootNamespace>
+    <AssemblyName>QuanLyThuVien</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<<< HEAD:QuanLyAccount/QuanLyAccount.csproj
     <Compile Include="CPhieuMuon.cs" />
     <Compile Include="CQLAccount.cs" />
     <Compile Include="CQLUser.cs" />
@@ -67,7 +61,7 @@
     </Compile>
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
-========
+    </Compile>
     <Compile Include="0_CDanhSachMau.cs" />
     <Compile Include="5_CNhaXuatBan.cs" />
     <Compile Include="2_CQuanLySach.cs" />
@@ -100,7 +94,6 @@
     </Compile>
     <Compile Include="FormQuanLySach.Designer.cs">
       <DependentUpon>FormQuanLySach.cs</DependentUpon>
->>>>>>>> thanhphuc:QUAN_LY_SACH/QUAN_LY_SACH.csproj
     </Compile>
     <Compile Include="FrmQLSach_Chung.cs">
       <SubType>Form</SubType>
@@ -116,17 +109,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<<< HEAD:QuanLyAccount/QuanLyAccount.csproj
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ucCreatUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucCreatUser.Designer.cs">
-      <DependentUpon>ucCreatUser.cs</DependentUpon>
     </Compile>
     <Compile Include="ucDangkyTK.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +132,24 @@
     <Compile Include="ucQLPhieuMuon.Designer.cs">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQLSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLSach.Designer.cs">
+      <DependentUpon>ucQLSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLSach_Chung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLSach_Chung.Designer.cs">
+      <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLTheLoai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLTheLoai.Designer.cs">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucQLUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,10 +161,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
-========
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLySach.resx">
       <DependentUpon>FormQuanLySach.cs</DependentUpon>
->>>>>>>> thanhphuc:QUAN_LY_SACH/QUAN_LY_SACH.csproj
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQLSach_Chung.resx">
       <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
@@ -169,44 +173,42 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-<<<<<<<< HEAD:QuanLyAccount/QuanLyAccount.csproj
-    <EmbeddedResource Include="ucCreatUser.resx">
-      <DependentUpon>ucCreatUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucDangkyTK.resx">
       <DependentUpon>ucDangkyTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLAccount.resx">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLPhieuMuon.resx">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucQLSach.resx">
+      <DependentUpon>ucQLSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLSach_Chung.resx">
+      <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLTheLoai.resx">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucQLUser.resx">
       <DependentUpon>ucQLUser.cs</DependentUpon>
     </EmbeddedResource>
-========
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
->>>>>>>> thanhphuc:QUAN_LY_SACH/QUAN_LY_SACH.csproj
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<<< HEAD:QuanLyAccount/QuanLyAccount.csproj
     <None Include="Resources\admin.png" />
   </ItemGroup>
   <ItemGroup>
@@ -238,7 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
-========
     <None Include="Resources\icon_xemdanhsach.png" />
   </ItemGroup>
   <ItemGroup>
@@ -255,7 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconsach_vien_trang.png" />
->>>>>>>> thanhphuc:QUAN_LY_SACH/QUAN_LY_SACH.csproj
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

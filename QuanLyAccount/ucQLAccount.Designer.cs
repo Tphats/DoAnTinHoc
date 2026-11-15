@@ -162,7 +162,7 @@
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLuu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnLuu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLuu.Location = new System.Drawing.Point(13, 196);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(114, 32);
@@ -173,7 +173,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnSua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSua.Location = new System.Drawing.Point(13, 113);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(114, 32);
@@ -185,7 +185,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnXoa.Location = new System.Drawing.Point(13, 30);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(114, 34);

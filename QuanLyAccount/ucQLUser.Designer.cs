@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Top = new System.Windows.Forms.Panel();
             this.panel_Info = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,17 +47,15 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvDsUser = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.rNam = new System.Windows.Forms.RadioButton();
-            this.rNu = new System.Windows.Forms.RadioButton();
-            this.groupBoxLoaiTK = new System.Windows.Forms.GroupBox();
             this.dtNS = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBoxLoaiTK = new System.Windows.Forms.GroupBox();
+            this.rNu = new System.Windows.Forms.RadioButton();
+            this.rNam = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvDsUser = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +68,8 @@
             this.pnl_Button.SuspendLayout();
             this.panel_search.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsUser)).BeginInit();
             this.groupBoxLoaiTK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsUser)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(245, 10);
+            this.label1.Location = new System.Drawing.Point(242, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(325, 38);
             this.label1.TabIndex = 1;
@@ -90,7 +90,7 @@
             this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Top.Location = new System.Drawing.Point(0, 0);
             this.panel_Top.Name = "panel_Top";
-            this.panel_Top.Size = new System.Drawing.Size(798, 60);
+            this.panel_Top.Size = new System.Drawing.Size(792, 60);
             this.panel_Top.TabIndex = 32;
             // 
             // panel_Info
@@ -105,10 +105,33 @@
             this.panel_Info.Controls.Add(this.txtSDT);
             this.panel_Info.Controls.Add(this.txtTenUser);
             this.panel_Info.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel_Info.Location = new System.Drawing.Point(3, 66);
+            this.panel_Info.Location = new System.Drawing.Point(0, 66);
             this.panel_Info.Name = "panel_Info";
             this.panel_Info.Size = new System.Drawing.Size(442, 141);
             this.panel_Info.TabIndex = 31;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label5.Location = new System.Drawing.Point(4, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(114, 106);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(305, 20);
+            this.txtEmail.TabIndex = 12;
             // 
             // label2
             // 
@@ -187,18 +210,18 @@
             this.pnl_Button.Controls.Add(this.btnLuu);
             this.pnl_Button.Controls.Add(this.btnSua);
             this.pnl_Button.Controls.Add(this.btnXoa);
-            this.pnl_Button.Location = new System.Drawing.Point(614, 290);
+            this.pnl_Button.Location = new System.Drawing.Point(608, 282);
             this.pnl_Button.Name = "pnl_Button";
-            this.pnl_Button.Size = new System.Drawing.Size(146, 189);
+            this.pnl_Button.Size = new System.Drawing.Size(120, 129);
             this.pnl_Button.TabIndex = 30;
             // 
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
-            this.btnLuu.Location = new System.Drawing.Point(16, 132);
+            this.btnLuu.Location = new System.Drawing.Point(7, 85);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(101, 35);
+            this.btnLuu.Size = new System.Drawing.Size(105, 35);
             this.btnLuu.TabIndex = 14;
             this.btnLuu.Text = "Lưu thông tin";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -207,7 +230,7 @@
             // 
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSua.ForeColor = System.Drawing.Color.Black;
-            this.btnSua.Location = new System.Drawing.Point(16, 74);
+            this.btnSua.Location = new System.Drawing.Point(7, 44);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(105, 35);
             this.btnSua.TabIndex = 13;
@@ -219,7 +242,7 @@
             // 
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Location = new System.Drawing.Point(16, 18);
+            this.btnXoa.Location = new System.Drawing.Point(7, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(105, 35);
             this.btnXoa.TabIndex = 12;
@@ -234,7 +257,7 @@
             this.panel_search.Controls.Add(this.label6);
             this.panel_search.Controls.Add(this.txtTimKiem);
             this.panel_search.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel_search.Location = new System.Drawing.Point(614, 225);
+            this.panel_search.Location = new System.Drawing.Point(608, 225);
             this.panel_search.Name = "panel_search";
             this.panel_search.Size = new System.Drawing.Size(181, 51);
             this.panel_search.TabIndex = 29;
@@ -266,29 +289,6 @@
             this.txtTimKiem.Size = new System.Drawing.Size(98, 20);
             this.txtTimKiem.TabIndex = 15;
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(4, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(114, 106);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(305, 20);
-            this.txtEmail.TabIndex = 12;
-            // 
             // txtDiachi
             // 
             this.txtDiachi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -307,10 +307,84 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.groupBoxLoaiTK);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(451, 66);
+            this.panel1.Location = new System.Drawing.Point(448, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(339, 141);
             this.panel1.TabIndex = 33;
+            // 
+            // dtNS
+            // 
+            this.dtNS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtNS.Location = new System.Drawing.Point(123, 15);
+            this.dtNS.Name = "dtNS";
+            this.dtNS.Size = new System.Drawing.Size(202, 20);
+            this.dtNS.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label8.Location = new System.Drawing.Point(13, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Địa chỉ";
+            // 
+            // groupBoxLoaiTK
+            // 
+            this.groupBoxLoaiTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.groupBoxLoaiTK.Controls.Add(this.rNu);
+            this.groupBoxLoaiTK.Controls.Add(this.rNam);
+            this.groupBoxLoaiTK.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.groupBoxLoaiTK.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBoxLoaiTK.Location = new System.Drawing.Point(4, 80);
+            this.groupBoxLoaiTK.Name = "groupBoxLoaiTK";
+            this.groupBoxLoaiTK.Size = new System.Drawing.Size(305, 32);
+            this.groupBoxLoaiTK.TabIndex = 22;
+            this.groupBoxLoaiTK.TabStop = false;
+            this.groupBoxLoaiTK.Text = "Giới tính";
+            // 
+            // rNu
+            // 
+            this.rNu.AutoSize = true;
+            this.rNu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rNu.Location = new System.Drawing.Point(202, 3);
+            this.rNu.Name = "rNu";
+            this.rNu.Size = new System.Drawing.Size(45, 23);
+            this.rNu.TabIndex = 2;
+            this.rNu.TabStop = true;
+            this.rNu.Text = "Nữ";
+            this.rNu.UseVisualStyleBackColor = true;
+            // 
+            // rNam
+            // 
+            this.rNam.AutoSize = true;
+            this.rNam.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rNam.Location = new System.Drawing.Point(107, 3);
+            this.rNam.Name = "rNam";
+            this.rNam.Size = new System.Drawing.Size(56, 23);
+            this.rNam.TabIndex = 1;
+            this.rNam.TabStop = true;
+            this.rNam.Text = "Nam";
+            this.rNam.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(13, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Ngày sinh";
             // 
             // dgvDsUser
             // 
@@ -329,83 +403,9 @@
             this.dgvDsUser.Location = new System.Drawing.Point(3, 223);
             this.dgvDsUser.Name = "dgvDsUser";
             this.dgvDsUser.ReadOnly = true;
-            this.dgvDsUser.Size = new System.Drawing.Size(605, 256);
+            this.dgvDsUser.Size = new System.Drawing.Size(599, 210);
             this.dgvDsUser.TabIndex = 28;
             this.dgvDsUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsUser_RowEnter);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(13, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Địa chỉ";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(13, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Ngày sinh";
-            // 
-            // rNam
-            // 
-            this.rNam.AutoSize = true;
-            this.rNam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rNam.Location = new System.Drawing.Point(107, 3);
-            this.rNam.Name = "rNam";
-            this.rNam.Size = new System.Drawing.Size(56, 23);
-            this.rNam.TabIndex = 1;
-            this.rNam.TabStop = true;
-            this.rNam.Text = "Nam";
-            this.rNam.UseVisualStyleBackColor = true;
-            // 
-            // rNu
-            // 
-            this.rNu.AutoSize = true;
-            this.rNu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rNu.Location = new System.Drawing.Point(202, 3);
-            this.rNu.Name = "rNu";
-            this.rNu.Size = new System.Drawing.Size(45, 23);
-            this.rNu.TabIndex = 2;
-            this.rNu.TabStop = true;
-            this.rNu.Text = "Nữ";
-            this.rNu.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxLoaiTK
-            // 
-            this.groupBoxLoaiTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.groupBoxLoaiTK.Controls.Add(this.rNu);
-            this.groupBoxLoaiTK.Controls.Add(this.rNam);
-            this.groupBoxLoaiTK.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.groupBoxLoaiTK.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBoxLoaiTK.Location = new System.Drawing.Point(4, 80);
-            this.groupBoxLoaiTK.Name = "groupBoxLoaiTK";
-            this.groupBoxLoaiTK.Size = new System.Drawing.Size(305, 32);
-            this.groupBoxLoaiTK.TabIndex = 22;
-            this.groupBoxLoaiTK.TabStop = false;
-            this.groupBoxLoaiTK.Text = "Giới tính";
-            // 
-            // dtNS
-            // 
-            this.dtNS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtNS.Location = new System.Drawing.Point(123, 15);
-            this.dtNS.Name = "dtNS";
-            this.dtNS.Size = new System.Drawing.Size(202, 20);
-            this.dtNS.TabIndex = 23;
             // 
             // Column1
             // 
@@ -467,7 +467,7 @@
             this.Controls.Add(this.panel_search);
             this.Controls.Add(this.dgvDsUser);
             this.Name = "ucQLUser";
-            this.Size = new System.Drawing.Size(798, 492);
+            this.Size = new System.Drawing.Size(792, 446);
             this.Load += new System.EventHandler(this.ucQLUser_Load);
             this.panel_Top.ResumeLayout(false);
             this.panel_Top.PerformLayout();
@@ -478,9 +478,9 @@
             this.panel_search.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsUser)).EndInit();
             this.groupBoxLoaiTK.ResumeLayout(false);
             this.groupBoxLoaiTK.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsUser)).EndInit();
             this.ResumeLayout(false);
 
         }
