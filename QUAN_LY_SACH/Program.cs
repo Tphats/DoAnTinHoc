@@ -17,7 +17,9 @@ namespace QUAN_LY_SACH
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormQuanLySach());
-            Application.Run(new FormCapNhatTacGia());
+            //Application.Run(new FormCapNhatTacGia());
+            //Application.Run(new FormCapNhatNhaXuatBan());
+            //Application.Run(new FormCapNhatTheLoai());
         }
     }
 }

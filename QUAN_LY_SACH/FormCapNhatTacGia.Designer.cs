@@ -36,17 +36,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv_dstacgia = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_thoat = new System.Windows.Forms.Button();
-            this.btn_sua = new System.Windows.Forms.Button();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_them = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_tentacgia = new System.Windows.Forms.TextBox();
             this.txt_matacgia = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_thoat = new System.Windows.Forms.Button();
+            this.btn_sua = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dstacgia)).BeginInit();
@@ -92,9 +92,9 @@
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.dgv_dstacgia);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
-            this.groupBox3.Location = new System.Drawing.Point(-8, 179);
+            this.groupBox3.Location = new System.Drawing.Point(0, 179);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(792, 247);
+            this.groupBox3.Size = new System.Drawing.Size(776, 231);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DANH SÁCH TÁC GIẢ";
@@ -128,27 +128,59 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_dstacgia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_dstacgia.EnableHeadersVisualStyles = false;
-            this.dgv_dstacgia.Location = new System.Drawing.Point(0, 26);
+            this.dgv_dstacgia.Location = new System.Drawing.Point(16, 26);
             this.dgv_dstacgia.Name = "dgv_dstacgia";
             this.dgv_dstacgia.ReadOnly = true;
             this.dgv_dstacgia.RowHeadersVisible = false;
             this.dgv_dstacgia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_dstacgia.Size = new System.Drawing.Size(789, 232);
+            this.dgv_dstacgia.Size = new System.Drawing.Size(748, 190);
             this.dgv_dstacgia.TabIndex = 7;
             // 
-            // Column1
+            // groupBox1
             // 
-            this.Column1.DataPropertyName = "Matacgia";
-            this.Column1.HeaderText = "MÃ TÁC GIẢ";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.groupBox1.Controls.Add(this.txt_tentacgia);
+            this.groupBox1.Controls.Add(this.txt_matacgia);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.groupBox1.Location = new System.Drawing.Point(0, 77);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(424, 96);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông Tin Tác Giả";
             // 
-            // Column2
+            // txt_tentacgia
             // 
-            this.Column2.DataPropertyName = "Tentacgia";
-            this.Column2.HeaderText = "TÊN TÁC GIẢ";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.txt_tentacgia.Location = new System.Drawing.Point(150, 64);
+            this.txt_tentacgia.Name = "txt_tentacgia";
+            this.txt_tentacgia.Size = new System.Drawing.Size(127, 25);
+            this.txt_tentacgia.TabIndex = 3;
+            // 
+            // txt_matacgia
+            // 
+            this.txt_matacgia.Location = new System.Drawing.Point(150, 23);
+            this.txt_matacgia.Name = "txt_matacgia";
+            this.txt_matacgia.Size = new System.Drawing.Size(127, 25);
+            this.txt_matacgia.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 19);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Tên Tác Giả";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã Tác Giả";
             // 
             // btn_thoat
             // 
@@ -214,51 +246,19 @@
             this.btn_them.UseVisualStyleBackColor = false;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
-            // groupBox1
+            // Column1
             // 
-            this.groupBox1.Controls.Add(this.txt_tentacgia);
-            this.groupBox1.Controls.Add(this.txt_matacgia);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(0, 77);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(424, 96);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Tác Giả";
+            this.Column1.DataPropertyName = "Matacgia";
+            this.Column1.HeaderText = "MÃ TÁC GIẢ";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // txt_tentacgia
+            // Column2
             // 
-            this.txt_tentacgia.Location = new System.Drawing.Point(150, 64);
-            this.txt_tentacgia.Name = "txt_tentacgia";
-            this.txt_tentacgia.Size = new System.Drawing.Size(127, 25);
-            this.txt_tentacgia.TabIndex = 3;
-            // 
-            // txt_matacgia
-            // 
-            this.txt_matacgia.Location = new System.Drawing.Point(150, 23);
-            this.txt_matacgia.Name = "txt_matacgia";
-            this.txt_matacgia.Size = new System.Drawing.Size(127, 25);
-            this.txt_matacgia.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 19);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Tên Tác Giả";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mã Tác Giả";
+            this.Column2.DataPropertyName = "Tentacgia";
+            this.Column2.HeaderText = "TÊN TÁC GIẢ";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // FormCapNhatTacGia
             // 
@@ -291,8 +291,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgv_dstacgia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_xoa;
@@ -302,5 +300,7 @@
         private System.Windows.Forms.TextBox txt_matacgia;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

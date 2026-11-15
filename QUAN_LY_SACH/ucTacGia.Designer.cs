@@ -39,17 +39,17 @@
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgv_dssach = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_matacgia = new System.Windows.Forms.TextBox();
-            this.txt_tentacgia = new System.Windows.Forms.TextBox();
+            this.dgv_dstacgia = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_tentacgia = new System.Windows.Forms.TextBox();
+            this.txt_matacgia = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dssach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dstacgia)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,7 @@
             this.btn_them.Text = "Thêm";
             this.btn_them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_xoa
             // 
@@ -150,7 +151,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.dgv_dssach);
+            this.groupBox3.Controls.Add(this.dgv_dstacgia);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
             this.groupBox3.Location = new System.Drawing.Point(0, 196);
             this.groupBox3.Name = "groupBox3";
@@ -158,16 +159,15 @@
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DANH SÁCH TÁC GIẢ";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // dgv_dssach
+            // dgv_dstacgia
             // 
-            this.dgv_dssach.AllowUserToAddRows = false;
+            this.dgv_dstacgia.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.dgv_dssach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_dssach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_dssach.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_dssach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_dstacgia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_dstacgia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_dstacgia.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_dstacgia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(58)))), ((int)(((byte)(107)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
@@ -175,9 +175,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_dssach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_dssach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_dssach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_dstacgia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_dstacgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_dstacgia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -187,15 +187,32 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(85)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_dssach.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_dssach.EnableHeadersVisualStyles = false;
-            this.dgv_dssach.Location = new System.Drawing.Point(0, 23);
-            this.dgv_dssach.Name = "dgv_dssach";
-            this.dgv_dssach.ReadOnly = true;
-            this.dgv_dssach.RowHeadersVisible = false;
-            this.dgv_dssach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_dssach.Size = new System.Drawing.Size(789, 235);
-            this.dgv_dssach.TabIndex = 7;
+            this.dgv_dstacgia.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_dstacgia.EnableHeadersVisualStyles = false;
+            this.dgv_dstacgia.Location = new System.Drawing.Point(0, 23);
+            this.dgv_dstacgia.Name = "dgv_dstacgia";
+            this.dgv_dstacgia.ReadOnly = true;
+            this.dgv_dstacgia.RowHeadersVisible = false;
+            this.dgv_dstacgia.RowHeadersWidth = 51;
+            this.dgv_dstacgia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_dstacgia.Size = new System.Drawing.Size(789, 235);
+            this.dgv_dstacgia.TabIndex = 7;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Matacgia";
+            this.Column1.HeaderText = "MÃ TÁC GIẢ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Tentacgia";
+            this.Column2.HeaderText = "TÊN TÁC GIẢ";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -211,14 +228,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tác Giả";
             // 
-            // label3
+            // txt_tentacgia
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mã Tác Giả";
+            this.txt_tentacgia.Location = new System.Drawing.Point(150, 64);
+            this.txt_tentacgia.Name = "txt_tentacgia";
+            this.txt_tentacgia.Size = new System.Drawing.Size(127, 25);
+            this.txt_tentacgia.TabIndex = 3;
+            // 
+            // txt_matacgia
+            // 
+            this.txt_matacgia.Location = new System.Drawing.Point(150, 23);
+            this.txt_matacgia.Name = "txt_matacgia";
+            this.txt_matacgia.Size = new System.Drawing.Size(127, 25);
+            this.txt_matacgia.TabIndex = 2;
             // 
             // label4
             // 
@@ -229,33 +251,14 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Tên Tác Giả";
             // 
-            // txt_matacgia
+            // label3
             // 
-            this.txt_matacgia.Location = new System.Drawing.Point(150, 23);
-            this.txt_matacgia.Name = "txt_matacgia";
-            this.txt_matacgia.Size = new System.Drawing.Size(127, 25);
-            this.txt_matacgia.TabIndex = 2;
-            // 
-            // txt_tentacgia
-            // 
-            this.txt_tentacgia.Location = new System.Drawing.Point(150, 64);
-            this.txt_tentacgia.Name = "txt_tentacgia";
-            this.txt_tentacgia.Size = new System.Drawing.Size(127, 25);
-            this.txt_tentacgia.TabIndex = 3;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Matacgia";
-            this.Column1.HeaderText = "MÃ TÁC GIẢ";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Tentacgia";
-            this.Column2.HeaderText = "TÊN TÁC GIẢ";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã Tác Giả";
             // 
             // ucTacGia
             // 
@@ -274,7 +277,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dssach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dstacgia)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -291,7 +294,7 @@
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgv_dssach;
+        private System.Windows.Forms.DataGridView dgv_dstacgia;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

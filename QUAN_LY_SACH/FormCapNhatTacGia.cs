@@ -12,12 +12,11 @@ namespace QUAN_LY_SACH
 {
     public partial class FormCapNhatTacGia : Form
     {
-        CQuanLyTacGia qltg = new CQuanLyTacGia();
-
+        List<CTacGia> danhsachtacgia = new List<CTacGia>();
         public FormCapNhatTacGia()
         {
             InitializeComponent();
-            hienthidanhsach(qltg.Danhsachtacgia);
+            hienthidanhsach(danhsachtacgia);
         }
 
         private void hienthidanhsach(List<CTacGia> danhsachtacgia)
@@ -32,6 +31,31 @@ namespace QUAN_LY_SACH
             }
             return true;
         }
+        private bool kttratontaimatacgia(string ma)
+        {
+            foreach (CTacGia tg in this.danhsachtacgia)
+            {
+                if (tg.Matacgia == ma)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private CTacGia timtacgiatheoma(string ma)
+        {
+            foreach (CTacGia tg in this.danhsachtacgia)
+            {
+                if (tg.Matacgia == ma)
+                {
+                    return tg;
+                }
+            }
+            return null;
+        }
+
+        // ------------------------------------------------
+
         private void btn_them_Click(object sender, EventArgs e)
         {
             if (!ktnhapduthongtin())
@@ -44,16 +68,10 @@ namespace QUAN_LY_SACH
                 );
                 return;
             }
-
             CTacGia tgmoi = new CTacGia();
             tgmoi.Matacgia = txt_matacgia.Text;
             tgmoi.Tentacgia = txt_tentacgia.Text;
-
-            if (qltg.Them(tgmoi))
-            {
-                hienthidanhsach(qltg.Danhsachtacgia);
-            }
-            else
+            if (kttratontaimatacgia(tgmoi.Matacgia))
             {
                 MessageBox.Show(
                     "Không thêm được (mã tác giả bị trùng)",
@@ -61,7 +79,10 @@ namespace QUAN_LY_SACH
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
+                return;
             }
+            this.danhsachtacgia.Add(tgmoi);
+            hienthidanhsach(danhsachtacgia);
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -76,12 +97,7 @@ namespace QUAN_LY_SACH
                 );
                 return;
             }
-
-            if (qltg.Xoa(txt_matacgia.Text))
-            {
-                hienthidanhsach(qltg.Danhsachtacgia);
-            }
-            else
+            if (!kttratontaimatacgia(txt_matacgia.Text))
             {
                 MessageBox.Show(
                     "Không xóa được (không tìm thấy mã)",
@@ -89,7 +105,21 @@ namespace QUAN_LY_SACH
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
+                return;
             }
+            CTacGia tg = timtacgiatheoma(txt_matacgia.Text);
+            if (tg == null)
+            {
+                MessageBox.Show(
+                    "Không xóa được (không tìm thấy mã)",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+            this.danhsachtacgia.Remove(tg);
+            hienthidanhsach(danhsachtacgia);
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -104,16 +134,11 @@ namespace QUAN_LY_SACH
                 );
                 return;
             }
-
             CTacGia tgmoi = new CTacGia();
             tgmoi.Matacgia = txt_matacgia.Text;
             tgmoi.Tentacgia = txt_tentacgia.Text;
-
-            if (qltg.Sua(tgmoi))
-            {
-                hienthidanhsach(qltg.Danhsachtacgia);
-            }
-            else
+            CTacGia tgCu = timtacgiatheoma(tgmoi.Matacgia);
+            if (tgCu == null)
             {
                 MessageBox.Show(
                     $"Không tìm thấy tác giả có mã {txt_matacgia.Text} để sửa",
@@ -121,84 +146,15 @@ namespace QUAN_LY_SACH
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
+                return;
             }
+            tgCu.Tentacgia = tgmoi.Tentacgia;
+            hienthidanhsach(danhsachtacgia);
         }
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             Close();
-        }
-    }
-    internal class CQuanLyTacGia
-    {
-        List<CTacGia> danhsachtacgia;
-        public CQuanLyTacGia()
-        {
-            danhsachtacgia = new List<CTacGia>();
-        }
-        public CQuanLyTacGia(List<CTacGia> danhsachtacgia)
-        {
-            this.danhsachtacgia = danhsachtacgia;
-        }
-        public List<CTacGia> Danhsachtacgia
-        {
-            get { return this.danhsachtacgia; }
-            set { this.danhsachtacgia = value; }
-        }
-        private bool kttratontaimatacgia(string ma)
-        {
-            foreach (CTacGia tg in this.danhsachtacgia)
-            {
-                if (tg.Matacgia == ma)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public CTacGia timtacgiatheoma(string ma)
-        {
-            foreach (CTacGia tg in this.danhsachtacgia)
-            {
-                if (tg.Matacgia == ma)
-                {
-                    return tg;
-                }
-            }
-            return null;
-        }
-        public bool Them(CTacGia tg)
-        {
-            if (kttratontaimatacgia(tg.Matacgia))
-            {
-                return false;
-            }
-            this.danhsachtacgia.Add(tg);
-            return true;
-        }
-        public bool Xoa(string ma)
-        {
-            if (!kttratontaimatacgia(ma))
-            {
-                return false;
-            }
-            CTacGia tg = timtacgiatheoma(ma);
-            if (tg == null)
-            {
-                return false;
-            }
-            this.danhsachtacgia.Remove(tg);
-            return true;
-        }
-        public bool Sua(CTacGia tgMoi)
-        {
-            CTacGia tgCu = timtacgiatheoma(tgMoi.Matacgia);
-            if (tgCu == null)
-            {
-                return false;
-            }
-            tgCu.Tentacgia = tgMoi.Tentacgia;
-            return true;
         }
     }
     

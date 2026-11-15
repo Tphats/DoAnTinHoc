@@ -46,24 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="0_CDanhSachMau.cs" />
-    <Compile Include="5_CNhaXuatBan.cs" />
-    <Compile Include="2_CQuanLySach.cs" />
-    <Compile Include="4_CQuanLyTacGia.cs" />
-    <Compile Include="1_CSach.cs" />
-    <Compile Include="3_CTacGia.cs" />
-    <Compile Include="7_CTheLoai.cs" />
+    <Compile Include="CDanhSachMau.cs" />
+    <Compile Include="CNhaXuatBan.cs" />
+    <Compile Include="CSach.cs" />
+    <Compile Include="CTacGia.cs" />
+    <Compile Include="CTheLoai.cs" />
     <Compile Include="FormCapNhatNhaXuatBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCapNhatNhaXuatBan.Designer.cs">
       <DependentUpon>FormCapNhatNhaXuatBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCapTacGia.cs">
+    <Compile Include="FormCapNhatTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCapTacGia.Designer.cs">
-      <DependentUpon>FormCapTacGia.cs</DependentUpon>
+    <Compile Include="FormCapNhatTacGia.Designer.cs">
+      <DependentUpon>FormCapNhatTacGia.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCapNhatTheLoai.cs">
       <SubType>Form</SubType>
@@ -79,6 +77,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucNhaXuatBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNhaXuatBan.Designer.cs">
+      <DependentUpon>ucNhaXuatBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucQLSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,8 +95,20 @@
     <Compile Include="ucTacGia.Designer.cs">
       <DependentUpon>ucTacGia.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormCapTacGia.resx">
-      <DependentUpon>FormCapTacGia.cs</DependentUpon>
+    <Compile Include="ucTheLoai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTheLoai.Designer.cs">
+      <DependentUpon>ucTheLoai.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormCapNhatNhaXuatBan.resx">
+      <DependentUpon>FormCapNhatNhaXuatBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCapNhatTacGia.resx">
+      <DependentUpon>FormCapNhatTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCapNhatTheLoai.resx">
+      <DependentUpon>FormCapNhatTheLoai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLySach.resx">
       <DependentUpon>FormQuanLySach.cs</DependentUpon>
@@ -107,11 +123,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucNhaXuatBan.resx">
+      <DependentUpon>ucNhaXuatBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucQLSach.resx">
       <DependentUpon>ucQLSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucTacGia.resx">
       <DependentUpon>ucTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTheLoai.resx">
+      <DependentUpon>ucTheLoai.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
