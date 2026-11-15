@@ -12,7 +12,7 @@ namespace QuanLyAccount
 {
     public partial class FrmDangNhap : Form
     {
-        private List<CQLAccount> dsaccount = DuLieuDungChung.dsuser;
+        private List<CQLAccount> dsaccount = DuLieuDungChung.dsuser_account;
         public FrmDangNhap()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace QuanLyAccount
         {
             DuLieuDungChung.LoadData();
             txtMK.UseSystemPasswordChar = true;
-            dsaccount = DuLieuDungChung.dsuser;
+            dsaccount = DuLieuDungChung.dsuser_account;
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {

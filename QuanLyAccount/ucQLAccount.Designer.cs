@@ -38,7 +38,6 @@
             this.pnl_Button = new System.Windows.Forms.Panel();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel_search = new System.Windows.Forms.Panel();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -73,7 +72,7 @@
             this.panel_Info.Controls.Add(this.txtMatKhau);
             this.panel_Info.Controls.Add(this.txtTenDangNhap);
             this.panel_Info.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel_Info.Location = new System.Drawing.Point(122, 69);
+            this.panel_Info.Location = new System.Drawing.Point(120, 66);
             this.panel_Info.Name = "panel_Info";
             this.panel_Info.Size = new System.Drawing.Size(511, 92);
             this.panel_Info.TabIndex = 25;
@@ -124,6 +123,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaUser.Location = new System.Drawing.Point(113, 5);
             this.txtMaUser.Name = "txtMaUser";
+            this.txtMaUser.ReadOnly = true;
             this.txtMaUser.Size = new System.Drawing.Size(371, 20);
             this.txtMaUser.TabIndex = 6;
             // 
@@ -153,9 +153,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Button.Controls.Add(this.btnLuu);
             this.pnl_Button.Controls.Add(this.btnSua);
-            this.pnl_Button.Controls.Add(this.btnThem);
             this.pnl_Button.Controls.Add(this.btnXoa);
-            this.pnl_Button.Location = new System.Drawing.Point(644, 173);
+            this.pnl_Button.Location = new System.Drawing.Point(642, 170);
             this.pnl_Button.Name = "pnl_Button";
             this.pnl_Button.Size = new System.Drawing.Size(144, 246);
             this.pnl_Button.TabIndex = 24;
@@ -175,7 +174,7 @@
             // 
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnSua.Location = new System.Drawing.Point(13, 130);
+            this.btnSua.Location = new System.Drawing.Point(13, 113);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(114, 32);
             this.btnSua.TabIndex = 13;
@@ -183,23 +182,11 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnThem.Location = new System.Drawing.Point(13, 12);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(114, 33);
-            this.btnThem.TabIndex = 11;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnXoa.Location = new System.Drawing.Point(13, 66);
+            this.btnXoa.Location = new System.Drawing.Point(13, 30);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(114, 34);
             this.btnXoa.TabIndex = 12;
@@ -214,7 +201,7 @@
             this.panel_search.Controls.Add(this.label4);
             this.panel_search.Controls.Add(this.txtTimKiem);
             this.panel_search.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel_search.Location = new System.Drawing.Point(635, 69);
+            this.panel_search.Location = new System.Drawing.Point(633, 66);
             this.panel_search.Name = "panel_search";
             this.panel_search.Size = new System.Drawing.Size(229, 59);
             this.panel_search.TabIndex = 23;
@@ -258,7 +245,7 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvDsUser.Location = new System.Drawing.Point(5, 162);
+            this.dgvDsUser.Location = new System.Drawing.Point(3, 159);
             this.dgvDsUser.Name = "dgvDsUser";
             this.dgvDsUser.ReadOnly = true;
             this.dgvDsUser.Size = new System.Drawing.Size(630, 257);
@@ -300,7 +287,7 @@
             this.groupBoxLoaiTK.Controls.Add(this.rBtnUser);
             this.groupBoxLoaiTK.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.groupBoxLoaiTK.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBoxLoaiTK.Location = new System.Drawing.Point(5, 69);
+            this.groupBoxLoaiTK.Location = new System.Drawing.Point(3, 66);
             this.groupBoxLoaiTK.Name = "groupBoxLoaiTK";
             this.groupBoxLoaiTK.Size = new System.Drawing.Size(113, 92);
             this.groupBoxLoaiTK.TabIndex = 21;
@@ -390,7 +377,6 @@
         private System.Windows.Forms.Panel pnl_Button;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Panel panel_search;
         private System.Windows.Forms.Button btnTimKiem;

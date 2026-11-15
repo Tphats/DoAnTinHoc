@@ -38,7 +38,6 @@
             this.txtDC = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.grGTinh = new System.Windows.Forms.GroupBox();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
@@ -47,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -118,7 +116,7 @@
             // 
             this.dtNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtNgaySinh.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtNgaySinh.Location = new System.Drawing.Point(131, 360);
+            this.dtNgaySinh.Location = new System.Drawing.Point(131, 325);
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(239, 20);
             this.dtNgaySinh.TabIndex = 36;
@@ -126,7 +124,7 @@
             // txtDC
             // 
             this.txtDC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDC.Location = new System.Drawing.Point(131, 314);
+            this.txtDC.Location = new System.Drawing.Point(131, 279);
             this.txtDC.Multiline = true;
             this.txtDC.Name = "txtDC";
             this.txtDC.Size = new System.Drawing.Size(239, 29);
@@ -135,7 +133,7 @@
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtEmail.Location = new System.Drawing.Point(131, 227);
+            this.txtEmail.Location = new System.Drawing.Point(131, 192);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(239, 29);
@@ -144,20 +142,11 @@
             // txtSDT
             // 
             this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSDT.Location = new System.Drawing.Point(131, 188);
+            this.txtSDT.Location = new System.Drawing.Point(131, 153);
             this.txtSDT.Multiline = true;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(239, 29);
             this.txtSDT.TabIndex = 33;
-            // 
-            // txtCCCD
-            // 
-            this.txtCCCD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCCCD.Location = new System.Drawing.Point(131, 150);
-            this.txtCCCD.Multiline = true;
-            this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(239, 29);
-            this.txtCCCD.TabIndex = 32;
             // 
             // txtTen
             // 
@@ -175,7 +164,7 @@
             this.grGTinh.Controls.Add(this.rbtnNam);
             this.grGTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grGTinh.ForeColor = System.Drawing.Color.Black;
-            this.grGTinh.Location = new System.Drawing.Point(21, 267);
+            this.grGTinh.Location = new System.Drawing.Point(21, 232);
             this.grGTinh.Name = "grGTinh";
             this.grGTinh.Size = new System.Drawing.Size(349, 38);
             this.grGTinh.TabIndex = 30;
@@ -210,7 +199,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(28, 360);
+            this.label7.Location = new System.Drawing.Point(28, 325);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 29;
@@ -222,7 +211,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(28, 315);
+            this.label6.Location = new System.Drawing.Point(28, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 28;
@@ -234,7 +223,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(28, 228);
+            this.label4.Location = new System.Drawing.Point(28, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 27;
@@ -246,23 +235,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(28, 189);
+            this.label3.Location = new System.Drawing.Point(28, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 17);
             this.label3.TabIndex = 26;
             this.label3.Text = "Số điện thoại";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(28, 153);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "CCCD";
             // 
             // label1
             // 
@@ -286,6 +263,7 @@
             this.btnDangKy.TabIndex = 23;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // label9
             // 
@@ -315,14 +293,12 @@
             this.Controls.Add(this.txtDC);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSDT);
-            this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.grGTinh);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangKy);
             this.Name = "ucDangkyTK";
@@ -346,7 +322,6 @@
         private System.Windows.Forms.TextBox txtDC;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.GroupBox grGTinh;
         private System.Windows.Forms.RadioButton rbtnNu;
@@ -355,7 +330,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.Label label9;

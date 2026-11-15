@@ -16,7 +16,8 @@ namespace QuanLyAccount
         {
             InitializeComponent();
             //ucDangkyTK uc = new ucDangkyTK();
-            ucQLAccount uc = new ucQLAccount();
+            //ucQLAccount uc = new ucQLAccount();
+            ucQLUser uc = new ucQLUser();
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
         }

@@ -36,13 +36,13 @@
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.Pnl_Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnQLAccount = new System.Windows.Forms.Button();
             this.btnCreatUser = new System.Windows.Forms.Button();
-            this.btnQLSach = new System.Windows.Forms.Button();
             this.btnQLDocGia = new System.Windows.Forms.Button();
+            this.btnQLSach = new System.Windows.Forms.Button();
             this.btnQLPhieuMuon = new System.Windows.Forms.Button();
             this.btnQuaHan = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
-            this.btnQLAccount = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
             this.pnl_Top.SuspendLayout();
             this.Pnl_Sidebar.SuspendLayout();
@@ -136,6 +136,28 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // btnQLAccount
+            // 
+            this.btnQLAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnQLAccount.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnQLAccount.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnQLAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLAccount.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnQLAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQLAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnQLAccount.Image")));
+            this.btnQLAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLAccount.Location = new System.Drawing.Point(0, 84);
+            this.btnQLAccount.Margin = new System.Windows.Forms.Padding(0);
+            this.btnQLAccount.Name = "btnQLAccount";
+            this.btnQLAccount.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnQLAccount.Size = new System.Drawing.Size(198, 47);
+            this.btnQLAccount.TabIndex = 11;
+            this.btnQLAccount.Text = "Quản lý tài khoản";
+            this.btnQLAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLAccount.UseVisualStyleBackColor = false;
+            this.btnQLAccount.Click += new System.EventHandler(this.btnQLAccount_Click);
+            // 
             // btnCreatUser
             // 
             this.btnCreatUser.BackColor = System.Drawing.Color.AliceBlue;
@@ -157,26 +179,6 @@
             this.btnCreatUser.UseVisualStyleBackColor = false;
             this.btnCreatUser.Click += new System.EventHandler(this.btnCreatUser_Click);
             // 
-            // btnQLSach
-            // 
-            this.btnQLSach.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnQLSach.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnQLSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLSach.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnQLSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnQLSach.Image = global::QuanLyAccount.Properties.Resources.sach;
-            this.btnQLSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLSach.Location = new System.Drawing.Point(0, 225);
-            this.btnQLSach.Margin = new System.Windows.Forms.Padding(0);
-            this.btnQLSach.Name = "btnQLSach";
-            this.btnQLSach.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQLSach.Size = new System.Drawing.Size(198, 47);
-            this.btnQLSach.TabIndex = 2;
-            this.btnQLSach.Text = "Quản lý Sách";
-            this.btnQLSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLSach.UseVisualStyleBackColor = false;
-            // 
             // btnQLDocGia
             // 
             this.btnQLDocGia.BackColor = System.Drawing.Color.AliceBlue;
@@ -196,6 +198,27 @@
             this.btnQLDocGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLDocGia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLDocGia.UseVisualStyleBackColor = false;
+            this.btnQLDocGia.Click += new System.EventHandler(this.btnQLDocGia_Click);
+            // 
+            // btnQLSach
+            // 
+            this.btnQLSach.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnQLSach.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnQLSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLSach.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnQLSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnQLSach.Image = global::QuanLyAccount.Properties.Resources.sach;
+            this.btnQLSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLSach.Location = new System.Drawing.Point(0, 225);
+            this.btnQLSach.Margin = new System.Windows.Forms.Padding(0);
+            this.btnQLSach.Name = "btnQLSach";
+            this.btnQLSach.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnQLSach.Size = new System.Drawing.Size(198, 47);
+            this.btnQLSach.TabIndex = 2;
+            this.btnQLSach.Text = "Quản lý Sách";
+            this.btnQLSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLSach.UseVisualStyleBackColor = false;
             // 
             // btnQLPhieuMuon
             // 
@@ -256,28 +279,6 @@
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = false;
-            // 
-            // btnQLAccount
-            // 
-            this.btnQLAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnQLAccount.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnQLAccount.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnQLAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLAccount.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnQLAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnQLAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnQLAccount.Image")));
-            this.btnQLAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLAccount.Location = new System.Drawing.Point(0, 84);
-            this.btnQLAccount.Margin = new System.Windows.Forms.Padding(0);
-            this.btnQLAccount.Name = "btnQLAccount";
-            this.btnQLAccount.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQLAccount.Size = new System.Drawing.Size(198, 47);
-            this.btnQLAccount.TabIndex = 11;
-            this.btnQLAccount.Text = "Quản lý tài khoản";
-            this.btnQLAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLAccount.UseVisualStyleBackColor = false;
-            this.btnQLAccount.Click += new System.EventHandler(this.btnQLAccount_Click);
             // 
             // FrmNhanVien
             // 

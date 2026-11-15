@@ -12,17 +12,15 @@ namespace QuanLyAccount
 {
     public partial class ucQLAccount : UserControl
     {
-        private List<CQLAccount> dsuser = DuLieuDungChung.dsuser;
+        private List<CQLAccount> dsuser = DuLieuDungChung.dsuser_account;
         public ucQLAccount()
         {
             InitializeComponent();
             DuLieuDungChung.LoadData();
-            dsuser = DuLieuDungChung.dsuser;
             hienthidanhsach();
         }
         private void hienthidanhsach()
         {
-            dgvDsUser.DataSource = null;
             dgvDsUser.DataSource = dsuser;
         }
         private void ClearData()
@@ -47,7 +45,7 @@ namespace QuanLyAccount
             CQLAccount us = new CQLAccount();
             if (timUser(txtMaUser.Text) == null)
             {
-                us.MaUser = txtMaUser.Text;
+                us.MaUser = DuLieuDungChung.TaoMaUser();
                 us.TenDangNhap = txtTenDangNhap.Text;
                 us.MatKhau = txtMatKhau.Text;
                 if (rBtnThuThu.Checked)

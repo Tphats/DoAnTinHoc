@@ -106,6 +106,12 @@
     <Compile Include="ucQLPhieuMuon.Designer.cs">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQLUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLUser.Designer.cs">
+      <DependentUpon>ucQLUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLPhieuMuon.resx">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLUser.resx">
+      <DependentUpon>ucQLUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
