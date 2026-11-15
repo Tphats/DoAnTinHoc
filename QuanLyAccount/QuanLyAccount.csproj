@@ -69,6 +69,12 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmQLSach_Chung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQLSach_Chung.Designer.cs">
+      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQLSach_Chung.resx">
+      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
