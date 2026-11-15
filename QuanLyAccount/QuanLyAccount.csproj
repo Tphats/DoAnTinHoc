@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPhieuMuon.cs" />
     <Compile Include="CQLAccount.cs" />
+    <Compile Include="CQLUser.cs" />
     <Compile Include="DuLieuDungChung.cs" />
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
@@ -98,6 +100,12 @@
     <Compile Include="ucQLAccount.Designer.cs">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQLPhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLPhieuMuon.Designer.cs">
+      <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLAccount.resx">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLPhieuMuon.resx">
+      <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
