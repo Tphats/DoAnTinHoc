@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BB438A00-516B-49DE-BB88-BFC00AC2F4FD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>QuanLyAccount</RootNamespace>
-    <AssemblyName>QuanLyAccount</AssemblyName>
+    <RootNamespace>QuanLyThuVien</RootNamespace>
+    <AssemblyName>QuanLyThuVien</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +62,39 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="0_CDanhSachMau.cs" />
+    <Compile Include="5_CNhaXuatBan.cs" />
+    <Compile Include="2_CQuanLySach.cs" />
+    <Compile Include="4_CQuanLyTacGia.cs" />
+    <Compile Include="1_CSach.cs" />
+    <Compile Include="3_CTacGia.cs" />
+    <Compile Include="6_CQuanLyNhaXuatBan.cs" />
+    <Compile Include="7_CTheLoai.cs" />
+    <Compile Include="8_CQuanLyTheLoai.cs" />
+    <Compile Include="FormCapNhatNhaXuatBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCapNhatNhaXuatBan.Designer.cs">
+      <DependentUpon>FormCapNhatNhaXuatBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCapTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCapTacGia.Designer.cs">
+      <DependentUpon>FormCapTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCapNhatTheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCapNhatTheLoai.Designer.cs">
+      <DependentUpon>FormCapNhatTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQuanLySach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLySach.Designer.cs">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmQLSach_Chung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,12 +114,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ucCreatUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucCreatUser.Designer.cs">
-      <DependentUpon>ucCreatUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucDangkyTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +132,24 @@
     <Compile Include="ucQLPhieuMuon.Designer.cs">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQLSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLSach.Designer.cs">
+      <DependentUpon>ucQLSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLSach_Chung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLSach_Chung.Designer.cs">
+      <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLTheLoai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLTheLoai.Designer.cs">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucQLUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +162,10 @@
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLySach.resx">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmQLSach_Chung.resx">
       <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,30 +173,37 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucCreatUser.resx">
-      <DependentUpon>ucCreatUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucDangkyTK.resx">
       <DependentUpon>ucDangkyTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLAccount.resx">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLPhieuMuon.resx">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucQLSach.resx">
+      <DependentUpon>ucQLSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLSach_Chung.resx">
+      <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLTheLoai.resx">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucQLUser.resx">
       <DependentUpon>ucQLUser.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -185,6 +240,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+    <None Include="Resources\icon_xemdanhsach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xoa_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_sua_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_thoat_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_them_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconsach_vien_trang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

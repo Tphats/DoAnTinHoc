@@ -21,6 +21,7 @@ namespace QuanLyAccount
         }
         private void hienthidanhsach()
         {
+            dgvDsUser.DataSource = null;
             dgvDsUser.DataSource = dsuser;
         }
         private void ClearData()
@@ -97,21 +98,15 @@ namespace QuanLyAccount
         private void btnSua_Click(object sender, EventArgs e)
         {
             string maUs = txtMaUser.Text;
-            if (timUser(maUs) == null)
-            {
-                MessageBox.Show("Không tìm thấy user có mã " + maUs);
-            }
+
+            CQLAccount us = timUser(maUs);
+            us.TenDangNhap = txtTenDangNhap.Text;
+            us.MatKhau = txtMatKhau.Text;
+            if (rBtnThuThu.Checked)
+                us.LoaiUser = CQLAccount.VaiTro.Librarian;
             else
-            {
-                CQLAccount us = timUser(maUs);
-                us.TenDangNhap = txtTenDangNhap.Text;
-                us.MatKhau = txtMatKhau.Text;
-                if (rBtnThuThu.Checked)
-                    us.LoaiUser = CQLAccount.VaiTro.Librarian;
-                else
-                    us.LoaiUser = CQLAccount.VaiTro.User;
-                hienthidanhsach();
-            }
+                us.LoaiUser = CQLAccount.VaiTro.User;
+            hienthidanhsach();
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {

@@ -8,9 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<<< HEAD:QuanLyAccount/Properties/Settings.Designer.cs
 namespace QuanLyAccount.Properties {
     
     
+========
+namespace QUAN_LY_SACH.Properties
+{
+
+
+>>>>>>>> thanhphuc:QUAN_LY_SACH/Properties/Settings.Designer.cs
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "18.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {

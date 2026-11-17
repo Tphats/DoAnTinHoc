@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUAN_LY_SACH;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace QuanLyAccount
             //Application.Run(new FrmDangNhap());
             Application.Run(new FrmNhanVien());
             //Application.Run(new FrmTest());
+            //Application.Run(new FormQuanLySach());
         }
     }
 }
