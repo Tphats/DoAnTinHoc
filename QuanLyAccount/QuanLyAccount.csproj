@@ -62,39 +62,11 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="0_CDanhSachMau.cs" />
-    <Compile Include="5_CNhaXuatBan.cs" />
-    <Compile Include="2_CQuanLySach.cs" />
-    <Compile Include="4_CQuanLyTacGia.cs" />
-    <Compile Include="1_CSach.cs" />
-    <Compile Include="3_CTacGia.cs" />
-    <Compile Include="6_CQuanLyNhaXuatBan.cs" />
-    <Compile Include="7_CTheLoai.cs" />
-    <Compile Include="8_CQuanLyTheLoai.cs" />
-    <Compile Include="FormCapNhatNhaXuatBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCapNhatNhaXuatBan.Designer.cs">
-      <DependentUpon>FormCapNhatNhaXuatBan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCapTacGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCapTacGia.Designer.cs">
-      <DependentUpon>FormCapTacGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCapNhatTheLoai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCapNhatTheLoai.Designer.cs">
-      <DependentUpon>FormCapNhatTheLoai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormQuanLySach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQuanLySach.Designer.cs">
-      <DependentUpon>FormQuanLySach.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DanhSachMau.cs" />
+    <Compile Include="CNhaXuatBan.cs" />
+    <Compile Include="CSach.cs" />
+    <Compile Include="CTacGia.cs" />
+    <Compile Include="CTheLoai.cs" />
     <Compile Include="FrmQLSach_Chung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,10 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormQuanLySach.resx">
-      <DependentUpon>FormQuanLySach.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQLSach_Chung.resx">
       <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
