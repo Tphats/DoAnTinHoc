@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QUAN_LY_SACH
+namespace QuanLyThuVien
 {
     internal class DanhSachMau
     {

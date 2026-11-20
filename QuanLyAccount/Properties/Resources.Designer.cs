@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QUAN_LY_SACH.Properties {
+namespace QuanLyThuVien.Properties {
     using System;
     
     
