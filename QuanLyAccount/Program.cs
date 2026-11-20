@@ -1,11 +1,11 @@
-﻿using QUAN_LY_SACH;
+﻿using QuanLyThuVien;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyAccount
+namespace QuanLyThuVien
 {
     internal static class Program
     {
