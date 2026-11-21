@@ -47,9 +47,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CPhieuMuon.cs" />
+    <Compile Include="CPhieuTra.cs" />
     <Compile Include="CQLAccount.cs" />
     <Compile Include="CQLUser.cs" />
     <Compile Include="DuLieuDungChung.cs" />
+    <Compile Include="FrmChiTietPhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChiTietPhieu.Designer.cs">
+      <DependentUpon>FrmChiTietPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLapPhieuMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLapPhieuMuon.Designer.cs">
+      <DependentUpon>FrmLapPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLapPhieuTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLapPhieuTra.Designer.cs">
+      <DependentUpon>FrmLapPhieuTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +111,12 @@
     <Compile Include="ucDangkyTK.Designer.cs">
       <DependentUpon>ucDangkyTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQLPhieuTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLPhieuTra.Designer.cs">
+      <DependentUpon>ucQLPhieuTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucQLAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +128,12 @@
     </Compile>
     <Compile Include="ucQLPhieuMuon.Designer.cs">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLPhieu_Chung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLPhieu_Chung.Designer.cs">
+      <DependentUpon>ucQLPhieu_Chung.cs</DependentUpon>
     </Compile>
     <Compile Include="ucQLSach.cs">
       <SubType>UserControl</SubType>
@@ -128,6 +159,15 @@
     <Compile Include="ucQLUser.Designer.cs">
       <DependentUpon>ucQLUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmChiTietPhieu.resx">
+      <DependentUpon>FrmChiTietPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLapPhieuMuon.resx">
+      <DependentUpon>FrmLapPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLapPhieuTra.resx">
+      <DependentUpon>FrmLapPhieuTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,12 +184,18 @@
     <EmbeddedResource Include="ucDangkyTK.resx">
       <DependentUpon>ucDangkyTK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucQLPhieuTra.resx">
+      <DependentUpon>ucQLPhieuTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucQLAccount.resx">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLPhieuMuon.resx">
       <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLPhieu_Chung.resx">
+      <DependentUpon>ucQLPhieu_Chung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLSach.resx">
       <DependentUpon>ucQLSach.cs</DependentUpon>

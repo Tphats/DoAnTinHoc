@@ -441,7 +441,7 @@
         RK5CYII=
 </value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAN8AAAA7CAYAAAD7LF+4AAAABGdBTUEAALGPC/xhBQAAJ1FJREFUeF7t
         nQlYFFe699Ekrl3dsq/dkOWaWZK5M5NvksnMnfjdRLobXKG7QHHBFRWpYlPoBWyNURrUJE7m5k4miXQD

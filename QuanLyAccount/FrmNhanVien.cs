@@ -58,5 +58,11 @@ namespace QuanLyThuVien
             DoiTrangThaiButton(btnQLSach);
             HienthiUserControl(new ucQLSach_Chung());
         }
+
+        private void btnQLPhieuMuon_Click(object sender, EventArgs e)
+        {
+            DoiTrangThaiButton(btnQLPhieuMuon);
+            HienthiUserControl(new ucQLPhieu_Chung());
+        }
     }
 }

@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNhanVien));
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_Content = new System.Windows.Forms.Panel();
+            this.Pnl_Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Top = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.Pnl_Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnQLAccount = new System.Windows.Forms.Button();
             this.btnCreatUser = new System.Windows.Forms.Button();
             this.btnQLDocGia = new System.Windows.Forms.Button();
@@ -41,12 +41,12 @@
             this.btnQLPhieuMuon = new System.Windows.Forms.Button();
             this.btnQuaHan = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
-            this.pnl_Top.SuspendLayout();
             this.Pnl_Sidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnl_Top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main
@@ -66,15 +66,30 @@
             this.pnl_Content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_Content.Location = new System.Drawing.Point(274, 116);
+            this.pnl_Content.Location = new System.Drawing.Point(236, 90);
             this.pnl_Content.Name = "pnl_Content";
-            this.pnl_Content.Size = new System.Drawing.Size(792, 446);
+            this.pnl_Content.Size = new System.Drawing.Size(896, 497);
             this.pnl_Content.TabIndex = 2;
+            // 
+            // Pnl_Sidebar
+            // 
+            this.Pnl_Sidebar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Pnl_Sidebar.Controls.Add(this.btnQLAccount);
+            this.Pnl_Sidebar.Controls.Add(this.btnCreatUser);
+            this.Pnl_Sidebar.Controls.Add(this.btnQLDocGia);
+            this.Pnl_Sidebar.Controls.Add(this.btnQLSach);
+            this.Pnl_Sidebar.Controls.Add(this.btnQLPhieuMuon);
+            this.Pnl_Sidebar.Controls.Add(this.btnQuaHan);
+            this.Pnl_Sidebar.Controls.Add(this.btnSetting);
+            this.Pnl_Sidebar.Location = new System.Drawing.Point(3, 90);
+            this.Pnl_Sidebar.Name = "Pnl_Sidebar";
+            this.Pnl_Sidebar.Size = new System.Drawing.Size(227, 497);
+            this.Pnl_Sidebar.TabIndex = 6;
             // 
             // pnl_Top
             // 
             this.pnl_Top.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.pnl_Top.Controls.Add(this.pictureBox1);
+            this.pnl_Top.Controls.Add(this.picLogo);
             this.pnl_Top.Controls.Add(this.label3);
             this.pnl_Top.Controls.Add(this.btn_TaiKhoan);
             this.pnl_Top.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -95,21 +110,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "GIAO DIỆN THỦ THƯ";
             // 
-            // Pnl_Sidebar
-            // 
-            this.Pnl_Sidebar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.Pnl_Sidebar.Controls.Add(this.btnQLAccount);
-            this.Pnl_Sidebar.Controls.Add(this.btnCreatUser);
-            this.Pnl_Sidebar.Controls.Add(this.btnQLDocGia);
-            this.Pnl_Sidebar.Controls.Add(this.btnQLSach);
-            this.Pnl_Sidebar.Controls.Add(this.btnQLPhieuMuon);
-            this.Pnl_Sidebar.Controls.Add(this.btnQuaHan);
-            this.Pnl_Sidebar.Controls.Add(this.btnSetting);
-            this.Pnl_Sidebar.Location = new System.Drawing.Point(3, 90);
-            this.Pnl_Sidebar.Name = "Pnl_Sidebar";
-            this.Pnl_Sidebar.Size = new System.Drawing.Size(209, 497);
-            this.Pnl_Sidebar.TabIndex = 6;
-            // 
             // btnQLAccount
             // 
             this.btnQLAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -124,7 +124,7 @@
             this.btnQLAccount.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLAccount.Name = "btnQLAccount";
             this.btnQLAccount.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQLAccount.Size = new System.Drawing.Size(209, 47);
+            this.btnQLAccount.Size = new System.Drawing.Size(227, 47);
             this.btnQLAccount.TabIndex = 11;
             this.btnQLAccount.Text = "Quản lý tài khoản";
             this.btnQLAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,7 +145,7 @@
             this.btnCreatUser.Margin = new System.Windows.Forms.Padding(0);
             this.btnCreatUser.Name = "btnCreatUser";
             this.btnCreatUser.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnCreatUser.Size = new System.Drawing.Size(209, 47);
+            this.btnCreatUser.Size = new System.Drawing.Size(227, 47);
             this.btnCreatUser.TabIndex = 8;
             this.btnCreatUser.Text = "Tạo hồ sơ Độc giả";
             this.btnCreatUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,7 +166,7 @@
             this.btnQLDocGia.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLDocGia.Name = "btnQLDocGia";
             this.btnQLDocGia.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQLDocGia.Size = new System.Drawing.Size(209, 47);
+            this.btnQLDocGia.Size = new System.Drawing.Size(227, 47);
             this.btnQLDocGia.TabIndex = 3;
             this.btnQLDocGia.Text = "Quản lý Độc giả";
             this.btnQLDocGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,7 +187,7 @@
             this.btnQLSach.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLSach.Name = "btnQLSach";
             this.btnQLSach.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQLSach.Size = new System.Drawing.Size(209, 47);
+            this.btnQLSach.Size = new System.Drawing.Size(227, 47);
             this.btnQLSach.TabIndex = 2;
             this.btnQLSach.Text = "Quản lý Sách";
             this.btnQLSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,12 +208,13 @@
             this.btnQLPhieuMuon.Margin = new System.Windows.Forms.Padding(0);
             this.btnQLPhieuMuon.Name = "btnQLPhieuMuon";
             this.btnQLPhieuMuon.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQLPhieuMuon.Size = new System.Drawing.Size(209, 47);
+            this.btnQLPhieuMuon.Size = new System.Drawing.Size(227, 47);
             this.btnQLPhieuMuon.TabIndex = 5;
-            this.btnQLPhieuMuon.Text = "Quản lý Phiếu mượn";
+            this.btnQLPhieuMuon.Text = "Quản lý Phiếu Mượn/Trả";
             this.btnQLPhieuMuon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLPhieuMuon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLPhieuMuon.UseVisualStyleBackColor = false;
+            this.btnQLPhieuMuon.Click += new System.EventHandler(this.btnQLPhieuMuon_Click);
             // 
             // btnQuaHan
             // 
@@ -228,7 +229,7 @@
             this.btnQuaHan.Margin = new System.Windows.Forms.Padding(0);
             this.btnQuaHan.Name = "btnQuaHan";
             this.btnQuaHan.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnQuaHan.Size = new System.Drawing.Size(209, 47);
+            this.btnQuaHan.Size = new System.Drawing.Size(227, 47);
             this.btnQuaHan.TabIndex = 10;
             this.btnQuaHan.Text = "Quản lý Quá hạn";
             this.btnQuaHan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,22 +249,22 @@
             this.btnSetting.Margin = new System.Windows.Forms.Padding(0);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnSetting.Size = new System.Drawing.Size(209, 47);
+            this.btnSetting.Size = new System.Drawing.Size(227, 47);
             this.btnSetting.TabIndex = 7;
             this.btnSetting.Text = "Cài đặt";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // picLogo
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, -3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(212, 84);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.picLogo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(-3, -3);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(230, 84);
+            this.picLogo.TabIndex = 9;
+            this.picLogo.TabStop = false;
             // 
             // btn_TaiKhoan
             // 
@@ -297,10 +298,10 @@
             this.Name = "FrmNhanVien";
             this.Text = "FrmNhanVien";
             this.pnl_Main.ResumeLayout(false);
+            this.Pnl_Sidebar.ResumeLayout(false);
             this.pnl_Top.ResumeLayout(false);
             this.pnl_Top.PerformLayout();
-            this.Pnl_Sidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,7 +317,7 @@
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnCreatUser;
         private System.Windows.Forms.Button btn_TaiKhoan;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnQuaHan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnl_Content;
