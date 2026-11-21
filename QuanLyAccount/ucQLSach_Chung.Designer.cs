@@ -86,6 +86,7 @@
             this.btnTG.TabIndex = 1;
             this.btnTG.Text = "Tác giả";
             this.btnTG.UseVisualStyleBackColor = true;
+            this.btnTG.Click += new System.EventHandler(this.btnTG_Click);
             // 
             // btnNXB
             // 
@@ -96,6 +97,7 @@
             this.btnNXB.TabIndex = 2;
             this.btnNXB.Text = "Nhà xuất bản";
             this.btnNXB.UseVisualStyleBackColor = true;
+            this.btnNXB.Click += new System.EventHandler(this.btnNXB_Click);
             // 
             // pnl_Content
             // 

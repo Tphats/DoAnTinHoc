@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUAN_LY_SACH;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,7 +44,17 @@ namespace QuanLyThuVien
         private void btnTheLoai_Click(object sender, EventArgs e)
         {
             DoiTrangThaiButton(btnTheLoai);
-            HienthiUserControl(new ucQLTheLoai());
+            HienthiUserControl(new ucTheLoai());
+        }
+        private void btnTG_Click(object sender, EventArgs e)
+        {
+            DoiTrangThaiButton(btnTG);
+            HienthiUserControl(new ucTacGia());
+        }
+        private void btnNXB_Click(object sender, EventArgs e)
+        {
+            DoiTrangThaiButton(btnNXB);
+            HienthiUserControl(new ucNhaXuatBan());
         }
     }
 }

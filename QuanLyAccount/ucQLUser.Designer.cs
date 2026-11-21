@@ -92,6 +92,7 @@
             this.panel_Top.Name = "panel_Top";
             this.panel_Top.Size = new System.Drawing.Size(792, 60);
             this.panel_Top.TabIndex = 32;
+            this.panel_Top.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Top_Paint);
             // 
             // panel_Info
             // 

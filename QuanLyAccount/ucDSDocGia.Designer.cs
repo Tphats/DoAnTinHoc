@@ -1,6 +1,6 @@
-﻿namespace QuanLyThuVien
+﻿namespace QuanLyAccount
 {
-    partial class ucQLTheLoai
+    partial class ucDSDocGia
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgv_dsdocgia = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsdocgia)).BeginInit();
             this.SuspendLayout();
             // 
-            // ucQLTheLoai
+            // dgv_dsdocgia
+            // 
+            this.dgv_dsdocgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_dsdocgia.Location = new System.Drawing.Point(0, 0);
+            this.dgv_dsdocgia.Name = "dgv_dsdocgia";
+            this.dgv_dsdocgia.Size = new System.Drawing.Size(792, 446);
+            this.dgv_dsdocgia.TabIndex = 1;
+            // 
+            // ucDSDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.Name = "ucQLTheLoai";
-            this.Size = new System.Drawing.Size(786, 346);
+            this.Controls.Add(this.dgv_dsdocgia);
+            this.Name = "ucDSDocGia";
+            this.Size = new System.Drawing.Size(792, 446);
+            this.Load += new System.EventHandler(this.ucDSDocGia_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsdocgia)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgv_dsdocgia;
     }
 }

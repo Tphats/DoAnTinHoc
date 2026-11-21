@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNhanVien));
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_Content = new System.Windows.Forms.Panel();
+            this.Pnl_Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Top = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.Pnl_Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnQLAccount = new System.Windows.Forms.Button();
             this.btnCreatUser = new System.Windows.Forms.Button();
             this.btnQLDocGia = new System.Windows.Forms.Button();
@@ -44,8 +44,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
-            this.pnl_Top.SuspendLayout();
             this.Pnl_Sidebar.SuspendLayout();
+            this.pnl_Top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,7 @@
             this.pnl_Main.Name = "pnl_Main";
             this.pnl_Main.Size = new System.Drawing.Size(1135, 590);
             this.pnl_Main.TabIndex = 7;
+            this.pnl_Main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Main_Paint);
             // 
             // pnl_Content
             // 
@@ -70,30 +71,7 @@
             this.pnl_Content.Name = "pnl_Content";
             this.pnl_Content.Size = new System.Drawing.Size(792, 446);
             this.pnl_Content.TabIndex = 2;
-            // 
-            // pnl_Top
-            // 
-            this.pnl_Top.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.pnl_Top.Controls.Add(this.pictureBox1);
-            this.pnl_Top.Controls.Add(this.label3);
-            this.pnl_Top.Controls.Add(this.btn_TaiKhoan);
-            this.pnl_Top.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnl_Top.Location = new System.Drawing.Point(3, 3);
-            this.pnl_Top.Name = "pnl_Top";
-            this.pnl_Top.Size = new System.Drawing.Size(1132, 81);
-            this.pnl_Top.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(447, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(430, 58);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "GIAO DIỆN THỦ THƯ";
+            this.pnl_Content.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Content_Paint);
             // 
             // Pnl_Sidebar
             // 
@@ -109,6 +87,33 @@
             this.Pnl_Sidebar.Name = "Pnl_Sidebar";
             this.Pnl_Sidebar.Size = new System.Drawing.Size(209, 497);
             this.Pnl_Sidebar.TabIndex = 6;
+            this.Pnl_Sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnl_Sidebar_Paint);
+            // 
+            // pnl_Top
+            // 
+            this.pnl_Top.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_Top.Controls.Add(this.pictureBox1);
+            this.pnl_Top.Controls.Add(this.label3);
+            this.pnl_Top.Controls.Add(this.btn_TaiKhoan);
+            this.pnl_Top.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnl_Top.Location = new System.Drawing.Point(3, 3);
+            this.pnl_Top.Name = "pnl_Top";
+            this.pnl_Top.Size = new System.Drawing.Size(1132, 81);
+            this.pnl_Top.TabIndex = 0;
+            this.pnl_Top.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Top_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label3.Location = new System.Drawing.Point(447, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(430, 58);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "GIAO DIỆN THỦ THƯ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnQLAccount
             // 
@@ -214,6 +219,7 @@
             this.btnQLPhieuMuon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLPhieuMuon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLPhieuMuon.UseVisualStyleBackColor = false;
+            this.btnQLPhieuMuon.Click += new System.EventHandler(this.btnQLPhieuMuon_Click);
             // 
             // btnQuaHan
             // 
@@ -234,6 +240,7 @@
             this.btnQuaHan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuaHan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuaHan.UseVisualStyleBackColor = false;
+            this.btnQuaHan.Click += new System.EventHandler(this.btnQuaHan_Click);
             // 
             // btnSetting
             // 
@@ -254,6 +261,7 @@
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = false;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // pictureBox1
             // 
@@ -264,6 +272,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(212, 84);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_TaiKhoan
             // 
@@ -285,6 +294,7 @@
             this.btn_TaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_TaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_TaiKhoan.UseVisualStyleBackColor = false;
+            this.btn_TaiKhoan.Click += new System.EventHandler(this.btn_TaiKhoan_Click);
             // 
             // FrmNhanVien
             // 
@@ -297,9 +307,9 @@
             this.Name = "FrmNhanVien";
             this.Text = "FrmNhanVien";
             this.pnl_Main.ResumeLayout(false);
+            this.Pnl_Sidebar.ResumeLayout(false);
             this.pnl_Top.ResumeLayout(false);
             this.pnl_Top.PerformLayout();
-            this.Pnl_Sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

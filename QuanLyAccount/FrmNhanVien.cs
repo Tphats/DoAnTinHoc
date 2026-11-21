@@ -58,5 +58,55 @@ namespace QuanLyAccount
             DoiTrangThaiButton(btnQLSach);
             HienthiUserControl(new ucQLSach_Chung());
         }
+
+        private void pnl_Content_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Pnl_Sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_Top_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_Main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnQLPhieuMuon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuaHan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_TaiKhoan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

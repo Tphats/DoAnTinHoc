@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyThuVien
+namespace QuanLyAccount
 {
-    public partial class ucQLTheLoai : UserControl
+    public partial class ucDSDocGia : UserControl
     {
-        public ucQLTheLoai()
+        public ucDSDocGia()
         {
             InitializeComponent();
         }
+
+        private void ucDSDocGia_Load(object sender, EventArgs e)
+        {
+            dgv_dsdocgia.DataSource = DuLieuDungChung.dsuser_info.ToList();
+        }
+        
     }
 }
