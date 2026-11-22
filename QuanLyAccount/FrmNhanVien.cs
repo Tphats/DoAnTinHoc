@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,6 +64,24 @@ namespace QuanLyThuVien
         {
             DoiTrangThaiButton(btnQLPhieuMuon);
             HienthiUserControl(new ucQLPhieu_Chung());
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            DatabaseConnection db = new DatabaseConnection();
+
+            using (SqlConnection conn = db.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    MessageBox.Show("Kết nối SQL Server thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối: " + ex.Message);
+                }
+            }
         }
     }
 }

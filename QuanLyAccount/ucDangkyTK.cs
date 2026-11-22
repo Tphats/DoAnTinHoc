@@ -76,5 +76,10 @@ namespace QuanLyThuVien
             DuLieuDungChung.dsuser_info.Add(dk_user);
             MessageBox.Show("Đăng ký tài khoản thành công! Mã User của bạn là: " + dk_TK_user.MaUser);
         }
+
+        private void ucDangkyTK_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace QuanLyThuVien
             }
             if (txtMa.Text == "123")
             {
-                FrmChiTietPhieu frm = new FrmChiTietPhieu(txtMa.Text);
+                FrmLapPhieuTra frm = new FrmLapPhieuTra(txtMa.Text);
                 frm.Show();
             }
         }

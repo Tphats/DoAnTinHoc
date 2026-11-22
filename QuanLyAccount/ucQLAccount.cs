@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyThuVien
 {
@@ -16,8 +17,6 @@ namespace QuanLyThuVien
         public ucQLAccount()
         {
             InitializeComponent();
-            DuLieuDungChung.LoadData();
-            hienthidanhsach();
         }
         private void hienthidanhsach()
         {
@@ -127,6 +126,22 @@ namespace QuanLyThuVien
                     rBtnThuThu.Checked = true;
                 else
                     rBtnUser.Checked = true;
+            }
+        }
+
+        private void ucQLAccount_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM TaiKhoan";
+
+            using (SqlConnection conn = new SqlConnection(
+                @"Server=.\SQLEXPRESS;Database=QuanLyThuVien;Trusted_Connection=True;TrustServerCertificate=True;"))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                dgvDsUser.DataSource = dt;
             }
         }
     }
