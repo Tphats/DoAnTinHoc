@@ -17,6 +17,8 @@ namespace QuanLyAccount
             InitializeComponent();
         }
 
+        public string MaDocGia { get; internal set; }
+
         private void dgvDangMuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

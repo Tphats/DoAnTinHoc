@@ -101,6 +101,7 @@
             this.dgvLichSu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichSu.Size = new System.Drawing.Size(768, 366);
             this.dgvLichSu.TabIndex = 2;
+            this.dgvLichSu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichSu_CellContentClick);
             // 
             // MaPM
             // 

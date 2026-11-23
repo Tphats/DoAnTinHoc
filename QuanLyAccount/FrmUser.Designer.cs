@@ -30,23 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUser));
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblTieuDe = new System.Windows.Forms.Label();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnThongTinCaNhan = new System.Windows.Forms.Button();
-            this.btnLichSuTra = new System.Windows.Forms.Button();
+            this.btnLichSuMuonTra = new System.Windows.Forms.Button();
             this.btnDanhSachMuon = new System.Windows.Forms.Button();
             this.btnDanhSachSach = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTieuDe = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblXinChao = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -58,19 +59,10 @@
             this.panelMain.Size = new System.Drawing.Size(1234, 726);
             this.panelMain.TabIndex = 0;
             // 
-            // panelContent
-            // 
-            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelContent.Location = new System.Drawing.Point(0, 104);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1234, 622);
-            this.panelContent.TabIndex = 2;
-            // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.panelTop.Controls.Add(this.lblXinChao);
             this.panelTop.Controls.Add(this.pictureBox2);
             this.panelTop.Controls.Add(this.lblTieuDe);
             this.panelTop.Controls.Add(this.btn_TaiKhoan);
@@ -80,6 +72,30 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1234, 100);
             this.panelTop.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(6, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblTieuDe
+            // 
+            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTieuDe.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTieuDe.Location = new System.Drawing.Point(72, 9);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(397, 71);
+            this.lblTieuDe.TabIndex = 10;
+            this.lblTieuDe.Text = "GIAO DIỆN ĐỌC GIẢ";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTieuDe.Click += new System.EventHandler(this.lblTieuDe_Click);
             // 
             // btn_TaiKhoan
             // 
@@ -102,6 +118,16 @@
             this.btn_TaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_TaiKhoan.UseVisualStyleBackColor = false;
             // 
+            // panelContent
+            // 
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelContent.Location = new System.Drawing.Point(0, 104);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1234, 622);
+            this.panelContent.TabIndex = 2;
+            // 
             // panelSidebar
             // 
             this.panelSidebar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -111,7 +137,7 @@
             this.panelSidebar.Controls.Add(this.pictureBox1);
             this.panelSidebar.Controls.Add(this.btnDangXuat);
             this.panelSidebar.Controls.Add(this.btnThongTinCaNhan);
-            this.panelSidebar.Controls.Add(this.btnLichSuTra);
+            this.panelSidebar.Controls.Add(this.btnLichSuMuonTra);
             this.panelSidebar.Controls.Add(this.btnDanhSachMuon);
             this.panelSidebar.Controls.Add(this.btnDanhSachSach);
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
@@ -161,26 +187,26 @@
             this.btnThongTinCaNhan.UseVisualStyleBackColor = false;
             this.btnThongTinCaNhan.Click += new System.EventHandler(this.btnThongTinCaNhan_Click);
             // 
-            // btnLichSuTra
+            // btnLichSuMuonTra
             // 
-            this.btnLichSuTra.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnLichSuTra.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLichSuTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichSuTra.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLichSuTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnLichSuTra.Image = ((System.Drawing.Image)(resources.GetObject("btnLichSuTra.Image")));
-            this.btnLichSuTra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichSuTra.Location = new System.Drawing.Point(7, 218);
-            this.btnLichSuTra.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLichSuTra.Name = "btnLichSuTra";
-            this.btnLichSuTra.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnLichSuTra.Size = new System.Drawing.Size(245, 58);
-            this.btnLichSuTra.TabIndex = 11;
-            this.btnLichSuTra.Text = "Lịch Sử Mượn Trả";
-            this.btnLichSuTra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichSuTra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLichSuTra.UseVisualStyleBackColor = false;
-            this.btnLichSuTra.Click += new System.EventHandler(this.btnLichSuTra_Click);
+            this.btnLichSuMuonTra.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnLichSuMuonTra.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLichSuMuonTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichSuMuonTra.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnLichSuMuonTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnLichSuMuonTra.Image = ((System.Drawing.Image)(resources.GetObject("btnLichSuMuonTra.Image")));
+            this.btnLichSuMuonTra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichSuMuonTra.Location = new System.Drawing.Point(7, 218);
+            this.btnLichSuMuonTra.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLichSuMuonTra.Name = "btnLichSuMuonTra";
+            this.btnLichSuMuonTra.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.btnLichSuMuonTra.Size = new System.Drawing.Size(245, 58);
+            this.btnLichSuMuonTra.TabIndex = 11;
+            this.btnLichSuMuonTra.Text = "Lịch Sử Mượn Trả";
+            this.btnLichSuMuonTra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichSuMuonTra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLichSuMuonTra.UseVisualStyleBackColor = false;
+            this.btnLichSuMuonTra.Click += new System.EventHandler(this.btnLichSuMuonTra_Click);
             // 
             // btnDanhSachMuon
             // 
@@ -226,53 +252,38 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QuanLyAccount.Properties.Resources.logo_thuvien__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 0);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 5);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 95);
+            this.pictureBox1.Size = new System.Drawing.Size(264, 100);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // lblTieuDe
+            // lblXinChao
             // 
-            this.lblTieuDe.AutoSize = true;
-            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDe.Location = new System.Drawing.Point(6, 9);
-            this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(173, 23);
-            this.lblTieuDe.TabIndex = 10;
-            this.lblTieuDe.Text = "GIAO DIÊN ĐỌC GIẢ";
-            this.lblTieuDe.Click += new System.EventHandler(this.lblTieuDe_Click);
+            this.lblXinChao.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXinChao.Location = new System.Drawing.Point(567, 9);
+            this.lblXinChao.Name = "lblXinChao";
+            this.lblXinChao.Size = new System.Drawing.Size(381, 71);
+            this.lblXinChao.TabIndex = 12;
+            this.lblXinChao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(20, 44);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // FrmUser1
+            // FrmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 601);
             this.Controls.Add(this.panelSidebar);
             this.Controls.Add(this.panelMain);
-            this.Name = "FrmUser1";
+            this.Name = "FrmUser";
             this.Text = "FrmUser1";
             this.Load += new System.EventHandler(this.FrmUser1_Load);
             this.panelMain.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,11 +297,12 @@
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Button btnThongTinCaNhan;
-        private System.Windows.Forms.Button btnLichSuTra;
+        private System.Windows.Forms.Button btnLichSuMuonTra;
         private System.Windows.Forms.Button btnDanhSachMuon;
         private System.Windows.Forms.Button btnDanhSachSach;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTieuDe;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblXinChao;
     }
 }

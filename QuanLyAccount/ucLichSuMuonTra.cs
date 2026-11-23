@@ -12,9 +12,16 @@ namespace QuanLyAccount
 {
     public partial class ucLichSuMuonTra : UserControl
     {
+        internal string MaDocGia;
+
         public ucLichSuMuonTra()
         {
             InitializeComponent();
+        }
+
+        private void dgvLichSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

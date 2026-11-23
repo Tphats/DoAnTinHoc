@@ -12,6 +12,8 @@ namespace QuanLyAccount
 {
     public partial class ucThongTinCaNhan : UserControl
     {
+        internal string MaDocGia;
+
         public ucThongTinCaNhan()
         {
             InitializeComponent();
