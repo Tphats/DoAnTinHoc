@@ -15,6 +15,7 @@ namespace QuanLyThuVien
         public ucQLPhieu_Chung()
         {
             InitializeComponent();
+            btnPM.PerformClick();
         }
         private void HienthiUserControl(UserControl uc)
         {
@@ -34,15 +35,15 @@ namespace QuanLyThuVien
             btn.BackColor = Color.LightBlue;
             btn.ForeColor = Color.Blue;
         }
-        private void btnSach_Click(object sender, EventArgs e)
+        private void btnPM_Click(object sender, EventArgs e)
         {
-            DoiTrangThaiButton(btnSach);
+            DoiTrangThaiButton(btnPM);
             HienthiUserControl(new ucQLPhieuMuon());
         }
 
-        private void btnTheLoai_Click(object sender, EventArgs e)
+        private void btnPT_Click(object sender, EventArgs e)
         {
-            DoiTrangThaiButton(btnTheLoai);
+            DoiTrangThaiButton(btnPT);
             HienthiUserControl(new ucQLPhieuTra());
         }
     }

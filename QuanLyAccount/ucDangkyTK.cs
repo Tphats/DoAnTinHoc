@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace QuanLyThuVien
 {
     public partial class ucDangkyTK : UserControl
     {
+        DatabaseConnection connect = new DatabaseConnection();
         public ucDangkyTK()
         {
             InitializeComponent();
@@ -33,53 +36,53 @@ namespace QuanLyThuVien
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
-            //Tạo tài khoản cho user
-            CQLAccount dk_TK_user = new CQLAccount();
-            dk_TK_user.LoaiUser = CQLAccount.VaiTro.User;
-            dk_TK_user.MaUser = DuLieuDungChung.TaoMaUser();
-            dk_TK_user.TenDangNhap = txtTenDN.Text;
-            //Password
-            if (txtMK.Text != txtNhaplaiMK.Text)
+            using (SqlConnection conn = connect.GetConnection())
             {
-                MessageBox.Show("Mật khẩu không trùng khớp!");
-                return;
+                try
+                {
+                    conn.Open();
+                    string sql = @"INSERT INTO TaiKhoan (TenDangNhap, MatKhau, VaiTro)
+                                   VALUES 
+                                   (@TenDangNhap, @MatKhau, @VaiTro)
+                                   
+                                    INSERT INTO DocGia (HoTen, NgaySinh, GioiTinh, DiaChi, SDT, Email)
+                                    VALUES
+                                    (@HoTen, @NgaySinh, @GioiTinh, @DiaChi, @SDT, @Email)";
+                    using(SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        //Account
+                        cmd.Parameters.Add("@TenDangNhap", SqlDbType.VarChar, 50).Value = txtTenDN.Text.Trim();
+                        cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar, 100).Value = txtMK.Text.Trim();
+                        while (txtNhaplaiMK.Text.Trim() != txtMK.Text.Trim())
+                        {
+                            MessageBox.Show("Mật khẩu chưa trùng khớp!!!");
+                        }
+                        cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = CQLAccount.VaiTro.User;
+                        //Info
+                        cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar, 100).Value = txtTen.Text.Trim();
+                        cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtNgaySinh.Value;
+                        if (rbtnNam.Checked)
+                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = CQLUser.GioiTinh.Nam;
+                        else
+                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = CQLUser.GioiTinh.Nam;
+                        cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar, 200).Value = txtDC.Text;
+                        cmd.Parameters.Add("@SDT", SqlDbType.VarChar, 15).Value = txtSDT.Text;
+                        cmd.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = txtEmail.Text;
+                        //Kiểm tra số dòng thực hiện thành công
+                        if (cmd.ExecuteNonQuery() > 0)
+                            MessageBox.Show("Đăng ký thành công");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
-            dk_TK_user.MatKhau = txtMK.Text;
-            //Thêm thông tin cá nhân cho user
-            CQLUser dk_user = new CQLUser();
-            dk_user.MaUser = dk_TK_user.MaUser;
-            dk_user.TenUser = txtTen.Text;
-            if(KiemTraSDT(txtSDT.Text))
-            {
-                MessageBox.Show("Số điện thoại đã tồn tại!");
-                return;
-            }
-            else if (txtSDT.Text.Length != 10 || !txtSDT.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ! Vui lòng nhập đúng định dạng số điện thoại (10 chữ số).");
-                return;
-            }
-            else
-                dk_user.SDT_User = txtSDT.Text;
-
-            dk_user.Email_User = txtEmail.Text;
-            dk_user.DiaChi_User = txtDC.Text;
-            if (rbtnNam.Checked)
-            {
-                dk_user.GioiTinh_User = CQLUser.GioiTinh.Nam;
-            }
-            else
-            {
-                dk_user.GioiTinh_User = CQLUser.GioiTinh.Nu;
-            }
-            DuLieuDungChung.dsuser_account.Add(dk_TK_user);
-            DuLieuDungChung.dsuser_info.Add(dk_user);
-            MessageBox.Show("Đăng ký tài khoản thành công! Mã User của bạn là: " + dk_TK_user.MaUser);
         }
 
         private void ucDangkyTK_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

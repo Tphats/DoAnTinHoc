@@ -32,8 +32,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pnl_Content = new System.Windows.Forms.Panel();
             this.pnl_sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSach = new System.Windows.Forms.Button();
-            this.btnTheLoai = new System.Windows.Forms.Button();
+            this.btnPM = new System.Windows.Forms.Button();
+            this.btnPT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_sidebar.SuspendLayout();
             this.SuspendLayout();
@@ -73,34 +73,34 @@
             this.pnl_sidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_sidebar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.pnl_sidebar.Controls.Add(this.btnSach);
-            this.pnl_sidebar.Controls.Add(this.btnTheLoai);
+            this.pnl_sidebar.Controls.Add(this.btnPM);
+            this.pnl_sidebar.Controls.Add(this.btnPT);
             this.pnl_sidebar.Location = new System.Drawing.Point(0, 63);
             this.pnl_sidebar.Name = "pnl_sidebar";
             this.pnl_sidebar.Size = new System.Drawing.Size(800, 38);
             this.pnl_sidebar.TabIndex = 6;
             // 
-            // btnSach
+            // btnPM
             // 
-            this.btnSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSach.Location = new System.Drawing.Point(3, 3);
-            this.btnSach.Name = "btnSach";
-            this.btnSach.Size = new System.Drawing.Size(189, 35);
-            this.btnSach.TabIndex = 0;
-            this.btnSach.Text = "Phiếu mượn";
-            this.btnSach.UseVisualStyleBackColor = true;
-            this.btnSach.Click += new System.EventHandler(this.btnSach_Click);
+            this.btnPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPM.Location = new System.Drawing.Point(3, 3);
+            this.btnPM.Name = "btnPM";
+            this.btnPM.Size = new System.Drawing.Size(189, 35);
+            this.btnPM.TabIndex = 0;
+            this.btnPM.Text = "Phiếu mượn";
+            this.btnPM.UseVisualStyleBackColor = true;
+            this.btnPM.Click += new System.EventHandler(this.btnPM_Click);
             // 
-            // btnTheLoai
+            // btnPT
             // 
-            this.btnTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnTheLoai.Location = new System.Drawing.Point(198, 3);
-            this.btnTheLoai.Name = "btnTheLoai";
-            this.btnTheLoai.Size = new System.Drawing.Size(198, 35);
-            this.btnTheLoai.TabIndex = 3;
-            this.btnTheLoai.Text = "Phiếu trả";
-            this.btnTheLoai.UseVisualStyleBackColor = true;
-            this.btnTheLoai.Click += new System.EventHandler(this.btnTheLoai_Click);
+            this.btnPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPT.Location = new System.Drawing.Point(198, 3);
+            this.btnPT.Name = "btnPT";
+            this.btnPT.Size = new System.Drawing.Size(198, 35);
+            this.btnPT.TabIndex = 3;
+            this.btnPT.Text = "Phiếu trả";
+            this.btnPT.UseVisualStyleBackColor = true;
+            this.btnPT.Click += new System.EventHandler(this.btnPT_Click);
             // 
             // ucQLPhieu_Chung
             // 
@@ -125,7 +125,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnl_Content;
         private System.Windows.Forms.FlowLayoutPanel pnl_sidebar;
-        private System.Windows.Forms.Button btnSach;
-        private System.Windows.Forms.Button btnTheLoai;
+        private System.Windows.Forms.Button btnPM;
+        private System.Windows.Forms.Button btnPT;
     }
 }
