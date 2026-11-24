@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUser));
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.lblXinChao = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTieuDe = new System.Windows.Forms.Label();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnThongTinCaNhan = new System.Windows.Forms.Button();
             this.btnLichSuMuonTra = new System.Windows.Forms.Button();
             this.btnDanhSachMuon = new System.Windows.Forms.Button();
             this.btnDanhSachSach = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblXinChao = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -72,6 +72,15 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1234, 100);
             this.panelTop.TabIndex = 3;
+            // 
+            // lblXinChao
+            // 
+            this.lblXinChao.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXinChao.Location = new System.Drawing.Point(567, 9);
+            this.lblXinChao.Name = "lblXinChao";
+            this.lblXinChao.Size = new System.Drawing.Size(381, 71);
+            this.lblXinChao.TabIndex = 12;
+            this.lblXinChao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -144,6 +153,19 @@
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(279, 726);
             this.panelSidebar.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(264, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // btnDangXuat
             // 
@@ -249,25 +271,6 @@
             this.btnDanhSachSach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDanhSachSach.UseVisualStyleBackColor = false;
             this.btnDanhSachSach.Click += new System.EventHandler(this.btnDanhSachSach_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyAccount.Properties.Resources.logo_thuvien__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 100);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblXinChao
-            // 
-            this.lblXinChao.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblXinChao.Location = new System.Drawing.Point(567, 9);
-            this.lblXinChao.Name = "lblXinChao";
-            this.lblXinChao.Size = new System.Drawing.Size(381, 71);
-            this.lblXinChao.TabIndex = 12;
-            this.lblXinChao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmUser
             // 
