@@ -192,12 +192,6 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQLSach_Chung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQLSach_Chung.Designer.cs">
-      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,24 +235,6 @@
     <Compile Include="ucQLPhieu_Chung.Designer.cs">
       <DependentUpon>ucQLPhieu_Chung.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucQLSach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucQLSach.Designer.cs">
-      <DependentUpon>ucQLSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucQLSach_Chung.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucQLSach_Chung.Designer.cs">
-      <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucQLTheLoai.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucQLTheLoai.Designer.cs">
-      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucQLUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -283,9 +259,6 @@
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQLSach_Chung.resx">
-      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -305,15 +278,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLPhieu_Chung.resx">
       <DependentUpon>ucQLPhieu_Chung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucQLSach.resx">
-      <DependentUpon>ucQLSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucQLSach_Chung.resx">
-      <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucQLTheLoai.resx">
-      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLUser.resx">
       <DependentUpon>ucQLUser.cs</DependentUpon>

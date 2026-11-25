@@ -34,11 +34,8 @@ namespace QuanLyThuVien
                 MessageBox.Show("Vui lòng nhập mã phiếu trả hoặc mã độc giả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtMa.Text == "123")
-            {
                 FrmLapPhieuTra frm = new FrmLapPhieuTra(txtMa.Text);
                 frm.Show();
-            }
         }
 
         private void btnChiTiet_Click(object sender, EventArgs e)
@@ -48,11 +45,8 @@ namespace QuanLyThuVien
                 MessageBox.Show("Vui lòng nhập mã phiếu trả hoặc mã độc giả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtMa.Text == "123")
-            {
-                FrmChiTietPhieu frm = new FrmChiTietPhieu(txtMa.Text);
-                frm.Show();
-            }
+                //FrmChiTietPhieu frm = new FrmChiTietPhieu(Convert.ToInt32(txtMa.Text), "PT");
+                //frm.Show();
         }
     }
 }

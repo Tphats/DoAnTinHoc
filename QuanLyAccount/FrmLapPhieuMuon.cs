@@ -14,19 +14,17 @@ namespace QuanLyThuVien
 {
     public partial class FrmLapPhieuMuon : Form
     {
-        private string maDG;
         private int maPM;
         DBConnection Connect = new DBConnection();
-        public FrmLapPhieuMuon(string maDocGia)
+        public FrmLapPhieuMuon()
         {
-            maDG = maDocGia;
-            dtHanTra.Value = dtNgayMuon.Value.AddDays(120);
             InitializeComponent();
+            
         }
 
         private void btnThemSach_Click(object sender, EventArgs e)
         {
-            if (txtMaDG.Text == "" || txtMaDG.Text != maDG)
+            if (cboMaDG.Text == "")
                 return;
             using (SqlConnection conn = Connect.GetConnection())
             {
@@ -53,7 +51,7 @@ namespace QuanLyThuVien
 
         private void btnLapPM_Click(object sender, EventArgs e)
         {
-            if (txtMaDG.Text == "" || txtMaDG.Text != maDG)
+            if (cboMaDG.Text == "")
                 return;
             using (SqlConnection conn = Connect.GetConnection())
             {
@@ -65,7 +63,7 @@ namespace QuanLyThuVien
                                     SELECT CAST(SCOPE_IDENTITY() AS INT);";//ép kiểu MãPM thành int
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.Add("@MaDocGia", SqlDbType.Int).Value = maDG;
+                        cmd.Parameters.Add("@MaDocGia", SqlDbType.Int).Value = cboMaDG.Text.Trim();
                         cmd.Parameters.Add("@NgayMuon", SqlDbType.Date).Value = dtNgayMuon.Value;
                         cmd.Parameters.Add("@HanTra", SqlDbType.Date).Value = dtHanTra.Value;
                         cmd.Parameters.Add("@TrangThai", SqlDbType.NVarChar, 30).Value = "Đang Mượn";
@@ -76,7 +74,56 @@ namespace QuanLyThuVien
                 {
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
+                //Hiện chức năng thêm sách
+                labelMaSach.Visible = true;
+                labelSoCuon.Visible = true;
+                txtMaSach.Visible = true;
+                txtSoCuon.Visible = true;
+                btnThemSach.Visible = true;
             }
+        }
+
+        private void btnHoanThanh_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void LoadMaDG()
+        {
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    string sql = "SELECT MaDocGia FROM DocGia";
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        cboMaDG.DataSource = dt;
+                        cboMaDG.DisplayMember = "MaDocGia";
+                        cboMaDG.ValueMember = "MaDocGia";
+                        cboMaDG.SelectedIndex = -1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+        }
+
+        private void FrmLapPhieuMuon_Load(object sender, EventArgs e)
+        {
+            dtHanTra.Value = dtNgayMuon.Value.AddDays(120);
+            labelMaSach.Visible = false;
+            labelSoCuon.Visible = false;
+            txtMaSach.Visible = false;
+            txtSoCuon.Visible = false;
+            btnThemSach.Visible = false;
+            LoadMaDG();
         }
     }
 }
