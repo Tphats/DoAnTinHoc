@@ -46,10 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPhieuMuon.cs" />
-    <Compile Include="CQLAccount.cs" />
-    <Compile Include="CQLUser.cs" />
-    <Compile Include="DuLieuDungChung.cs" />
+    <Compile Include="DBConnection.cs" />
     <Compile Include="FrmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,17 +58,6 @@
     </Compile>
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DanhSachMau.cs" />
-    <Compile Include="CNhaXuatBan.cs" />
-    <Compile Include="CSach.cs" />
-    <Compile Include="CTacGia.cs" />
-    <Compile Include="CTheLoai.cs" />
-    <Compile Include="FrmQLSach_Chung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQLSach_Chung.Designer.cs">
-      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTest.cs">
       <SubType>Form</SubType>
@@ -97,12 +83,6 @@
     </Compile>
     <Compile Include="ucQLAccount.Designer.cs">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucQLPhieuMuon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucQLPhieuMuon.Designer.cs">
-      <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </Compile>
     <Compile Include="ucQLSach.cs">
       <SubType>UserControl</SubType>
@@ -134,9 +114,6 @@
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQLSach_Chung.resx">
-      <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -147,9 +124,6 @@
     <EmbeddedResource Include="ucQLAccount.resx">
       <DependentUpon>ucQLAccount.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucQLPhieuMuon.resx">
-      <DependentUpon>ucQLPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLSach.resx">
       <DependentUpon>ucQLSach.cs</DependentUpon>
