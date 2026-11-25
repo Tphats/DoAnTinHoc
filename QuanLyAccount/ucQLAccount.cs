@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyAccount
+namespace QuanLyThuVien
 {
     public partial class ucQLAccount : UserControl
     {
@@ -128,6 +128,16 @@ namespace QuanLyAccount
                 else
                     rBtnUser.Checked = true;
             }
+        }
+
+        private void ucQLAccount_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDsUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

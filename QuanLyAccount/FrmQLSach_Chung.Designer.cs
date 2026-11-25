@@ -1,4 +1,4 @@
-﻿namespace QuanLyAccount
+﻿namespace QuanLyThuVien
 {
     partial class FrmQLSach_Chung
     {
@@ -33,10 +33,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_Content = new System.Windows.Forms.Panel();
             this.pnl_sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.btnTG = new System.Windows.Forms.Button();
             this.btnNXB = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnl_Top.SuspendLayout();
             this.pnl_sidebar.SuspendLayout();
             this.SuspendLayout();
@@ -87,17 +87,6 @@
             this.pnl_sidebar.Size = new System.Drawing.Size(800, 31);
             this.pnl_sidebar.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Thể loại";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnSach
             // 
             this.btnSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -118,7 +107,6 @@
             this.btnTG.TabIndex = 1;
             this.btnTG.Text = "Tác giả";
             this.btnTG.UseVisualStyleBackColor = true;
-            this.btnTG.Click += new System.EventHandler(this.btnTG_Click);
             // 
             // btnNXB
             // 
@@ -129,7 +117,16 @@
             this.btnNXB.TabIndex = 2;
             this.btnNXB.Text = "Nhà xuất bản";
             this.btnNXB.UseVisualStyleBackColor = true;
-            this.btnNXB.Click += new System.EventHandler(this.btnNXB_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 28);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Thể loại";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmQLSach_Chung
             // 
@@ -141,7 +138,6 @@
             this.Controls.Add(this.pnl_Top);
             this.Name = "FrmQLSach_Chung";
             this.Text = "FrmQLSach_Chung";
-            this.Load += new System.EventHandler(this.FrmQLSach_Chung_Load);
             this.pnl_Top.ResumeLayout(false);
             this.pnl_Top.PerformLayout();
             this.pnl_sidebar.ResumeLayout(false);

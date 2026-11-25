@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QUAN_LY_SACH
+namespace QuanLyThuVien
 {
     public partial class ucTacGia : UserControl
     {

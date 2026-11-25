@@ -1,4 +1,4 @@
-﻿namespace QUAN_LY_SACH
+﻿namespace QuanLyThuVien
 {
     partial class ucTheLoai
     {
@@ -287,6 +287,7 @@
             this.Controls.Add(this.btn_them);
             this.Name = "ucTheLoai";
             this.Size = new System.Drawing.Size(792, 446);
+            this.Load += new System.EventHandler(this.ucTheLoai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dstheloai)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

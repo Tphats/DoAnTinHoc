@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyAccount
+namespace QuanLyThuVien
 {
     public partial class ucDSDocGia : UserControl
     {
@@ -21,6 +21,9 @@ namespace QuanLyAccount
         {
             dgv_dsdocgia.DataSource = DuLieuDungChung.dsuser_info.ToList();
         }
-        
-    }
+
+		private void dgv_dsdocgia_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+		}
+	}
 }

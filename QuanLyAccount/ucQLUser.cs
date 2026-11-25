@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyAccount
+namespace QuanLyThuVien
 {
     public partial class ucQLUser : UserControl
     {
@@ -102,11 +102,6 @@ namespace QuanLyAccount
                 }
                 hienthidanhsach();
             }
-        }
-
-        private void panel_Top_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace QUAN_LY_SACH
+﻿namespace QuanLyThuVien
 {
     partial class ucQLSach
     {
@@ -251,7 +251,7 @@
             this.btn_xemdanhsach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xemdanhsach.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btn_xemdanhsach.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_xemdanhsach.Image = global::QuanLyAccount.Properties.Resources.icon_xemdanhsach;
+            this.btn_xemdanhsach.Image = global::QuanLyThuVien.Properties.Resources.icon_xemdanhsach;
             this.btn_xemdanhsach.Location = new System.Drawing.Point(695, 89);
             this.btn_xemdanhsach.Name = "btn_xemdanhsach";
             this.btn_xemdanhsach.Size = new System.Drawing.Size(96, 69);
@@ -436,10 +436,11 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sách";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QuanLyAccount.Properties.Resources.iconsach_vien_trang;
+            this.pictureBox1.Image = global::QuanLyThuVien.Properties.Resources.iconsach_vien_trang;
             this.pictureBox1.Location = new System.Drawing.Point(12, -2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 78);

@@ -1,4 +1,4 @@
-﻿namespace QuanLyAccount
+﻿namespace QuanLyThuVien
 {
     partial class ucDSDocGia
     {
@@ -37,8 +37,10 @@
             this.dgv_dsdocgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dsdocgia.Location = new System.Drawing.Point(0, 0);
             this.dgv_dsdocgia.Name = "dgv_dsdocgia";
+            this.dgv_dsdocgia.RowHeadersWidth = 51;
             this.dgv_dsdocgia.Size = new System.Drawing.Size(792, 446);
             this.dgv_dsdocgia.TabIndex = 1;
+            this.dgv_dsdocgia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dsdocgia_CellContentClick);
             // 
             // ucDSDocGia
             // 

@@ -1,4 +1,4 @@
-﻿namespace QUAN_LY_SACH
+﻿namespace QuanLyThuVien
 {
     partial class ucTacGia
     {
@@ -155,7 +155,7 @@
             this.btn_thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_thoat.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btn_thoat.ForeColor = System.Drawing.Color.Black;
-            this.btn_thoat.Image = global::QuanLyAccount.Properties.Resources.icon_thoat_24;
+            this.btn_thoat.Image = QuanLyThuVien.Properties.Resources.icon_thoat_24;
             this.btn_thoat.Location = new System.Drawing.Point(631, 146);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(87, 35);

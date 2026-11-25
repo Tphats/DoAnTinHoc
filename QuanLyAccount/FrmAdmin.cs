@@ -1,4 +1,5 @@
-﻿using QUAN_LY_SACH;
+﻿using QuanLyThuVien;
+using QuanLyAccount;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyAccount
+namespace QuanLyThuVien
 {
     public partial class FrmAdmin : Form
     {
@@ -50,7 +51,19 @@ namespace QuanLyAccount
         private void btnDSSach_Click(object sender, EventArgs e)
         {
             DoiTrangThaiButton(btnDSSach);
-            HienthiUserControl(new ucQLSach());
+            HienthiUserControl(new ucDSSach());
+        }
+
+        private void btnQLThuThu_Click(object sender, EventArgs e)
+        {
+            DoiTrangThaiButton(btnQLThuThu);
+            HienthiUserControl(new ucQLThuThu());
+        }
+
+        private void btnDSPhieuMuon_Click(object sender, EventArgs e)
+        {
+            DoiTrangThaiButton(btnDSPhieuMuon);
+            HienthiUserControl(new ucDSPhieuMuon());
         }
     }
 }

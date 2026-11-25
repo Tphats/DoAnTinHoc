@@ -1,4 +1,4 @@
-﻿namespace QuanLyAccount
+﻿namespace QuanLyThuVien
 {
     partial class ucQLPhieuMuon
     {

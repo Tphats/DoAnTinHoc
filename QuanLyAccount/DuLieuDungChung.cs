@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyAccount
+namespace QuanLyThuVien
 {
     internal static class DuLieuDungChung
     {
         public static List<CQLAccount> dsuser_account = new List<CQLAccount>();
         public static List<CQLUser> dsuser_info = new List<CQLUser>();
+        public static List<CSach> dssach_info= new List<CSach>();
+        public static List<CQLThuThu> dsthuthu_info= new List<CQLThuThu>();
+        public static List<CPhieuMuon> dsphieumuon_info= new List<CPhieuMuon>();
         public static string TaoMaUser()
         {
             int maxSoThuTu = 1;

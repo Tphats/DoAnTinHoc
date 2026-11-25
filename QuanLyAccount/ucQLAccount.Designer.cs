@@ -1,4 +1,4 @@
-﻿namespace QuanLyAccount
+﻿namespace QuanLyThuVien
 {
     partial class ucQLAccount
     {
@@ -250,6 +250,7 @@
             this.dgvDsUser.ReadOnly = true;
             this.dgvDsUser.Size = new System.Drawing.Size(630, 257);
             this.dgvDsUser.TabIndex = 22;
+            this.dgvDsUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsUser_CellContentClick);
             this.dgvDsUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsUser_RowEnter);
             // 
             // Column1
@@ -351,6 +352,7 @@
             this.Controls.Add(this.groupBoxLoaiTK);
             this.Name = "ucQLAccount";
             this.Size = new System.Drawing.Size(878, 429);
+            this.Load += new System.EventHandler(this.ucQLAccount_Load);
             this.panel_Info.ResumeLayout(false);
             this.panel_Info.PerformLayout();
             this.pnl_Button.ResumeLayout(false);

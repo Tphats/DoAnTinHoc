@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BB438A00-516B-49DE-BB88-BFC00AC2F4FD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>QuanLyAccount</RootNamespace>
-    <AssemblyName>QuanLyAccount</AssemblyName>
+    <RootNamespace>QuanLyThuVien</RootNamespace>
+    <AssemblyName>QuanLyThuVien</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CPhieuMuon.cs" />
     <Compile Include="CQLAccount.cs" />
+    <Compile Include="CQLThuThu.cs" />
     <Compile Include="CQLUser.cs" />
     <Compile Include="DuLieuDungChung.cs" />
     <Compile Include="FrmAdmin.cs">
@@ -92,11 +93,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="ucDangkyTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +104,18 @@
     </Compile>
     <Compile Include="ucDSDocGia.Designer.cs">
       <DependentUpon>ucDSDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDSPhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDSPhieuMuon.Designer.cs">
+      <DependentUpon>ucDSPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDSSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDSSach.Designer.cs">
+      <DependentUpon>ucDSSach.cs</DependentUpon>
     </Compile>
     <Compile Include="ucNhaXuatBan.cs">
       <SubType>UserControl</SubType>
@@ -139,11 +147,17 @@
     <Compile Include="ucQLSach_Chung.Designer.cs">
       <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucTheLoai.cs">
+    <Compile Include="ucQLTheLoai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTheLoai.Designer.cs">
-      <DependentUpon>ucTheLoai.cs</DependentUpon>
+    <Compile Include="ucQLTheLoai.Designer.cs">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQLThuThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQLThuThu.Designer.cs">
+      <DependentUpon>ucQLThuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="ucQLUser.cs">
       <SubType>UserControl</SubType>
@@ -156,6 +170,12 @@
     </Compile>
     <Compile Include="ucTacGia.Designer.cs">
       <DependentUpon>ucTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTheLoai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTheLoai.Designer.cs">
+      <DependentUpon>ucTheLoai.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
@@ -170,15 +190,20 @@
       <DependentUpon>FrmQLSach_Chung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ucDangkyTK.resx">
       <DependentUpon>ucDangkyTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucDSDocGia.resx">
       <DependentUpon>ucDSDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDSPhieuMuon.resx">
+      <DependentUpon>ucDSPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDSSach.resx">
+      <DependentUpon>ucDSSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucNhaXuatBan.resx">
       <DependentUpon>ucNhaXuatBan.cs</DependentUpon>
@@ -196,14 +221,25 @@
     <EmbeddedResource Include="ucQLSach_Chung.resx">
       <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucTheLoai.resx">
-      <DependentUpon>ucTheLoai.cs</DependentUpon>
+    <EmbeddedResource Include="ucQLTheLoai.resx">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQLThuThu.resx">
+      <DependentUpon>ucQLThuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLUser.resx">
       <DependentUpon>ucQLUser.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <EmbeddedResource Include="ucTacGia.resx">
       <DependentUpon>ucTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTheLoai.resx">
+      <DependentUpon>ucTheLoai.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -261,22 +297,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconsach_vien_trang.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\logologin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\eye.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\Login-background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="image\hidden.png" />
-    <Content Include="Resources\eye.png" />
-    <None Include="Resources\hidden.png" />
-    <Content Include="Resources\Login-background.jpg" />
-    <Content Include="Resources\logologin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

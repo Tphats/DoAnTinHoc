@@ -1,5 +1,4 @@
-﻿using QUAN_LY_SACH;
-using QuanLyThuVien;
+﻿using QuanLyThuVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyAccount
+namespace QuanLyThuVien
 {
     public partial class FrmQLSach_Chung : Form
     {
@@ -36,32 +35,10 @@ namespace QuanLyAccount
             btn.BackColor = Color.LightBlue;
             btn.ForeColor = Color.Blue;
         }
-
-        private void btnSach_Click(object sender, EventArgs e) {
+        private void btnSach_Click(object sender, EventArgs e)
+        {
             DoiTrangThaiButton(btnSach);
             HienthiUserControl(new ucQLSach());
-        }
-
-		private void btnTG_Click(object sender, EventArgs e) {
-			DoiTrangThaiButton(btnTG);
-			HienthiUserControl(new ucTacGia());
-		}
-
-        private void FrmQLSach_Chung_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DoiTrangThaiButton(btnTG);
-            HienthiUserControl(new ucTheLoai());
-        }
-
-        private void btnNXB_Click(object sender, EventArgs e)
-        {
-            DoiTrangThaiButton(btnTG);
-            HienthiUserControl(new ucNhaXuatBan());
         }
     }
 }

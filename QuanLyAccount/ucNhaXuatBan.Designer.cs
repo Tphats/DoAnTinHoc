@@ -1,4 +1,4 @@
-﻿namespace QUAN_LY_SACH
+﻿namespace QuanLyThuVien
 {
     partial class ucNhaXuatBan
     {

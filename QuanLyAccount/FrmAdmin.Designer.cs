@@ -1,4 +1,4 @@
-﻿namespace QuanLyAccount
+﻿namespace QuanLyThuVien
 {
     partial class FrmAdmin
     {
@@ -32,8 +32,6 @@
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_Content = new System.Windows.Forms.Panel();
             this.Pnl_Sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl_Top = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnQLAccount = new System.Windows.Forms.Button();
             this.btnQLThuThu = new System.Windows.Forms.Button();
             this.btnDSDocGia = new System.Windows.Forms.Button();
@@ -41,7 +39,9 @@
             this.btnDSPhieuMuon = new System.Windows.Forms.Button();
             this.btnDSQuaHan = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
+            this.pnl_Top = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
             this.Pnl_Sidebar.SuspendLayout();
@@ -86,30 +86,6 @@
             this.Pnl_Sidebar.Size = new System.Drawing.Size(209, 497);
             this.Pnl_Sidebar.TabIndex = 6;
             // 
-            // pnl_Top
-            // 
-            this.pnl_Top.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.pnl_Top.Controls.Add(this.pictureBox1);
-            this.pnl_Top.Controls.Add(this.label3);
-            this.pnl_Top.Controls.Add(this.btn_TaiKhoan);
-            this.pnl_Top.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnl_Top.Location = new System.Drawing.Point(3, 3);
-            this.pnl_Top.Name = "pnl_Top";
-            this.pnl_Top.Size = new System.Drawing.Size(1132, 81);
-            this.pnl_Top.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(447, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(389, 58);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "GIAO DIỆN ADMIN";
-            // 
             // btnQLAccount
             // 
             this.btnQLAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -151,6 +127,7 @@
             this.btnQLThuThu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLThuThu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLThuThu.UseVisualStyleBackColor = false;
+            this.btnQLThuThu.Click += new System.EventHandler(this.btnQLThuThu_Click);
             // 
             // btnDSDocGia
             // 
@@ -213,6 +190,7 @@
             this.btnDSPhieuMuon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDSPhieuMuon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDSPhieuMuon.UseVisualStyleBackColor = false;
+            this.btnDSPhieuMuon.Click += new System.EventHandler(this.btnDSPhieuMuon_Click);
             // 
             // btnDSQuaHan
             // 
@@ -254,6 +232,18 @@
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = false;
             // 
+            // pnl_Top
+            // 
+            this.pnl_Top.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_Top.Controls.Add(this.pictureBox1);
+            this.pnl_Top.Controls.Add(this.label3);
+            this.pnl_Top.Controls.Add(this.btn_TaiKhoan);
+            this.pnl_Top.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnl_Top.Location = new System.Drawing.Point(3, 3);
+            this.pnl_Top.Name = "pnl_Top";
+            this.pnl_Top.Size = new System.Drawing.Size(1132, 81);
+            this.pnl_Top.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -263,6 +253,18 @@
             this.pictureBox1.Size = new System.Drawing.Size(212, 84);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label3.Location = new System.Drawing.Point(447, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(389, 58);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "GIAO DIỆN ADMIN";
             // 
             // btn_TaiKhoan
             // 

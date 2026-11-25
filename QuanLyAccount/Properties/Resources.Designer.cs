@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuanLyAccount.Properties {
+namespace QuanLyThuVien.Properties {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace QuanLyAccount.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace QuanLyAccount.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("QuanLyAccount.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("QuanLyThuVien.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace QuanLyAccount.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,27 +63,7 @@ namespace QuanLyAccount.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap eye {
-            get {
-                object obj = ResourceManager.GetObject("eye", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap hidden {
-            get {
-                object obj = ResourceManager.GetObject("hidden", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap icon_sua_24 {
+        internal static System.Drawing.Bitmap icon_sua_24 {
             get {
                 object obj = ResourceManager.GetObject("icon_sua_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +73,7 @@ namespace QuanLyAccount.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_them_24 {
+        internal static System.Drawing.Bitmap icon_them_24 {
             get {
                 object obj = ResourceManager.GetObject("icon_them_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +83,7 @@ namespace QuanLyAccount.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_thoat_24 {
+        internal static System.Drawing.Bitmap icon_thoat_24 {
             get {
                 object obj = ResourceManager.GetObject("icon_thoat_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +93,7 @@ namespace QuanLyAccount.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_xemdanhsach {
+        internal static System.Drawing.Bitmap icon_xemdanhsach {
             get {
                 object obj = ResourceManager.GetObject("icon_xemdanhsach", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +103,7 @@ namespace QuanLyAccount.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap icon_xoa_24 {
+        internal static System.Drawing.Bitmap icon_xoa_24 {
             get {
                 object obj = ResourceManager.GetObject("icon_xoa_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,29 +113,9 @@ namespace QuanLyAccount.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap iconsach_vien_trang {
+        internal static System.Drawing.Bitmap iconsach_vien_trang {
             get {
                 object obj = ResourceManager.GetObject("iconsach_vien_trang", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Login_background {
-            get {
-                object obj = ResourceManager.GetObject("Login-background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap logologin {
-            get {
-                object obj = ResourceManager.GetObject("logologin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

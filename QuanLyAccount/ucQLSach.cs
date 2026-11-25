@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyThuVien;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QUAN_LY_SACH
+namespace QuanLyThuVien
 {
 	public partial class ucQLSach : UserControl
 	{
-        List<CSach> danhsachsach = new List<CSach>();
+        List<CSach> danhsachsach = DuLieuDungChung.dssach_info;
         public ucQLSach()
         {
             InitializeComponent();
@@ -55,6 +56,10 @@ namespace QUAN_LY_SACH
 		}
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
