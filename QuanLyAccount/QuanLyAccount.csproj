@@ -147,12 +147,6 @@
     <Compile Include="ucQLSach_Chung.Designer.cs">
       <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucQLTheLoai.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucQLTheLoai.Designer.cs">
-      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucQLThuThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,11 +165,11 @@
     <Compile Include="ucTacGia.Designer.cs">
       <DependentUpon>ucTacGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucTheLoai.cs">
+    <Compile Include="ucQLTheLoai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTheLoai.Designer.cs">
-      <DependentUpon>ucTheLoai.cs</DependentUpon>
+    <Compile Include="ucQLTheLoai.Designer.cs">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
@@ -221,9 +215,6 @@
     <EmbeddedResource Include="ucQLSach_Chung.resx">
       <DependentUpon>ucQLSach_Chung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQLTheLoai.resx">
-      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucQLThuThu.resx">
       <DependentUpon>ucQLThuThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,8 +229,8 @@
     <EmbeddedResource Include="ucTacGia.resx">
       <DependentUpon>ucTacGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucTheLoai.resx">
-      <DependentUpon>ucTheLoai.cs</DependentUpon>
+    <EmbeddedResource Include="ucQLTheLoai.resx">
+      <DependentUpon>ucQLTheLoai.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

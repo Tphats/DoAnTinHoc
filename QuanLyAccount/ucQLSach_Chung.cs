@@ -44,7 +44,7 @@ namespace QuanLyThuVien
         private void btnTheLoai_Click(object sender, EventArgs e)
         {
             DoiTrangThaiButton(btnTheLoai);
-            HienthiUserControl(new ucTheLoai());
+            HienthiUserControl(new ucQLTheLoai());
         }
         private void btnTG_Click(object sender, EventArgs e)
         {

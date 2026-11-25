@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyThuVien
 {
-    public partial class ucTheLoai : UserControl
+    public partial class ucQLTheLoai : UserControl
     {
         List<CTheLoai> danhsachtheloai = new List<CTheLoai>();
 
-        public ucTheLoai()
+        public ucQLTheLoai()
         {
             InitializeComponent();
             hienthidanhsach(danhsachtheloai);
@@ -24,8 +24,6 @@ namespace QuanLyThuVien
         {
             dgv_dstheloai.DataSource = danhsachtheloai.ToList();
         }
-
-        
 
         private void btn_them_Click(object sender, EventArgs e)
         {
