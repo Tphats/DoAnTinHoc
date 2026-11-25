@@ -10,8 +10,7 @@ namespace QUAN_LY_THU_VIEN
               Trusted_Connection=True;
               TrustServerCertificate=True";
 
-        public SqlConnection GetConnection()
-        {
+        public SqlConnection GetConnection()        {
             return new SqlConnection(connectionString);
         }
     }

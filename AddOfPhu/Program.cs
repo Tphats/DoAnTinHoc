@@ -16,7 +16,10 @@ namespace QUAN_LY_THU_VIEN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmQuanLySach());
+         //   Application.Run(new FrmQuanLySach());
+          //  Application.Run(new FrmTacGia());
+           // Application.Run(new FrmNhaXuatBan());
+            Application.Run(new FrmTheLoai());
         }
     }
 }
