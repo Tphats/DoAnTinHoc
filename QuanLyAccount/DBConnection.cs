@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien
 {
-    internal class DatabaseConnection
+    internal class DBConnection
     {
         private string connectionString =
-            @"Server=.\SQLEXPRESS;
+             @"Server=localhost\SQLEXPRESS;
               Database=QuanLyThuVien;
               Trusted_Connection=True;
-              TrustServerCertificate=True;";
+              TrustServerCertificate=True";
 
         public SqlConnection GetConnection()
         {

@@ -155,12 +155,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPhieuMuon.cs" />
-    <Compile Include="CPhieuTra.cs" />
-    <Compile Include="CQLAccount.cs" />
-    <Compile Include="CQLUser.cs" />
-    <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="DuLieuDungChung.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="FrmChiTietDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChiTietDocGia.Designer.cs">
+      <DependentUpon>FrmChiTietDocGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmChiTietPhieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,11 +192,6 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhSachMau.cs" />
-    <Compile Include="CNhaXuatBan.cs" />
-    <Compile Include="CSach.cs" />
-    <Compile Include="CTacGia.cs" />
-    <Compile Include="CTheLoai.cs" />
     <Compile Include="FrmQLSach_Chung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +265,9 @@
     <Compile Include="ucQLUser.Designer.cs">
       <DependentUpon>ucQLUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmChiTietDocGia.resx">
+      <DependentUpon>FrmChiTietDocGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmChiTietPhieu.resx">
       <DependentUpon>FrmChiTietPhieu.cs</DependentUpon>
     </EmbeddedResource>

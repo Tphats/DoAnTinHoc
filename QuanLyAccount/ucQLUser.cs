@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,95 +13,129 @@ namespace QuanLyThuVien
 {
     public partial class ucQLUser : UserControl
     {
+        DBConnection Connect = new DBConnection();
         public ucQLUser()
         {
             InitializeComponent();
-            hienthidanhsach();
+
         }
-        private List<CQLUser> dsuser_info = DuLieuDungChung.dsuser_info;
         private void hienthidanhsach()
         {
-            dgvDsUser.DataSource = null;
-            dgvDsUser.DataSource = DuLieuDungChung.dsuser_info;
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = @"select * from DocGia";
+                    SqlDataAdapter Adapter = new SqlDataAdapter(sql, conn);
+                    DataTable dt = new DataTable();
+                    Adapter.Fill(dt);
+                    dgvDsUser.DataSource = dt;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi" + ex.Message);
+                }
+            }
         }
-        
 
         private void ucQLUser_Load(object sender, EventArgs e)
         {
-            dsuser_info = DuLieuDungChung.dsuser_info;
+            hienthidanhsach();   
         }
-        private CQLUser timUser(string maUs)
-        {
-            foreach (CQLUser us in dsuser_info)
-            {
-                if (us.MaUser == maUs)
-                {
-                    return us;
-                }
-            }
-            return null;
-        }
-
         private void dgvDsUser_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.RowIndex >= dgvDsUser.Rows.Count)
-            {
                 return;
-            }
+
             DataGridViewRow row = dgvDsUser.Rows[e.RowIndex];
+
             if (row.IsNewRow)
                 return;
-            string maUser = dgvDsUser.Rows[e.RowIndex].Cells[0].Value.ToString();
-            CQLUser user = timUser(maUser);
-            if (user != null)
-            {
-                txtMaUser.Text = user.MaUser;
-                txtTenUser.Text = user.TenUser;
-                txtSDT.Text = user.SDT_User;
-                txtEmail.Text = user.Email_User;
-                txtDiachi.Text = user.DiaChi_User;
-                dtNS.Value = user.NgaySinh_User;
-                if(user.GioiTinh_User == CQLUser.GioiTinh.Nam)
-                {
-                    rNam.Checked = true;
-                }
-                else
-                {
-                    rNu.Checked = true;
-                }
-            }
+
+            txtMaUser.Text = row.Cells["MaDocGia"].Value?.ToString() ?? "";
+            txtTenUser.Text = row.Cells["HoTen"].Value?.ToString() ?? "";
+
+            if (row.Cells["NgaySinh"].Value != DBNull.Value)
+                dtNS.Value = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
+
+            string gioiTinh = row.Cells["GioiTinh"].Value?.ToString();
+
+            rNam.Checked = gioiTinh == "Nam";
+            rNu.Checked = gioiTinh == "Nu";
+
+            txtDiachi.Text = row.Cells["DiaChi"].Value?.ToString() ?? "";
+            txtSDT.Text = row.Cells["SDT"].Value?.ToString() ?? "";
+            txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string maUser = txtMaUser.Text;
-            CQLUser userToRemove = dsuser_info.FirstOrDefault(u => u.MaUser == maUser);//tìm User theo mã
-            if (userToRemove != null)
+            using (SqlConnection conn = Connect.GetConnection())
             {
-                dsuser_info.Remove(userToRemove);
-                hienthidanhsach();
+                try
+                {
+                    conn.Open();
+                    string sql = @"DELETE FROM TaiKhoan WHERE MaTK = @MaAccount
+                                   DELETE FROM DocGia WHERE MaDocGia = @MaUser";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.Add("@MaAccount", SqlDbType.Int).Value = txtMaUser.Text.Trim();
+                        cmd.Parameters.Add("@MaUser", SqlDbType.Int).Value = txtMaUser.Text.Trim();
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            hienthidanhsach();
+                            MessageBox.Show("Xóa thành công");
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: ", ex.Message);
+                }
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string maUser = txtMaUser.Text;
-            CQLUser userToUpdate = dsuser_info.FirstOrDefault(u => u.MaUser == maUser);//tìm User theo mã
-            if (userToUpdate != null)
+            using (SqlConnection conn = Connect.GetConnection())
             {
-                userToUpdate.TenUser = txtTenUser.Text;
-                userToUpdate.SDT_User = txtSDT.Text;
-                userToUpdate.Email_User = txtEmail.Text;
-                userToUpdate.DiaChi_User = txtDiachi.Text;
-                userToUpdate.NgaySinh_User = dtNS.Value;
-                if (rNam.Checked)
+                try
                 {
-                    userToUpdate.GioiTinh_User = CQLUser.GioiTinh.Nam;
+                    conn.Open();
+                    string sql = @"UPDATE DocGia
+                                    SET HoTen = @HoTen,
+                                        NgaySinh = @NgaySinh,
+                                        GioiTinh = @GioiTinh,
+                                        DiaChi = @DiaChi,
+                                        SDT = @SDT,
+                                        Email = @Email
+                                        WHERE MaDocGia = @MaUser";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.Add("@MaUser", SqlDbType.Int).Value = txtMaUser.Text.Trim();
+                        cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar, 100).Value = txtTenUser.Text.Trim();
+                        cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtNS.Value;
+                        if (rNam.Checked)
+                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = "Nam";
+                        else
+                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = "Nu";
+                        cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar, 200).Value = txtDiachi.Text.Trim();
+                        cmd.Parameters.Add("@SDT", SqlDbType.VarChar, 15).Value = txtSDT.Text.Trim();
+                        cmd.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = txtEmail.Text.Trim();
+                        //Kiểm tra số dòng thực hiện thành công
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            hienthidanhsach();
+                            MessageBox.Show("Sửa thành công");
+                        }
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    userToUpdate.GioiTinh_User = CQLUser.GioiTinh.Nu;
+                    MessageBox.Show("Lỗi: " + ex.Message);
                 }
-                hienthidanhsach();
             }
         }
     }

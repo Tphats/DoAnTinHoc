@@ -14,19 +14,10 @@ namespace QuanLyThuVien
 {
     public partial class ucDangkyTK : UserControl
     {
-        DatabaseConnection connect = new DatabaseConnection();
+        DBConnection connect = new DBConnection();
         public ucDangkyTK()
         {
             InitializeComponent();
-        }
-        private bool KiemTraSDT(string sdt)
-        {
-            foreach (CQLUser us in DuLieuDungChung.dsuser_info)
-            {
-                if (us.SDT_User == sdt)
-                    return true;
-            }
-            return false;
         }
         private void btnDangKy_Click(object sender, EventArgs e)
         {
@@ -57,14 +48,14 @@ namespace QuanLyThuVien
                         {
                             MessageBox.Show("Mật khẩu chưa trùng khớp!!!");
                         }
-                        cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = CQLAccount.VaiTro.User;
+                        cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = "User";
                         //Info
                         cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar, 100).Value = txtTen.Text.Trim();
                         cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtNgaySinh.Value;
                         if (rbtnNam.Checked)
-                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = CQLUser.GioiTinh.Nam;
+                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = "Nam";
                         else
-                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = CQLUser.GioiTinh.Nam;
+                            cmd.Parameters.Add("@GioiTinh", SqlDbType.NVarChar, 10).Value = "Nu";
                         cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar, 200).Value = txtDC.Text;
                         cmd.Parameters.Add("@SDT", SqlDbType.VarChar, 15).Value = txtSDT.Text;
                         cmd.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = txtEmail.Text;

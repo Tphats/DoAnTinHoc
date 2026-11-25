@@ -13,24 +13,35 @@ namespace QuanLyThuVien
 {
     public partial class ucQLAccount : UserControl
     {
-        private List<CQLAccount> dsuser = DuLieuDungChung.dsuser_account;
-        DatabaseConnection Connect = new DatabaseConnection();
+        DBConnection Connect = new DBConnection();
         public ucQLAccount()
         {
             InitializeComponent();
         }
+
         private void hienthidanhsach()
         {
             using (SqlConnection conn = Connect.GetConnection())
             {
-                conn.Open();
-                string sql = @"SELECT * FROM TaiKhoan tk
+                try
+                {
+                    conn.Open();
+                    string sql = @"SELECT * FROM TaiKhoan tk
                                   JOIN DocGia dg ON tk.MaTK = dg.MaDocGia";
-                SqlDataAdapter Adapter = new SqlDataAdapter(sql,conn);
-                DataTable dt = new DataTable();
-                Adapter.Fill(dt);
-                dgvDsUser.DataSource = dt;
+                    SqlDataAdapter Adapter = new SqlDataAdapter(sql, conn);
+                    DataTable dt = new DataTable();
+                    Adapter.Fill(dt);
+                    dgvDsUser.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
+        }
+        private void ucQLAccount_Load(object sender, EventArgs e)
+        {
+            hienthidanhsach();
         }
         private void ClearData()
         {
@@ -39,32 +50,6 @@ namespace QuanLyThuVien
             txtMatKhau.Text = "";
             rBtnThuThu.Checked = false;
             rBtnUser.Checked = false;
-        }
-        private CQLAccount timUser(string maUs)
-        {
-            foreach (CQLAccount us in dsuser)
-            {
-                if (us.MaUser == maUs)
-                    return us;
-            }
-            return null;
-        }
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            CQLAccount us = new CQLAccount();
-            if (timUser(txtMaUser.Text) == null)
-            {
-                us.MaUser = DuLieuDungChung.TaoMaUser();
-                us.TenDangNhap = txtTenDangNhap.Text;
-                us.MatKhau = txtMatKhau.Text;
-                if (rBtnThuThu.Checked)
-                    us.LoaiUser = CQLAccount.VaiTro.Librarian;
-                else
-                    us.LoaiUser = CQLAccount.VaiTro.User;
-                dsuser.Add(us);
-                hienthidanhsach();
-                ClearData();
-            }
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -81,6 +66,7 @@ namespace QuanLyThuVien
                         cmd.Parameters.Add("@MaUser", SqlDbType.Int).Value = txtMaUser.Text.Trim();
                         if (cmd.ExecuteNonQuery() > 0)
                         {
+                            ClearData();
                             hienthidanhsach();
                             MessageBox.Show("Xóa thành công");
                         }    
@@ -130,9 +116,9 @@ namespace QuanLyThuVien
                         cmd.Parameters.Add("@TenDN", SqlDbType.VarChar, 50).Value = txtTenDangNhap.Text.Trim();
                         cmd.Parameters.Add("@MK", SqlDbType.VarChar, 100).Value = txtMatKhau.Text.Trim();
                         if (rBtnUser.Checked)
-                            cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = CQLAccount.VaiTro.User;
+                            cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = "User";
                         else
-                            cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = CQLAccount.VaiTro.Librarian;
+                            cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = "Librarian";
                         //Kiểm tra số dòng thực hiện thành công
                         if (cmd.ExecuteNonQuery() > 0)
                         {
@@ -164,7 +150,7 @@ namespace QuanLyThuVien
                             txtMaUser.Text = reader["MaTK"].ToString();
                             txtTenDangNhap.Text = reader["TenDangNhap"].ToString();
                             txtMatKhau.Text = reader["MatKhau"].ToString();
-                            if (reader["VaiTro"].ToString() == CQLAccount.VaiTro.Librarian.ToString())
+                            if (reader["VaiTro"].ToString() == "VaiTro.Librarian")
                                 rBtnThuThu.Checked = true;
                             else
                                 rBtnUser.Checked = true;
@@ -179,27 +165,5 @@ namespace QuanLyThuVien
             }
         }
 
-        private void ucQLAccount_Load(object sender, EventArgs e)
-        {
-
-
-            using (SqlConnection conn = Connect.GetConnection())
-            {
-                try
-                {
-                    conn.Open();
-                    string sql = @"SELECT * FROM TaiKhoan tk
-                                  JOIN DocGia dg ON tk.MaTK = dg.MaDocGia";
-                    SqlDataAdapter Adapter = new SqlDataAdapter(sql, conn);
-                    DataTable dt = new DataTable();
-                    Adapter.Fill(dt);
-                    dgvDsUser.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message);
-                }
-            }
-        }
     }
 }

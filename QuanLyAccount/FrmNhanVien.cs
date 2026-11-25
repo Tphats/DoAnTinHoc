@@ -68,7 +68,7 @@ namespace QuanLyThuVien
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            DatabaseConnection db = new DatabaseConnection();
+            DBConnection db = new DBConnection();
 
             using (SqlConnection conn = db.GetConnection())
             {
