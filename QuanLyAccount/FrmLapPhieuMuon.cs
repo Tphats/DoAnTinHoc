@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,31 +20,99 @@ namespace QuanLyThuVien
         public FrmLapPhieuMuon()
         {
             InitializeComponent();
-            
-        }
 
+        }
+        private void hienthids()
+        {
+            LoadDgv();
+        }
         private void btnThemSach_Click(object sender, EventArgs e)
         {
             if (cboMaDG.Text == "")
                 return;
             using (SqlConnection conn = Connect.GetConnection())
             {
+                SqlTransaction tran = null;
                 try
                 {
                     conn.Open();
-                    string sql = @"INSERT INTO ChiTietPhieuMuon(MaPM, MaSach, SoLuong)
-                                   VALUES (@MaPM, @MaSach, @SoLuong)";
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    tran = conn.BeginTransaction(); //Kiểm tra giao dịch thành công hết hoặc hủy tất cả
+                    int maSach = Convert.ToInt32(txtMaSach.Text);
+                    int slMuon = Convert.ToInt32(txtSoCuon.Text);
+                    //Kiểm tra SL sách còn lại
+                    string sql_SLCon = @"select SoLuongCon from Sach where MaSach = @MaSach";
+                    int slCon;
+                    using(SqlCommand cmd = new SqlCommand(sql_SLCon, conn, tran))
+                    {
+                        cmd.Parameters.Add("@MaSach", SqlDbType.Int).Value = maSach;
+                        object kq = cmd.ExecuteScalar();
+                        if (kq == null || kq == DBNull.Value)
+                            throw new Exception("Không tìm thấy sách!");
+                        slCon = Convert.ToInt32(kq);
+                    }
+                    //Kiểm tra SL mượn
+                    if (slMuon <= 0)
+                        throw new Exception("Số lượng mượn phải lớn hơn 0!");
+                    if(slCon < slMuon)
+                        throw new Exception("Số lượng sách không đủ");
+                    // Kiểm tra sách đã tồn tại trong phiếu chưa
+                    string sql_KiemTra = @"SELECT COUNT(*)
+                                   FROM ChiTietPhieuMuon
+                                   WHERE MaPM = @MaPM
+                                   AND MaSach = @MaSach";
+
+                    int tonTai;
+
+                    using (SqlCommand cmd = new SqlCommand(sql_KiemTra, conn, tran))
                     {
                         cmd.Parameters.Add("@MaPM", SqlDbType.Int).Value = maPM;
-                        cmd.Parameters.Add("@MaSach", SqlDbType.Int).Value = Convert.ToInt32(txtMaSach.Text);
-                        cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = Convert.ToInt32(txtSoCuon.Text);
-                        if (cmd.ExecuteNonQuery() > 0)
-                            MessageBox.Show("Lập Phiếu thành công");
+                        cmd.Parameters.Add("@MaSach", SqlDbType.Int).Value = maSach;
+
+                        tonTai = Convert.ToInt32(cmd.ExecuteScalar());
                     }
+
+                    // Nếu tồn tại thì UPDATE, chưa tồn tại thì INSERT
+                    string sql;
+
+                    if (tonTai > 0)
+                    {
+                        sql = @"UPDATE ChiTietPhieuMuon
+                        SET SoLuong = SoLuong + @SoLuong
+                        WHERE MaPM = @MaPM AND MaSach = @MaSach";
+                    }
+                    else
+                    {
+                        sql = @"INSERT INTO ChiTietPhieuMuon
+                        (MaPM, MaSach, SoLuong)
+                        VALUES (@MaPM, @MaSach, @SoLuong)";
+                    }
+                    using (SqlCommand cmd = new SqlCommand(sql, conn, tran))
+                    {
+                        cmd.Parameters.Add("@MaPM", SqlDbType.Int).Value = maPM;
+                        cmd.Parameters.Add("@MaSach", SqlDbType.Int).Value = maSach;
+                        cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = slMuon;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    //Cập nhật số lượng sách còn  
+                    string sql_UpdateSLCon = @"UPDATE Sach
+                                       SET SoLuongCon = SoLuongCon - @SLMuon
+                                       WHERE MaSach = @MaSach";
+                    using (SqlCommand cmd = new SqlCommand(sql_UpdateSLCon, conn, tran))
+                    {
+                        cmd.Parameters.Add("@SLMuon", SqlDbType.Int).Value = slMuon;
+                        cmd.Parameters.Add("@MaSach", SqlDbType.Int).Value = maSach;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    tran.Commit();
+                    hienthids();
+                    MessageBox.Show("Thêm sách vào phiếu mượn thành công!");
                 }
                 catch (Exception ex)
                 {
+                    if (tran != null)
+                        tran.Rollback();
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
             }
@@ -80,6 +149,9 @@ namespace QuanLyThuVien
                 txtMaSach.Visible = true;
                 txtSoCuon.Visible = true;
                 btnThemSach.Visible = true;
+                label_SL.Visible = true;
+                txtSLSachCon.Visible = true;
+                btnLapPM.Enabled = false;
             }
         }
 
@@ -95,7 +167,7 @@ namespace QuanLyThuVien
                 {
                     conn.Open();
 
-                    string sql = "SELECT MaDocGia FROM DocGia";
+                    string sql = @"SELECT MaDocGia FROM DocGia";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
                     {
@@ -118,12 +190,82 @@ namespace QuanLyThuVien
         private void FrmLapPhieuMuon_Load(object sender, EventArgs e)
         {
             dtHanTra.Value = dtNgayMuon.Value.AddDays(120);
+            //Ẩn mục chọn sách trước khi tạo Phiếu
             labelMaSach.Visible = false;
             labelSoCuon.Visible = false;
             txtMaSach.Visible = false;
             txtSoCuon.Visible = false;
             btnThemSach.Visible = false;
+            label_SL.Visible = false;
+            txtSLSachCon.Visible = false;
             LoadMaDG();
+            LoadDgv();
+        }
+
+        private void cboMaDG_SelectionChangeCommitted(object sender, EventArgs e) //Sau khi chọn mãDG thì sẽ hiện tênDG
+        {
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string sql_TenDG = @"select HoTen from DocGia
+                                          where MaDocGia = @maDG";
+                    using (SqlCommand cmd = new SqlCommand(sql_TenDG, conn))
+                    {
+                        cmd.Parameters.Add("@maDG", SqlDbType.Int).Value = Convert.ToInt32(cboMaDG.SelectedValue);
+                        object tenDG = cmd.ExecuteScalar();
+                        if (tenDG != null && tenDG != DBNull.Value)
+                        {
+                            txtTenDG.Text = tenDG.ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+
+            }
+        }
+
+        private void dgvDSSach_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            DataGridViewRow row = dgvDSSach.Rows[e.RowIndex];
+            txtMaSach.Text = row.Cells["MaSach"].Value.ToString();
+            txtSLSachCon.Text = row.Cells["SoLuongCon"].Value.ToString();
+        }
+        private void LoadDgv()
+        {
+            using(SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = @"
+                                    SELECT
+                                        S.MaSach,
+                                        S.TenSach,
+                                        S.SoLuongCon,
+                                        TG.TenTacGia,
+                                        NXB.TenNXB,
+                                        TL.TenTheLoai
+                                    FROM Sach S
+                                    LEFT JOIN TacGia TG ON S.MaTacGia = TG.MaTacGia
+                                    LEFT JOIN NhaXuatBan NXB ON S.MaNXB = NXB.MaNXB
+                                    LEFT JOIN TheLoai TL ON S.MaTheLoai = TL.MaTheLoai";
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dgvDSSach.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

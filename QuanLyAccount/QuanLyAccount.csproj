@@ -241,6 +241,7 @@
     <Compile Include="ucQLUser.Designer.cs">
       <DependentUpon>ucQLUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="XuLyDuLieu.cs" />
     <EmbeddedResource Include="FrmChiTietDocGia.resx">
       <DependentUpon>FrmChiTietDocGia.cs</DependentUpon>
     </EmbeddedResource>

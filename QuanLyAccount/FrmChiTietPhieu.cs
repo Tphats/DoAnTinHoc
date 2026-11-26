@@ -13,7 +13,7 @@ namespace QuanLyThuVien
 {
     public partial class FrmChiTietPhieu : Form
     {
-        private string maPh, maDG;
+        private string maPh, maDG, TenDG ;
         private string loaiPh;
         DBConnection Connect = new DBConnection();
         private void FrmChiTietPhieu_Load(object sender, EventArgs e)
@@ -38,6 +38,7 @@ namespace QuanLyThuVien
                             dgvChiTietP.DataSource = dt;
                         }
 
+
                     }
                     catch (Exception ex)
                     {
@@ -57,6 +58,10 @@ namespace QuanLyThuVien
             maPh = MaPhieu;
             loaiPh = LoaiPhieu;
             maDG = MaDocGia;
+            TenDG = XuLyDuLieu.LayTenTheoMa("DocGia", "MaDocGia", "HoTen",Convert.ToInt32(maDG));
+            txtMaPM.Text = maPh;
+            txtMaDG.Text = maDG;
+            txtTenDG.Text = TenDG;
         }
     }
 }
