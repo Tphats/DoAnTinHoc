@@ -20,7 +20,6 @@ namespace QuanLyAccount
 
         private void ucDSPhieuMuon_Load(object sender, EventArgs e)
         {
-            dgv_dsphieumuon.DataSource = DuLieuDungChung.dsphieumuon_info.ToList();
         }
     }
 }

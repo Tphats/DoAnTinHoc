@@ -20,7 +20,6 @@ namespace QuanLyAccount
 
         private void ucDSSach_Load(object sender, EventArgs e)
         {
-            dgv_DSSach.DataSource = DuLieuDungChung.dssach_info.ToList();
         }
     }
 }

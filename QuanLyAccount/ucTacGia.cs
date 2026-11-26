@@ -12,14 +12,12 @@ namespace QuanLyThuVien
 {
     public partial class ucTacGia : UserControl
     {
-		List<CTacGia> danhsachtacgia = new List<CTacGia>();
 		public ucTacGia() {
 			InitializeComponent();
-			hienthidanhsach(danhsachtacgia);
 		}
 
-		private void hienthidanhsach(List<CTacGia> danhsachtacgia) {
-			dgv_dstacgia.DataSource = danhsachtacgia.ToList();
+		private void hienthidanhsach() {
+
 		}
 		
 

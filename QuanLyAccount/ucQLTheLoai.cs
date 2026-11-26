@@ -12,17 +12,15 @@ namespace QuanLyThuVien
 {
     public partial class ucQLTheLoai : UserControl
     {
-        List<CTheLoai> danhsachtheloai = new List<CTheLoai>();
 
         public ucQLTheLoai()
         {
             InitializeComponent();
-            hienthidanhsach(danhsachtheloai);
         }
 
-        private void hienthidanhsach(List<CTheLoai> danhsachtheloai)
+        private void hienthidanhsach()
         {
-            dgv_dstheloai.DataSource = danhsachtheloai.ToList();
+
         }
 
         private void btn_them_Click(object sender, EventArgs e)

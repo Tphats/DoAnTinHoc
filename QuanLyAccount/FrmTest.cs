@@ -17,7 +17,7 @@ namespace QuanLyThuVien
             InitializeComponent();
             //ucDangkyTK uc = new ucDangkyTK();
             //ucQLAccount uc = new ucQLAccount();
-            ucQLUser uc = new ucQLUser();
+            ucDSDocGia uc = new ucDSDocGia();
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
         }

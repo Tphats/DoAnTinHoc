@@ -39,7 +39,7 @@ namespace QuanLyThuVien
         private void btnQLAccount_Click(object sender, EventArgs e)
         {
             DoiTrangThaiButton(btnQLAccount);
-            HienthiUserControl(new ucQLAccount());
+            
         }
 
         private void btnDSDocGia_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace QuanLyThuVien
         private void btnDSSach_Click(object sender, EventArgs e)
         {
             DoiTrangThaiButton(btnDSSach);
-            HienthiUserControl(new ucDSSach());
+            HienthiUserControl(new ucQLSach_Chung());
         }
 
         private void btnQLThuThu_Click(object sender, EventArgs e)

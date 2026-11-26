@@ -19,10 +19,11 @@ namespace QuanLyThuVien
 
         private void ucDSDocGia_Load(object sender, EventArgs e)
         {
-            dgv_dsdocgia.DataSource = DuLieuDungChung.dsuser_info.ToList();
+
         }
 
-		private void dgv_dsdocgia_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+		private void dgv_dsdocgia_CellContentClick(object sender, DataGridViewCellEventArgs e) 
+        {
 
 		}
 	}

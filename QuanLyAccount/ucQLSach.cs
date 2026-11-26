@@ -13,16 +13,15 @@ namespace QuanLyThuVien
 {
 	public partial class ucQLSach : UserControl
 	{
-        List<CSach> danhsachsach = DuLieuDungChung.dssach_info;
         public ucQLSach()
         {
             InitializeComponent();
-            hienthidanhsach(danhsachsach);
+
         }
 
-        private void hienthidanhsach(List<CSach> danhsachsach)
+        private void hienthidanhsach()
         {
-            dgv_dssach.DataSource = danhsachsach.ToList();
+
         }
 
 
