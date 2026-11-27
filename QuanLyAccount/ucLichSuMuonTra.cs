@@ -23,5 +23,15 @@ namespace QuanLyAccount
         {
 
         }
+
+        private void panelBoLocNgay_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblThongKe_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

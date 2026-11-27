@@ -23,5 +23,10 @@ namespace QuanLyAccount
         {
 
         }
+
+        private void lblTieuDe_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
