@@ -132,7 +132,7 @@ namespace QuanLyThuVien
                                     SELECT CAST(SCOPE_IDENTITY() AS INT);";//ép kiểu MãPM thành int
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.Add("@MaDocGia", SqlDbType.Int).Value = cboMaDG.Text.Trim();
+                        cmd.Parameters.Add("@MaDocGia", SqlDbType.Int).Value = Convert.ToInt32(cboMaDG.SelectedValue);
                         cmd.Parameters.Add("@NgayMuon", SqlDbType.Date).Value = dtNgayMuon.Value;
                         cmd.Parameters.Add("@HanTra", SqlDbType.Date).Value = dtHanTra.Value;
                         cmd.Parameters.Add("@TrangThai", SqlDbType.NVarChar, 30).Value = "Đang Mượn";
@@ -204,29 +204,7 @@ namespace QuanLyThuVien
 
         private void cboMaDG_SelectionChangeCommitted(object sender, EventArgs e) //Sau khi chọn mãDG thì sẽ hiện tênDG
         {
-            using (SqlConnection conn = Connect.GetConnection())
-            {
-                try
-                {
-                    conn.Open();
-                    string sql_TenDG = @"select HoTen from DocGia
-                                          where MaDocGia = @maDG";
-                    using (SqlCommand cmd = new SqlCommand(sql_TenDG, conn))
-                    {
-                        cmd.Parameters.Add("@maDG", SqlDbType.Int).Value = Convert.ToInt32(cboMaDG.SelectedValue);
-                        object tenDG = cmd.ExecuteScalar();
-                        if (tenDG != null && tenDG != DBNull.Value)
-                        {
-                            txtTenDG.Text = tenDG.ToString();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message);
-                }
-
-            }
+            
         }
 
         private void dgvDSSach_RowEnter(object sender, DataGridViewCellEventArgs e)

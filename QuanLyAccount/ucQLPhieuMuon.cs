@@ -88,7 +88,7 @@ namespace QuanLyThuVien
             cboMaPM.Text = row.Cells["Mã Phiếu mượn"].Value?.ToString();
             txtMaDG.Text = row.Cells["Mã Độc giả"].Value?.ToString();
             cboTrangThai.Text = row.Cells["Trạng Thái"].Value?.ToString();
-            txtMaSach.Text = row.Cells["Mã Sách"].Value.ToString();
+            txtMaSach.Text = row.Cells["Mã Sách"].Value?.ToString();
         }
         private void LoadMaPM()
         {
