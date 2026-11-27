@@ -44,11 +44,13 @@ namespace QuanLyThuVien
                         //Account
                         cmd.Parameters.Add("@TenDangNhap", SqlDbType.VarChar, 50).Value = txtTenDN.Text.Trim();
                         cmd.Parameters.Add("@MatKhau", SqlDbType.VarChar, 100).Value = txtMK.Text.Trim();
-                        while (txtNhaplaiMK.Text.Trim() != txtMK.Text.Trim())
+                        do
                         {
-                            MessageBox.Show("Mật khẩu chưa trùng khớp!!!");
-                        }
-                        cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = "User";
+                            if (txtNhaplaiMK.Text.Trim() == txtMK.Text.Trim())
+                                break;
+                            throw new Exception("Nhập lại mật khẩu chưa khớp!");
+                        } while (txtNhaplaiMK.Text.Trim() != txtMK.Text.Trim());
+                            cmd.Parameters.Add("@VaiTro", SqlDbType.NVarChar, 20).Value = "User";
                         //Info
                         cmd.Parameters.Add("@HoTen", SqlDbType.NVarChar, 100).Value = txtTen.Text.Trim();
                         cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = dtNgaySinh.Value;

@@ -32,7 +32,6 @@
             this.btnLapPT = new System.Windows.Forms.Button();
             this.dtHanTra = new System.Windows.Forms.DateTimePicker();
             this.dtNgayTra = new System.Windows.Forms.DateTimePicker();
-            this.txtTenDG = new System.Windows.Forms.TextBox();
             this.txtMaPM = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTienDaDong = new System.Windows.Forms.TextBox();
             this.btnXemTP = new System.Windows.Forms.Button();
+            this.cboDG = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             // 
             this.btnLapPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnLapPT.Location = new System.Drawing.Point(126, 479);
-            this.btnLapPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLapPT.Margin = new System.Windows.Forms.Padding(4);
             this.btnLapPT.Name = "btnLapPT";
             this.btnLapPT.Size = new System.Drawing.Size(366, 43);
             this.btnLapPT.TabIndex = 21;
@@ -65,7 +65,7 @@
             // dtHanTra
             // 
             this.dtHanTra.Location = new System.Drawing.Point(232, 418);
-            this.dtHanTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtHanTra.Margin = new System.Windows.Forms.Padding(4);
             this.dtHanTra.Name = "dtHanTra";
             this.dtHanTra.Size = new System.Drawing.Size(296, 22);
             this.dtHanTra.TabIndex = 20;
@@ -73,24 +73,15 @@
             // dtNgayTra
             // 
             this.dtNgayTra.Location = new System.Drawing.Point(232, 371);
-            this.dtNgayTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtNgayTra.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayTra.Name = "dtNgayTra";
             this.dtNgayTra.Size = new System.Drawing.Size(296, 22);
             this.dtNgayTra.TabIndex = 19;
             // 
-            // txtTenDG
-            // 
-            this.txtTenDG.Location = new System.Drawing.Point(239, 245);
-            this.txtTenDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTenDG.Multiline = true;
-            this.txtTenDG.Name = "txtTenDG";
-            this.txtTenDG.Size = new System.Drawing.Size(289, 35);
-            this.txtTenDG.TabIndex = 18;
-            // 
             // txtMaPM
             // 
             this.txtMaPM.Location = new System.Drawing.Point(239, 304);
-            this.txtMaPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaPM.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaPM.Multiline = true;
             this.txtMaPM.Name = "txtMaPM";
             this.txtMaPM.Size = new System.Drawing.Size(121, 34);
@@ -147,7 +138,7 @@
             this.panel1.Controls.Add(this.picLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 96);
             this.panel1.TabIndex = 11;
@@ -156,12 +147,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Font = new System.Drawing.Font("Calibri", 35F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Calibri", 25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(227, 9);
+            this.label3.Location = new System.Drawing.Point(308, 20);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(398, 72);
+            this.label3.Size = new System.Drawing.Size(284, 51);
             this.label3.TabIndex = 13;
             this.label3.Text = "LẬP PHIẾU TRẢ";
             // 
@@ -170,7 +161,7 @@
             this.picLogo.BackColor = System.Drawing.SystemColors.HighlightText;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(207, 96);
             this.picLogo.TabIndex = 10;
@@ -229,11 +220,20 @@
             this.btnXemTP.UseVisualStyleBackColor = true;
             this.btnXemTP.Click += new System.EventHandler(this.btnXemTP_Click);
             // 
+            // cboDG
+            // 
+            this.cboDG.FormattingEnabled = true;
+            this.cboDG.Location = new System.Drawing.Point(239, 245);
+            this.cboDG.Name = "cboDG";
+            this.cboDG.Size = new System.Drawing.Size(289, 24);
+            this.cboDG.TabIndex = 27;
+            // 
             // FrmLapPhieuTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 578);
+            this.Controls.Add(this.cboDG);
             this.Controls.Add(this.btnXemTP);
             this.Controls.Add(this.txtTienDaDong);
             this.Controls.Add(this.label7);
@@ -242,14 +242,13 @@
             this.Controls.Add(this.btnLapPT);
             this.Controls.Add(this.dtHanTra);
             this.Controls.Add(this.dtNgayTra);
-            this.Controls.Add(this.txtTenDG);
             this.Controls.Add(this.txtMaPM);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(688, 572);
             this.Name = "FrmLapPhieuTra";
@@ -267,7 +266,6 @@
         private System.Windows.Forms.Button btnLapPT;
         private System.Windows.Forms.DateTimePicker dtHanTra;
         private System.Windows.Forms.DateTimePicker dtNgayTra;
-        private System.Windows.Forms.TextBox txtTenDG;
         private System.Windows.Forms.TextBox txtMaPM;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -281,5 +279,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTienDaDong;
         private System.Windows.Forms.Button btnXemTP;
+        private System.Windows.Forms.ComboBox cboDG;
     }
 }

@@ -20,12 +20,14 @@ namespace QuanLyThuVien
         public FrmLapPhieuMuon()
         {
             InitializeComponent();
+            LoadTenSach();
 
         }
         private void hienthids()
         {
             LoadDgv();
         }
+
         private void btnThemSach_Click(object sender, EventArgs e)
         {
             if (cboMaDG.Text == "")
@@ -37,7 +39,9 @@ namespace QuanLyThuVien
                 {
                     conn.Open();
                     tran = conn.BeginTransaction(); //Kiểm tra giao dịch thành công hết hoặc hủy tất cả
-                    int maSach = Convert.ToInt32(txtMaSach.Text);
+                    if (txtSoCuon.Text == "")
+                        throw new Exception("Hãy nhập số sách cần mượn");
+                    int maSach = Convert.ToInt32(cboMaSach.Text);
                     int slMuon = Convert.ToInt32(txtSoCuon.Text);
                     //Kiểm tra SL sách còn lại
                     string sql_SLCon = @"select SoLuongCon from Sach where MaSach = @MaSach";
@@ -94,6 +98,11 @@ namespace QuanLyThuVien
 
                         cmd.ExecuteNonQuery();
                     }
+                    MessageBox.Show(
+    "Mã sách: " + maSach +
+    "\nSố lượng mượn: " + slMuon +
+    "\nSố lượng còn trước khi mượn: " + slCon
+);
                     //Cập nhật số lượng sách còn  
                     string sql_UpdateSLCon = @"UPDATE Sach
                                        SET SoLuongCon = SoLuongCon - @SLMuon
@@ -146,7 +155,7 @@ namespace QuanLyThuVien
                 //Hiện chức năng thêm sách
                 labelMaSach.Visible = true;
                 labelSoCuon.Visible = true;
-                txtMaSach.Visible = true;
+                cboMaSach.Visible = true;
                 txtSoCuon.Visible = true;
                 btnThemSach.Visible = true;
                 label_SL.Visible = true;
@@ -193,7 +202,7 @@ namespace QuanLyThuVien
             //Ẩn mục chọn sách trước khi tạo Phiếu
             labelMaSach.Visible = false;
             labelSoCuon.Visible = false;
-            txtMaSach.Visible = false;
+            cboMaSach.Visible = false;
             txtSoCuon.Visible = false;
             btnThemSach.Visible = false;
             label_SL.Visible = false;
@@ -212,8 +221,35 @@ namespace QuanLyThuVien
             if (e.RowIndex < 0)
                 return;
             DataGridViewRow row = dgvDSSach.Rows[e.RowIndex];
-            txtMaSach.Text = row.Cells["MaSach"].Value.ToString();
-            txtSLSachCon.Text = row.Cells["SoLuongCon"].Value.ToString();
+            cboMaSach.Text = row.Cells["MaSach"].Value?.ToString();
+            txtSLSachCon.Text = row.Cells["SoLuongCon"].Value?.ToString();
+        }
+        private void LoadTenSach()
+        {
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    string sql = "SELECT MaSach, TenSach FROM Sach";
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        cboMaSach.DataSource = dt;
+                        cboMaSach.DisplayMember = "TenSach";
+                        cboMaSach.ValueMember = "MaSach";
+                        cboMaSach.SelectedIndex = -1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
         }
         private void LoadDgv()
         {

@@ -40,13 +40,13 @@
             this.btnThemSach = new System.Windows.Forms.Button();
             this.labelMaSach = new System.Windows.Forms.Label();
             this.labelSoCuon = new System.Windows.Forms.Label();
-            this.txtMaSach = new System.Windows.Forms.TextBox();
             this.txtSoCuon = new System.Windows.Forms.TextBox();
             this.cboMaDG = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSLSachCon = new System.Windows.Forms.TextBox();
             this.label_SL = new System.Windows.Forms.Label();
             this.dgvDSSach = new System.Windows.Forms.DataGridView();
+            this.cboMaSach = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSach)).BeginInit();
@@ -59,7 +59,7 @@
             this.panel1.Controls.Add(this.picLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 103);
             this.panel1.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.picLogo.BackColor = System.Drawing.SystemColors.HighlightText;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(307, 103);
             this.picLogo.TabIndex = 10;
@@ -116,7 +116,7 @@
             // 
             this.dtNgayMuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtNgayMuon.Location = new System.Drawing.Point(135, 204);
-            this.dtNgayMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtNgayMuon.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayMuon.Name = "dtNgayMuon";
             this.dtNgayMuon.Size = new System.Drawing.Size(231, 22);
             this.dtNgayMuon.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             this.dtHanTra.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtHanTra.Location = new System.Drawing.Point(135, 258);
-            this.dtHanTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtHanTra.Margin = new System.Windows.Forms.Padding(4);
             this.dtHanTra.Name = "dtHanTra";
             this.dtHanTra.Size = new System.Drawing.Size(231, 22);
             this.dtHanTra.TabIndex = 9;
@@ -135,7 +135,7 @@
             this.btnLapPM.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLapPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnLapPM.Location = new System.Drawing.Point(25, 325);
-            this.btnLapPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLapPM.Margin = new System.Windows.Forms.Padding(4);
             this.btnLapPM.Name = "btnLapPM";
             this.btnLapPM.Size = new System.Drawing.Size(341, 43);
             this.btnLapPM.TabIndex = 10;
@@ -148,7 +148,7 @@
             this.btnThemSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThemSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnThemSach.Location = new System.Drawing.Point(431, 240);
-            this.btnThemSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemSach.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemSach.Name = "btnThemSach";
             this.btnThemSach.Size = new System.Drawing.Size(287, 38);
             this.btnThemSach.TabIndex = 11;
@@ -180,21 +180,11 @@
             this.labelSoCuon.TabIndex = 13;
             this.labelSoCuon.Text = "Số Cuốn";
             // 
-            // txtMaSach
-            // 
-            this.txtMaSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMaSach.Location = new System.Drawing.Point(519, 122);
-            this.txtMaSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMaSach.Multiline = true;
-            this.txtMaSach.Name = "txtMaSach";
-            this.txtMaSach.Size = new System.Drawing.Size(195, 34);
-            this.txtMaSach.TabIndex = 14;
-            // 
             // txtSoCuon
             // 
             this.txtSoCuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSoCuon.Location = new System.Drawing.Point(519, 181);
-            this.txtSoCuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoCuon.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoCuon.Multiline = true;
             this.txtSoCuon.Name = "txtSoCuon";
             this.txtSoCuon.Size = new System.Drawing.Size(195, 34);
@@ -206,7 +196,7 @@
             this.cboMaDG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaDG.FormattingEnabled = true;
             this.cboMaDG.Location = new System.Drawing.Point(135, 146);
-            this.cboMaDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboMaDG.Margin = new System.Windows.Forms.Padding(4);
             this.cboMaDG.Name = "cboMaDG";
             this.cboMaDG.Size = new System.Drawing.Size(231, 24);
             this.cboMaDG.TabIndex = 18;
@@ -227,7 +217,7 @@
             // 
             this.txtSLSachCon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSLSachCon.Location = new System.Drawing.Point(807, 146);
-            this.txtSLSachCon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSLSachCon.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLSachCon.Multiline = true;
             this.txtSLSachCon.Name = "txtSLSachCon";
             this.txtSLSachCon.ReadOnly = true;
@@ -250,12 +240,20 @@
             // 
             this.dgvDSSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSach.Location = new System.Drawing.Point(431, 297);
-            this.dgvDSSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDSSach.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSSach.Name = "dgvDSSach";
             this.dgvDSSach.RowHeadersWidth = 51;
             this.dgvDSSach.Size = new System.Drawing.Size(575, 210);
             this.dgvDSSach.TabIndex = 23;
             this.dgvDSSach.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSach_RowEnter);
+            // 
+            // cboMaSach
+            // 
+            this.cboMaSach.FormattingEnabled = true;
+            this.cboMaSach.Location = new System.Drawing.Point(519, 124);
+            this.cboMaSach.Name = "cboMaSach";
+            this.cboMaSach.Size = new System.Drawing.Size(195, 24);
+            this.cboMaSach.TabIndex = 24;
             // 
             // FrmLapPhieuMuon
             // 
@@ -263,13 +261,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1021, 522);
+            this.Controls.Add(this.cboMaSach);
             this.Controls.Add(this.dgvDSSach);
             this.Controls.Add(this.txtSLSachCon);
             this.Controls.Add(this.label_SL);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboMaDG);
             this.Controls.Add(this.txtSoCuon);
-            this.Controls.Add(this.txtMaSach);
             this.Controls.Add(this.labelSoCuon);
             this.Controls.Add(this.labelMaSach);
             this.Controls.Add(this.btnThemSach);
@@ -279,7 +277,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(925, 557);
             this.Name = "FrmLapPhieuMuon";
             this.Text = "FrmLapPhieuMuon";
@@ -306,12 +304,12 @@
         private System.Windows.Forms.Button btnThemSach;
         private System.Windows.Forms.Label labelMaSach;
         private System.Windows.Forms.Label labelSoCuon;
-        private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.TextBox txtSoCuon;
         private System.Windows.Forms.ComboBox cboMaDG;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSLSachCon;
         private System.Windows.Forms.Label label_SL;
         private System.Windows.Forms.DataGridView dgvDSSach;
+        private System.Windows.Forms.ComboBox cboMaSach;
     }
 }

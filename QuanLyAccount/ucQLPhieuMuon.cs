@@ -266,6 +266,27 @@ namespace QuanLyThuVien
                 try
                 {
                     conn.Open();
+                    //Lấy số lượng của PM cần xóa
+                    int sL;
+                    string sql_GetSL = @"select MaSach from ChiTietPhieuMuon
+                                         where MaPM = @MaPM AND MaSach = @MaSach";
+                    using(SqlCommand cmd = new SqlCommand(sql_GetSL, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaPM", cboMaPM.Text);
+                        cmd.Parameters.AddWithValue("@MaSach", txtMaSach.Text);
+                        sL =Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                    //Cập nhật số lượng của sách
+                    string sql_UpdateSL = @"update Sach
+                                            set SoLuongCon = SoLuongCon + @SL
+                                            where MaSach = @MaSach";
+                    using (SqlCommand cmd = new SqlCommand(sql_UpdateSL, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaSach", txtMaSach.Text);
+                        cmd.Parameters.AddWithValue("@SL", sL);
+                        cmd.ExecuteNonQuery();
+                    }
+                    //Xóa Phiếu
                     string sql = @"delete from ChiTietPhieuMuon 
                                     where MaPM = @MaPM AND MaSach = @MaSach";
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
