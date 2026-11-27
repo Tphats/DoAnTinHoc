@@ -43,7 +43,7 @@ namespace QuanLyThuVien
         }
         private void btnTim_Click(object sender, EventArgs e)
         {
-            int maDG = XuLyDuLieu.LayMaTheoTen("DocGia","MaDocGia","HoTen",cboMaDG_Search.Text);
+            int maDG = Convert.ToInt32(cboMaDG_Search.SelectedValue.ToString());
             using (SqlConnection conn = Connect.GetConnection())
             {
                 try
@@ -88,6 +88,7 @@ namespace QuanLyThuVien
             cboMaPM.Text = row.Cells["Mã Phiếu mượn"].Value?.ToString();
             txtMaDG.Text = row.Cells["Mã Độc giả"].Value?.ToString();
             cboTrangThai.Text = row.Cells["Trạng Thái"].Value?.ToString();
+            txtMaSach.Text = row.Cells["Mã Sách"].Value.ToString();
         }
         private void LoadMaPM()
         {
@@ -156,7 +157,7 @@ namespace QuanLyThuVien
                 {
                     conn.Open();
 
-                    string sql = "SELECT HoTen FROM DocGia";
+                    string sql = "SELECT MaDocGia, HoTen FROM DocGia";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
                     {
@@ -165,7 +166,7 @@ namespace QuanLyThuVien
 
                         cboMaDG_Search.DataSource = dt;
                         cboMaDG_Search.DisplayMember = "HoTen";
-                        cboMaDG_Search.ValueMember = "HoTen";
+                        cboMaDG_Search.ValueMember = "MaDocGia";
                         cboMaDG_Search.SelectedIndex = -1;
                     }
                 }
@@ -258,6 +259,31 @@ namespace QuanLyThuVien
             }
         }
 
-        
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = @"delete from ChiTietPhieuMuon 
+                                    where MaPM = @MaPM AND MaSach = @MaSach";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaPM", cboMaPM.Text);
+                        cmd.Parameters.AddWithValue("@MaSach", txtMaSach.Text);
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            LoadDgv();
+                            MessageBox.Show("Xóa thành công");
+                        }    
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

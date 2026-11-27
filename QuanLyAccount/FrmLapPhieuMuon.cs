@@ -167,7 +167,7 @@ namespace QuanLyThuVien
                 {
                     conn.Open();
 
-                    string sql = @"SELECT MaDocGia FROM DocGia";
+                    string sql = @"SELECT MaDocGia, HoTen FROM DocGia";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
                     {
@@ -175,7 +175,7 @@ namespace QuanLyThuVien
                         da.Fill(dt);
 
                         cboMaDG.DataSource = dt;
-                        cboMaDG.DisplayMember = "MaDocGia";
+                        cboMaDG.DisplayMember = "HoTen";
                         cboMaDG.ValueMember = "MaDocGia";
                         cboMaDG.SelectedIndex = -1;
                     }
