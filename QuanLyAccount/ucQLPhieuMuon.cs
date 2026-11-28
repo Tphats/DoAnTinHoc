@@ -18,8 +18,10 @@ namespace QuanLyThuVien
         public ucQLPhieuMuon()
         {
             InitializeComponent();
+            timerLoadTQ.Start();
             LoadMaPM();
             LoadTen_Search();
+            XuLyDuLieu.CapNhatTrangThaiQuaHan();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -147,7 +149,35 @@ namespace QuanLyThuVien
             }
         }
 
-
+        private void LoadMaSach()
+        {
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string sql_layMaDG = @"SELECT MaSach FROM PhieuMuon
+                                  WHERE MaPM = @MaPM";
+                    using (SqlCommand cmd = new SqlCommand(sql_layMaDG, conn))
+                    {
+                        cmd.Parameters.Add("@MaPM", SqlDbType.Int).Value = Convert.ToInt32(cboMaPM.SelectedValue);
+                        object kq = cmd.ExecuteScalar();
+                        if (kq != null && kq != DBNull.Value)
+                        {
+                            txtMaSach.Text = kq.ToString();
+                        }
+                        else
+                        {
+                            txtMaSach.Clear();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+        }
 
         private void LoadTen_Search()
         {
@@ -179,6 +209,7 @@ namespace QuanLyThuVien
         private void cboMaPM_SelectionChangeCommitted(object sender, EventArgs e)
         {
             LoadMaDG();
+            LoadMaSach();
         }
         private void ucQLPhieuMuon_Load(object sender, EventArgs e)
         {
@@ -191,33 +222,39 @@ namespace QuanLyThuVien
                 try
                 {
                     conn.Open();
+                    //Đếm tổng Phiếu
                     string sql_TongPM = @"select count(*) from PhieuMuon";
                     using (SqlCommand cmd = new SqlCommand(sql_TongPM, conn))
                     {
-                        //int tongPhieuMuon = (int)cmd.ExecuteScalar();
                         txtSoLuongPM.Text = cmd.ExecuteScalar().ToString();
                     }
-                    string sql_DM_QH = @"
-                                         SELECT
-                                         COUNT(CASE
-                                         WHEN TrangThai = N'Đang mượn'
-                                         THEN 1 END) AS TongDangMuon,
+                    //Đếm Đang mượn
+                    string sql_DM = @"SELECT COUNT(TrangThai)
+                                        from PhieuMuon
+                                        where TrangThai = N'Đang Mượn'";
 
-                                         COUNT(CASE
-                                         WHEN TrangThai = N'Đang mượn'
-                                         AND HanTra < CAST(GETDATE() AS DATE)
-                                         THEN 1 END) AS TongQuaHan
-
-                                         FROM PhieuMuon";
-
-                    using (SqlCommand cmd = new SqlCommand(sql_DM_QH, conn))
-                    using (SqlDataReader rd = cmd.ExecuteReader())
+                    using (SqlCommand cmd = new SqlCommand(sql_DM, conn))
                     {
-                        if (rd.Read())
+                        object kq = cmd.ExecuteScalar();
+                        if(kq != null && kq != DBNull.Value)
                         {
-                            txtDangMuon.Text = rd["TongDangMuon"].ToString();
-                            txtQuaHan.Text = rd["TongQuaHan"].ToString();
+                            txtDangMuon.Text = kq.ToString();
                         }
+
+                    }
+                    //đếm Quá hạn
+                    string sql_QH = @"SELECT COUNT(TrangThai)
+                                        from PhieuMuon
+                                        where TrangThai = N'Quá Hạn'";
+
+                    using (SqlCommand cmd = new SqlCommand(sql_QH, conn))
+                    {
+                        object kq = cmd.ExecuteScalar();
+                        if (kq != null && kq != DBNull.Value)
+                        {
+                            txtQuaHan.Text = kq.ToString();
+                        }
+
                     }
                 }
                 catch (Exception ex)
@@ -239,13 +276,14 @@ namespace QuanLyThuVien
                                         ,ChiTietPhieuMuon.SoLuong as 'Số sách mượn',Sach.MaSach as 'Mã sách'
                                         , TenSach as 'Tên sách', TenTheLoai as 'Thể loại'
                                         ,TenTacGia as 'Tác giả', TenNXB as 'Nhà xuất bản'
-                                        from DocGia
-                                        join PhieuMuon on DocGia.MaDocGia=PhieuMuon.MaDocGia
-                                        join ChiTietPhieuMuon on PhieuMuon.MaPM=ChiTietPhieuMuon.MaPM
-                                        join Sach on Sach.MaSach=ChiTietPhieuMuon.MaSach
-                                        join TheLoai on TheLoai.MaTheLoai = Sach.MaTheLoai
-                                        join TacGia on Sach.MaTacGia = TacGia.MaTacGia
-                                        join NhaXuatBan on NhaXuatBan.MaNXB = Sach.MaNXB";
+                                        from PhieuMuon
+                                        left join  DocGia on DocGia.MaDocGia=PhieuMuon.MaDocGia
+                                        left join ChiTietPhieuMuon on PhieuMuon.MaPM=ChiTietPhieuMuon.MaPM
+                                        left join Sach on Sach.MaSach=ChiTietPhieuMuon.MaSach
+                                        left join TheLoai on TheLoai.MaTheLoai = Sach.MaTheLoai
+                                        left join TacGia on Sach.MaTacGia = TacGia.MaTacGia
+                                        left join NhaXuatBan on NhaXuatBan.MaNXB = Sach.MaNXB
+";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql_DGV, conn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
@@ -261,50 +299,98 @@ namespace QuanLyThuVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+            "Bạn có chắc chắn muốn xóa toàn bộ phiếu mượn này?",
+            "Xác nhận xóa",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+            );
+            if (result != DialogResult.Yes)
+                return;
             using (SqlConnection conn = Connect.GetConnection())
             {
-                try
+                conn.Open();
+                using (SqlTransaction tran = conn.BeginTransaction())
                 {
-                    conn.Open();
-                    //Lấy số lượng của PM cần xóa
-                    int sL;
-                    string sql_GetSL = @"select MaSach from ChiTietPhieuMuon
-                                         where MaPM = @MaPM AND MaSach = @MaSach";
-                    using(SqlCommand cmd = new SqlCommand(sql_GetSL, conn))
+                    try
                     {
-                        cmd.Parameters.AddWithValue("@MaPM", cboMaPM.Text);
-                        cmd.Parameters.AddWithValue("@MaSach", txtMaSach.Text);
-                        sL =Convert.ToInt32(cmd.ExecuteScalar());
-                    }
-                    //Cập nhật số lượng của sách
-                    string sql_UpdateSL = @"update Sach
-                                            set SoLuongCon = SoLuongCon + @SL
-                                            where MaSach = @MaSach";
-                    using (SqlCommand cmd = new SqlCommand(sql_UpdateSL, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@MaSach", txtMaSach.Text);
-                        cmd.Parameters.AddWithValue("@SL", sL);
-                        cmd.ExecuteNonQuery();
-                    }
-                    //Xóa Phiếu
-                    string sql = @"delete from ChiTietPhieuMuon 
-                                    where MaPM = @MaPM AND MaSach = @MaSach";
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@MaPM", cboMaPM.Text);
-                        cmd.Parameters.AddWithValue("@MaSach", txtMaSach.Text);
-                        if (cmd.ExecuteNonQuery() > 0)
+                        //Kiểm tra trạng thái phiếu mượn
+                        string sql_KiemTra = @"
+                                                SELECT TrangThai
+                                                FROM PhieuMuon
+                                                WHERE MaPM = @MaPM";
+
+                        string trangThai;
+                        int maPM = Convert.ToInt32(cboMaPM.Text);
+
+                        using (SqlCommand cmd = new SqlCommand(sql_KiemTra, conn, tran))
                         {
-                            LoadDgv();
-                            MessageBox.Show("Xóa thành công");
-                        }    
+                            cmd.Parameters.AddWithValue("@MaPM", maPM);
+
+                            object kq = cmd.ExecuteScalar();
+
+                            if (kq == null)
+                                throw new Exception("Không tìm thấy phiếu mượn!");
+
+                            trangThai = kq.ToString();
+                        }
+
+                        //Chỉ cho xóa phiếu đang mượn để tránh cộng kho hai lần
+                        if (trangThai != "Đang Mượn")
+                            throw new Exception("Chỉ được xóa phiếu đang mượn!");
+
+                        //Cập nhật số lượng của sách
+                        string sql_UpdateSL = @"update Sach
+                                            set Sach.SoLuongCon = SoLuongCon + CT.SoLuong
+                                            from Sach join ChiTietPhieuMuon CT on Sach.MaSach=CT.MaSach
+                                            where CT.MaPM = @MaPM";
+                        using (SqlCommand cmd = new SqlCommand(sql_UpdateSL, conn, tran))
+                        {
+                            cmd.Parameters.AddWithValue("@MaPM", maPM);
+                            cmd.ExecuteNonQuery();
+                        }
+                        //Xóa tất cả chi tiết phiếu mượn
+                        string sql_XoaCT = @"
+                                            DELETE FROM ChiTietPhieuMuon
+                                            WHERE MaPM = @MaPM";
+
+                        using (SqlCommand cmd = new SqlCommand(sql_XoaCT, conn, tran))
+                        {
+                            cmd.Parameters.AddWithValue("@MaPM", maPM);
+                            cmd.ExecuteNonQuery();
+                        }
+                        //Xóa Phiếu mươn
+                        string sql = @"delete from PhieuMuon 
+                                    where MaPM = @MaPM";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn, tran))
+                        {
+                            cmd.Parameters.AddWithValue("@MaPM", maPM);
+                            if (cmd.ExecuteNonQuery() == 0)
+                            {
+                                LoadDgv();
+                                MessageBox.Show("Xóa Phiếu mươn không thành công!");
+                            }
+                        }
+                        tran.Commit();
+                        LoadMaPM();
+                        LoadDgv();
+                        MessageBox.Show("Xóa toàn bộ Phiếu mượn thành công!");
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }
+        
+
+        private void timerLoadTQ_Tick(object sender, EventArgs e)
+        {
+            LoadTongQuan();
+            XuLyDuLieu.CapNhatTrangThaiQuaHan();
+        }
+
     }
 }

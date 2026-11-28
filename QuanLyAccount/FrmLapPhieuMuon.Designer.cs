@@ -90,7 +90,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(22, 204);
@@ -102,7 +101,6 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(21, 262);
@@ -114,16 +112,15 @@
             // 
             // dtNgayMuon
             // 
-            this.dtNgayMuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtNgayMuon.Location = new System.Drawing.Point(135, 204);
             this.dtNgayMuon.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayMuon.Name = "dtNgayMuon";
             this.dtNgayMuon.Size = new System.Drawing.Size(231, 22);
             this.dtNgayMuon.TabIndex = 8;
+            this.dtNgayMuon.ValueChanged += new System.EventHandler(this.dtNgayMuon_ValueChanged);
             // 
             // dtHanTra
             // 
-            this.dtHanTra.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtHanTra.Location = new System.Drawing.Point(135, 258);
             this.dtHanTra.Margin = new System.Windows.Forms.Padding(4);
             this.dtHanTra.Name = "dtHanTra";
@@ -132,7 +129,6 @@
             // 
             // btnLapPM
             // 
-            this.btnLapPM.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLapPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnLapPM.Location = new System.Drawing.Point(25, 325);
             this.btnLapPM.Margin = new System.Windows.Forms.Padding(4);
@@ -145,7 +141,6 @@
             // 
             // btnThemSach
             // 
-            this.btnThemSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThemSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnThemSach.Location = new System.Drawing.Point(431, 240);
             this.btnThemSach.Margin = new System.Windows.Forms.Padding(4);
@@ -158,7 +153,6 @@
             // 
             // labelMaSach
             // 
-            this.labelMaSach.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelMaSach.AutoSize = true;
             this.labelMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelMaSach.Location = new System.Drawing.Point(427, 124);
@@ -170,7 +164,6 @@
             // 
             // labelSoCuon
             // 
-            this.labelSoCuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelSoCuon.AutoSize = true;
             this.labelSoCuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelSoCuon.Location = new System.Drawing.Point(427, 183);
@@ -182,7 +175,6 @@
             // 
             // txtSoCuon
             // 
-            this.txtSoCuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSoCuon.Location = new System.Drawing.Point(519, 181);
             this.txtSoCuon.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoCuon.Multiline = true;
@@ -192,7 +184,6 @@
             // 
             // cboMaDG
             // 
-            this.cboMaDG.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboMaDG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaDG.FormattingEnabled = true;
             this.cboMaDG.Location = new System.Drawing.Point(135, 146);
@@ -203,7 +194,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(21, 146);
@@ -215,7 +205,6 @@
             // 
             // txtSLSachCon
             // 
-            this.txtSLSachCon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSLSachCon.Location = new System.Drawing.Point(807, 146);
             this.txtSLSachCon.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLSachCon.Multiline = true;
@@ -226,7 +215,6 @@
             // 
             // label_SL
             // 
-            this.label_SL.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_SL.AutoSize = true;
             this.label_SL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label_SL.Location = new System.Drawing.Point(752, 119);
@@ -238,6 +226,9 @@
             // 
             // dgvDSSach
             // 
+            this.dgvDSSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSach.Location = new System.Drawing.Point(431, 297);
             this.dgvDSSach.Margin = new System.Windows.Forms.Padding(4);

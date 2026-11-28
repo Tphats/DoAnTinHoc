@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lab_MaDG_Search = new System.Windows.Forms.Label();
             this.cboMaDG_Search = new System.Windows.Forms.ComboBox();
@@ -51,10 +52,10 @@
             this.cboMaPM = new System.Windows.Forms.ComboBox();
             this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.dgvPM = new System.Windows.Forms.DataGridView();
+            this.timerLoadTQ = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPM)).BeginInit();
@@ -73,7 +74,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtSoLuongPM);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1056, 76);
             this.panel1.TabIndex = 0;
@@ -113,7 +114,7 @@
             // 
             this.txtQuaHan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.txtQuaHan.Location = new System.Drawing.Point(284, 34);
-            this.txtQuaHan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQuaHan.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuaHan.Multiline = true;
             this.txtQuaHan.Name = "txtQuaHan";
             this.txtQuaHan.ReadOnly = true;
@@ -124,7 +125,7 @@
             // 
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnTim.Location = new System.Drawing.Point(659, 22);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(148, 44);
             this.btnTim.TabIndex = 16;
@@ -147,7 +148,7 @@
             // 
             this.txtDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.txtDangMuon.Location = new System.Drawing.Point(168, 34);
-            this.txtDangMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDangMuon.Margin = new System.Windows.Forms.Padding(4);
             this.txtDangMuon.Multiline = true;
             this.txtDangMuon.Name = "txtDangMuon";
             this.txtDangMuon.ReadOnly = true;
@@ -169,7 +170,7 @@
             // 
             this.txtSoLuongPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.txtSoLuongPM.Location = new System.Drawing.Point(53, 34);
-            this.txtSoLuongPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoLuongPM.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuongPM.Multiline = true;
             this.txtSoLuongPM.Name = "txtSoLuongPM";
             this.txtSoLuongPM.ReadOnly = true;
@@ -191,11 +192,10 @@
             this.panel2.Controls.Add(this.cboMaPM);
             this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.cboTrangThai);
             this.panel2.Location = new System.Drawing.Point(0, 84);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1056, 149);
             this.panel2.TabIndex = 1;
@@ -203,7 +203,7 @@
             // txtMaSach
             // 
             this.txtMaSach.Location = new System.Drawing.Point(163, 107);
-            this.txtMaSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSach.Name = "txtMaSach";
             this.txtMaSach.ReadOnly = true;
             this.txtMaSach.Size = new System.Drawing.Size(200, 22);
@@ -247,7 +247,7 @@
             this.btnXemDS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnXemDS.ForeColor = System.Drawing.Color.Black;
             this.btnXemDS.Location = new System.Drawing.Point(385, 30);
-            this.btnXemDS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXemDS.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemDS.Name = "btnXemDS";
             this.btnXemDS.Size = new System.Drawing.Size(348, 39);
             this.btnXemDS.TabIndex = 19;
@@ -258,7 +258,7 @@
             // txtMaDG
             // 
             this.txtMaDG.Location = new System.Drawing.Point(163, 37);
-            this.txtMaDG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaDG.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.ReadOnly = true;
             this.txtMaDG.Size = new System.Drawing.Size(200, 22);
@@ -302,7 +302,7 @@
             this.cboMaPM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaPM.FormattingEnabled = true;
             this.cboMaPM.Location = new System.Drawing.Point(163, 4);
-            this.cboMaPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboMaPM.Margin = new System.Windows.Forms.Padding(4);
             this.cboMaPM.Name = "cboMaPM";
             this.cboMaPM.Size = new System.Drawing.Size(200, 24);
             this.cboMaPM.TabIndex = 13;
@@ -313,10 +313,10 @@
             this.btnChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnChiTiet.ForeColor = System.Drawing.Color.Black;
-            this.btnChiTiet.Location = new System.Drawing.Point(601, 75);
-            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChiTiet.Location = new System.Drawing.Point(563, 75);
+            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(4);
             this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(132, 39);
+            this.btnChiTiet.Size = new System.Drawing.Size(170, 39);
             this.btnChiTiet.TabIndex = 12;
             this.btnChiTiet.Text = "Chi tiết Phiếu";
             this.btnChiTiet.UseVisualStyleBackColor = true;
@@ -326,26 +326,14 @@
             // 
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnXoa.Location = new System.Drawing.Point(493, 75);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Location = new System.Drawing.Point(385, 75);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 39);
+            this.btnXoa.Size = new System.Drawing.Size(177, 39);
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSua.Location = new System.Drawing.Point(385, 75);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 39);
-            this.btnSua.TabIndex = 10;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
             // 
             // btnThem
             // 
@@ -354,9 +342,9 @@
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnThem.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnThem.Location = new System.Drawing.Point(820, 69);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(51, 39);
+            this.btnThem.Size = new System.Drawing.Size(51, 45);
             this.btnThem.TabIndex = 9;
             this.btnThem.Text = "+";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -373,7 +361,7 @@
             "Đã Trả",
             "Quá Hạn"});
             this.cboTrangThai.Location = new System.Drawing.Point(163, 69);
-            this.cboTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(200, 28);
             this.cboTrangThai.TabIndex = 8;
@@ -385,13 +373,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPM.Location = new System.Drawing.Point(4, 236);
-            this.dgvPM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPM.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPM.Name = "dgvPM";
             this.dgvPM.ReadOnly = true;
             this.dgvPM.RowHeadersWidth = 51;
             this.dgvPM.Size = new System.Drawing.Size(1048, 250);
             this.dgvPM.TabIndex = 1;
             this.dgvPM.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPM_RowEnter);
+            // 
+            // timerLoadTQ
+            // 
+            this.timerLoadTQ.Interval = 1000;
+            this.timerLoadTQ.Tick += new System.EventHandler(this.timerLoadTQ_Tick);
             // 
             // ucQLPhieuMuon
             // 
@@ -400,7 +393,7 @@
             this.Controls.Add(this.dgvPM);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucQLPhieuMuon";
             this.Size = new System.Drawing.Size(1056, 490);
             this.Load += new System.EventHandler(this.ucQLPhieuMuon_Load);
@@ -427,7 +420,6 @@
         private System.Windows.Forms.DataGridView dgvPM;
         private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.ComboBox cboMaPM;
         private System.Windows.Forms.Label label6;
@@ -442,5 +434,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Timer timerLoadTQ;
     }
 }

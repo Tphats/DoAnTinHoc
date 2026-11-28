@@ -19,7 +19,8 @@ namespace QuanLyThuVien
         public FrmLapPhieuTra()
         {
             InitializeComponent();
-            GetHanTra();
+            XuLyDuLieu.CapNhatTrangThaiQuaHan();
+            LoadTenDG();
         }
         private Decimal TienPhat(DateTime NgayTra, DateTime HanTra)
         {
@@ -48,6 +49,8 @@ namespace QuanLyThuVien
                         {
                             dtHanTra.Value = Convert.ToDateTime(kq.ToString());
                         }
+                        else
+                            dtHanTra.Value = DateTime.Now;
                     }
                 }
                 catch (Exception ex)
@@ -74,6 +77,15 @@ namespace QuanLyThuVien
                         if (cmd.ExecuteNonQuery() > 0)
                         {
                             MessageBox.Show("Lập phiếu phạt thành công");
+                            string sql_updateTT = @"UPDATE PhieuMuon
+                                            SET TrangThai = N'Đã trả'
+                                            WHERE MaPM = @MaPM";
+
+                            using (SqlCommand cmdUpdate = new SqlCommand(sql_updateTT, conn))
+                            {
+                                cmdUpdate.Parameters.AddWithValue("@MaPM", Convert.ToInt32(txtMaPM.Text));
+                                cmdUpdate.ExecuteNonQuery();
+                            }
                         }
                     }
                 }
@@ -88,6 +100,70 @@ namespace QuanLyThuVien
         {
             decimal TP = TienPhat(dtNgayTra.Value, dtHanTra.Value);
             txtTienPhat.Text = Convert.ToString(TP);
+        }
+
+        private void bnt_XemDSPM_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = @"select PM.MaPM, PM.MaDocGia, HoTen, NgayMuon
+                                    , HanTra, TrangThai, CT.SoLuong as 'Số sách mượn' 
+                                    from PhieuMuon PM 
+                                    join ChiTietPhieuMuon CT on PM.MaPM=CT.MaPM
+                                    join DocGia DG on PM.MaDocGia=DG.MaDocGia
+                                    where PM.MaDocGia = @MaDG";
+                    using(SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaDG", Convert.ToInt32(cboDG.SelectedValue));
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dgvDSPM.DataSource = dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void LoadTenDG()
+        {
+            using(SqlConnection conn = Connect.GetConnection())
+            {
+                try
+                {
+                    string sql = @"select MaDocGia, HoTen from DocGia";
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    cboDG.DataSource = dt;
+                    cboDG.DisplayMember = "HoTen";
+                    cboDG.ValueMember = "MaDocGia";
+                    cboDG.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
+        private void txtMaPM_TextChanged(object sender, EventArgs e)
+        {
+            GetHanTra();
+        }
+
+        private void dgvDSPM_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            DataGridViewRow row = dgvDSPM.Rows[e.RowIndex];
+            txtMaPM.Text = row.Cells["MaPM"].Value?.ToString();
+            //dtHanTra.Value = Convert.ToDateTime(row.Cells["HanTra"].Value);
         }
     }
 }

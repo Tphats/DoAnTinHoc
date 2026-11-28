@@ -98,12 +98,7 @@ namespace QuanLyThuVien
 
                         cmd.ExecuteNonQuery();
                     }
-                    MessageBox.Show(
-    "Mã sách: " + maSach +
-    "\nSố lượng mượn: " + slMuon +
-    "\nSố lượng còn trước khi mượn: " + slCon
-);
-                    //Cập nhật số lượng sách còn  
+                    //Cập nhật số lượng sách còn
                     string sql_UpdateSLCon = @"UPDATE Sach
                                        SET SoLuongCon = SoLuongCon - @SLMuon
                                        WHERE MaSach = @MaSach";
@@ -280,6 +275,11 @@ namespace QuanLyThuVien
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void dtNgayMuon_ValueChanged(object sender, EventArgs e)
+        {
+            dtHanTra.Value = dtNgayMuon.Value.AddDays(120);
         }
     }
 }

@@ -59,5 +59,23 @@ namespace QuanLyThuVien
                 }
             }
         }
+        public static void CapNhatTrangThaiQuaHan()
+        {
+            DBConnection Connect = new DBConnection();
+            using (SqlConnection conn = Connect.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"UPDATE PhieuMuon
+                       SET TrangThai = N'Quá hạn'
+                       WHERE CAST(GETDATE() AS DATE) > CAST(HanTra AS DATE)
+                       AND TrangThai = N'Đang mượn'";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
